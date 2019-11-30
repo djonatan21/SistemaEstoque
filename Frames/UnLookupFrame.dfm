@@ -1,0 +1,87 @@
+object LookupFrame: TLookupFrame
+  Left = 0
+  Top = 0
+  Width = 529
+  Height = 29
+  TabOrder = 0
+  object lblTitulo: TLabel
+    AlignWithMargins = True
+    Left = 5
+    Top = 5
+    Width = 101
+    Height = 19
+    Margins.Left = 5
+    Margins.Top = 5
+    Margins.Right = 5
+    Margins.Bottom = 5
+    Align = alLeft
+    Caption = 'Lookupe Frame : '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    ExplicitHeight = 16
+  end
+  object pnlLkp: TPanel
+    Left = 171
+    Top = 0
+    Width = 384
+    Height = 29
+    Align = alLeft
+    TabOrder = 0
+    ExplicitLeft = 209
+    ExplicitHeight = 30
+    object btnAbrirConsulta: TSpeedButton
+      Left = 1
+      Top = 1
+      Width = 56
+      Height = 27
+      Align = alLeft
+      ExplicitLeft = -5
+      ExplicitTop = 2
+      ExplicitHeight = 26
+    end
+    object lblDescricao: TLabel
+      AlignWithMargins = True
+      Left = 62
+      Top = 6
+      Width = 320
+      Height = 17
+      Margins.Left = 5
+      Margins.Top = 5
+      Margins.Right = 5
+      Margins.Bottom = 5
+      Align = alLeft
+      Caption = 'Descricao'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      ExplicitLeft = 57
+      ExplicitTop = 1
+      ExplicitHeight = 28
+    end
+  end
+  object dbeCodigo: TDBEdit
+    AlignWithMargins = True
+    Left = 116
+    Top = 3
+    Width = 50
+    Height = 23
+    Margins.Left = 5
+    Margins.Right = 5
+    Align = alLeft
+    BiDiMode = bdRightToLeft
+    CharCase = ecUpperCase
+    Color = clBtnFace
+    ParentBiDiMode = False
+    TabOrder = 1
+    ExplicitLeft = 111
+    ExplicitTop = 0
+    ExplicitHeight = 30
+  end
+end

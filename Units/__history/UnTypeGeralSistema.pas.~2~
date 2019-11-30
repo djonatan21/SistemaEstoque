@@ -1,0 +1,12 @@
+unit UnTypeGeralSistema;
+
+interface
+
+Type
+  TValidar = class
+    class procedure FiltrarSQL;
+  end;
+
+implementation
+
+end.

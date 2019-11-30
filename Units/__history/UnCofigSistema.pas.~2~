@@ -1,0 +1,30 @@
+unit UnCofigSistema;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls;
+
+type
+  TFormConfig = class(TForm)
+    pgcConfig: TPageControl;
+    trwConfig: TTreeView;
+    tsConfigUsuario: TTabSheet;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  protected
+    procedure SetConfigInicial;
+  end;
+
+var
+  FormConfig: TFormConfig;
+
+implementation
+
+{$R *.dfm}
+
+end.

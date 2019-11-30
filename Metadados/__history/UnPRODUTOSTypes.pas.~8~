@@ -1,0 +1,22 @@
+unit UnPRODUTOSTypes;
+
+interface
+
+const
+  PRODUTOS = record NomeTabela = 'PRODUTOS';
+  // Primary Key
+  ID = 'ID';
+
+  NOME = 'NOME';
+  CODIGO = 'CODIGO';
+  DESCRICAO = 'DESCRICAO';
+  VALOR_COMPRA = 'VALOR_COMPRA';
+  QUANTIDADE = 'QUANTIDADE';
+  IMAGEM = 'IMAGEM';
+  CODIGO_BARRA = 'CODIGO_BARRA';
+  DATACOMPRA = 'DATACOMPRA';
+end;
+
+implementation
+
+end.

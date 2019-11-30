@@ -1,0 +1,85 @@
+unit UnFormCadastroProduto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnFormPadraoCadastro, Data.DB,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.ComCtrls,
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls, System.Actions, Vcl.ActnList, Vcl.DBCtrls,
+  Vcl.Mask;
+
+type
+  TFormCadastroProduto = class(TFormPadraoCadastro)
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    DBEdit9: TDBEdit;
+    DBEdit10: TDBEdit;
+    DBImage1: TDBImage;
+    DateTimePicker1: TDateTimePicker;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    DBEdit12: TDBEdit;
+    Label11: TLabel;
+    DBEdit13: TDBEdit;
+    Label12: TLabel;
+    DBEdit14: TDBEdit;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    DBComboBox1: TDBComboBox;
+    procedure FormShow(Sender: TObject);
+    procedure actNovoExecute(Sender: TObject);
+  private
+  public
+  protected
+    procedure SetConfigInicial; override;
+  end;
+
+var
+  FormCadastroProduto: TFormCadastroProduto;
+
+implementation
+
+uses
+  UnPRODUTOSTypes, UnTypesGeral,UnTypesCarregarSQL;
+
+{$R *.dfm}
+
+procedure TFormCadastroProduto.actNovoExecute(Sender: TObject);
+begin
+  inherited;
+  DBEdit1.Text := IntToStr(TCarregarSQL.CarregarProximoID('CODIGO', 'CLIENTE'));
+end;
+
+procedure TFormCadastroProduto.FormShow(Sender: TObject);
+begin
+  SetConfigInicial;
+  inherited;
+end;
+
+procedure TFormCadastroProduto.SetConfigInicial;
+begin
+  CarregarItemComboBox('Código', 'CODIGO');
+  inherited;
+end;
+
+end.

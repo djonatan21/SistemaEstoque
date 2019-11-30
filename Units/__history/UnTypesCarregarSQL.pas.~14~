@@ -1,0 +1,125 @@
+unit UnTypesCarregarSQL;
+
+interface
+
+uses
+  UnDmMenuPrincipal, Vcl.Controls, Vcl.Dialogs, System.SysUtils;
+
+type
+  CUsuarioLogado = record
+    ACodigoUsuarioLogado: Integer;
+  end;
+
+  TCarregarSQL = class
+    class procedure ConsultarProduto(ACodigo: Integer);
+    class procedure CarregarConfiguracoesUsuarioLogado;
+    class Function ValidarLoginUsuario(AUsuario, ASenha: string): Boolean;
+    class Function CarregarProximoID(ASqlColuna, ANomeTabela: string): Integer;
+    class Function AtualizarSaldo(AColuna, ANomeTabela: string): Extended;
+  end;
+
+implementation
+
+uses
+  UnDmValidacoesTypesGeral;
+
+{ TCarregarSQL }
+
+class function TCarregarSQL.AtualizarSaldo(AColuna, ANomeTabela: string)
+  : Extended;
+begin
+  with DmValidar.SQLValidar do
+  begin
+    Close;
+    SQL.Clear;
+    SQL.Add('SELECT COALESCE(SUM(' + AColuna + '),0) AS RESULT');
+    SQL.Add('FROM ' + ANomeTabela);
+    Open();
+    Result := Fields[0].value;
+  end;
+end;
+
+class procedure TCarregarSQL.CarregarConfiguracoesUsuarioLogado();
+var
+  LUsuarioLogado: CUsuarioLogado;
+begin
+  with DmMenuPrincipal.SQLConfigSistema do
+  begin
+    Close;
+    SQL.Clear;
+    SQL.Add('SELECT *');
+    SQL.Add('FROM USUARIOS');
+    // SQL.Add('WHERE USUARIO = ' + LUsuarioLogado.ACodigoUsuarioLogado);
+    Open();
+  end;
+end;
+
+class function TCarregarSQL.CarregarProximoID(ASqlColuna,
+  ANomeTabela: string): Integer;
+begin
+  try
+    with DmValidar.SQLValidar do
+    begin
+      Close;
+      SQL.Clear;
+      SQL.Add('SELECT COALESCE(MAX(' + ASqlColuna + '),0) AS RESULT');
+      SQL.Add('FROM ' + ANomeTabela);
+      Open();
+      Result := Fields[0].value + 1;
+    end;
+  except
+    Result := 0;
+  end;
+end;
+
+class procedure TCarregarSQL.ConsultarProduto(ACodigo: Integer);
+begin
+  with DmMenuPrincipal.SQLCaixa do
+  begin
+    Close;
+    SQL.Clear;
+    SQL.Add('SELECT PRODUTOS.ID,');
+    SQL.Add('       PRODUTOS.CODIGO,');
+    SQL.Add('       PRODUTOS.CODIGO_BARRA,');
+    SQL.Add('       PRODUTOS.NOME,');
+    SQL.Add('       PRODUTOS.VALOR_COMPRA,');
+    SQL.Add('       PRODUTOS.VALOR_VENDA, ');
+    SQL.Add('       PRODUTOS.IMAGEM,');
+    SQL.Add('       PRODUTOS.DESCRICAO,');
+    SQL.Add('       PRODUTOS.QUANTIDADE,');
+    SQL.Add('       PRODUTOS.UNIDADE');
+    SQL.Add('  FROM PRODUTOS');
+    SQL.Add(' WHERE PRODUTOS.CODIGO =:Cod');
+    ParamByName('Cod').AsExtended := ACodigo;
+    if IsEmpty then
+      ShowMessage('Código não emcontrado!!');
+
+    Open();
+  end;
+end;
+
+class function TCarregarSQL.ValidarLoginUsuario(AUsuario,
+  ASenha: string): Boolean;
+var
+  LUsuarioLogado: CUsuarioLogado;
+begin
+  with DmMenuPrincipal.SQLLogin do
+  begin
+    Close;
+    SQL.Clear;
+    SQL.Add('SELECT USUARIOS.USUARIO,');
+    SQL.Add('       USUARIOS.SENHA');
+    SQL.Add('  FROM USUARIOS');
+    SQL.Add(' WHERE USUARIOS.USUARIO  = ' + QuotedStr(UpperCase(AUsuario)));
+    SQL.Add('   AND USUARIOS.SENHA = ' + QuotedStr(UpperCase(ASenha)));
+    Open();
+
+    if IsEmpty then
+      Result := false
+    else
+      Result := true;
+  end;
+
+end;
+
+end.

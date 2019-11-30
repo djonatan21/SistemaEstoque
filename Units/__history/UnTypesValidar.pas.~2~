@@ -1,0 +1,16 @@
+unit UnTypesValidar;
+
+interface
+
+uses
+  UnDmValidacoesTypesGeral, Vcl.Controls;
+
+type
+  TValidar = class
+    class function ValidarCampoNumerico(Sender: TObject;
+      AControle: TWinControl): Boolean;
+  end;
+
+implementation
+
+end.

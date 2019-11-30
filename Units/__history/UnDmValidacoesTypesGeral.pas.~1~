@@ -1,0 +1,25 @@
+unit UnDmValidacoesTypesGeral;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TDmValidar = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DmValidar: TDmValidar;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

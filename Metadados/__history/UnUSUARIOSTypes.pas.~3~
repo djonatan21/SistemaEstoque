@@ -1,0 +1,17 @@
+unit UnUSUARIOSTypes;
+
+interface
+
+const
+  // Primary Key
+  ID = 'ID';
+
+  NOME = 'NOME';
+  SENHA = 'SENHA';
+  ImgPlanoFundo = 'ImgPlanoFundo';
+  EMAIL = 'EMAIL';
+  EMPRESA = 'EMPRESA';
+
+implementation
+
+end.

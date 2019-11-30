@@ -1,0 +1,16 @@
+unit UnUSUARIOSTypes;
+
+interface
+
+const
+  ID = '';
+  NOME = '';
+
+  SENHA = '';
+  ImgPlanoFundo = '';
+  EMAIL = '';
+  EMPRESA = '';
+
+implementation
+
+end.
