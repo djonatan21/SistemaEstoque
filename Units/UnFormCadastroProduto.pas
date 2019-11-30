@@ -11,7 +11,8 @@ uses
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.ComCtrls,
   Vcl.Imaging.pngimage, Vcl.ExtCtrls, System.Actions, Vcl.ActnList, Vcl.DBCtrls,
-  Vcl.Mask;
+  Vcl.Mask, System.Rtti, System.Bindings.Outputs, Vcl.Bind.Editors,
+  Data.Bind.EngExt, Vcl.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope;
 
 type
   TFormCadastroProduto = class(TFormPadraoCadastro)
@@ -44,10 +45,15 @@ type
     Label14: TLabel;
     edtQuantEstoque: TMaskEdit;
     memoObservacoes: TMemo;
+    pnlImgProduto: TPanel;
+    procedure actNovoExecute(Sender: TObject);
+    procedure actSalvarExecute(Sender: TObject);
+    procedure imgProdutoClick(Sender: TObject);
   private
   public
   protected
     procedure SetConfigInicial; override;
+    procedure SetCamposBanco;
   end;
 
 var
@@ -60,9 +66,54 @@ uses
 
 {$R *.dfm}
 
+procedure TFormCadastroProduto.actNovoExecute(Sender: TObject);
+begin
+  inherited;
+  edtCodigo.Text := IntToStr(TCarregarSQL.CarregarProximoID('CODIGO',
+    'PRODUTOS'));
+end;
+
+procedure TFormCadastroProduto.actSalvarExecute(Sender: TObject);
+begin
+  SetCamposBanco;
+  inherited;
+
+end;
+
+procedure TFormCadastroProduto.imgProdutoClick(Sender: TObject);
+begin
+  inherited;
+  TGTypeGeral.CarregarImagemEmTImage(Sender, opdCarregarArquivo, imgProduto);
+end;
+
+procedure TFormCadastroProduto.SetCamposBanco;
+begin
+  with SqlCadastro do
+  begin
+    FieldByName('ID').AsInteger := TCarregarSQL.CarregarProximoID('ID',
+      'PRODUTOS');
+    FieldByName('CODIGO').AsInteger := StrToInt(edtCodigo.Text);
+    FieldByName('DESCRICAO').AsString := edtDescricao.Text;
+    FieldByName('VALOR_VENDA').AsFloat := StrToFloat(edtPrecoVenda.Text);
+    FieldByName('VALOR_COMPRA').AsFloat := StrToFloat(edtPrecoCusto.Text);
+    FieldByName('QUANTIDADE').AsInteger := StrToInt(edtQuantEstoque.Text);
+    // FieldByName('IMAGE'). :=
+    FieldByName('CODIGO_BARRA').AsString := edtCodigoBarras.Text;
+    FieldByName('UNIDADE').AsInteger := cbUnidade.ItemIndex;
+    FieldByName('CATEGORIA').AsInteger := cbCategoria.ItemIndex;
+    FieldByName('MARCA').AsInteger := cbMarca.ItemIndex;
+    FieldByName('CATEGORIA').AsInteger := cbCategoria.ItemIndex;
+    FieldByName('LOCALIZACAO').AsString := edtLocalizacao.Text;
+    FieldByName('LIMITEESTOQUE').AsInteger := StrToInt(edtQuantEstoque.Text);
+    FieldByName('OBSERVACOES').AsString := memoObservacoes.Text;
+    FieldByName('PESOBRUTO').AsFloat := StrToFloat(edtPesoBruto.Text);
+    FieldByName('PESOLIQUIDO').AsFloat := StrToFloat(edtPesoLiquido.Text);
+  end;
+end;
+
 procedure TFormCadastroProduto.SetConfigInicial;
 begin
-//  inherited;
+  inherited;
 end;
 
 end.

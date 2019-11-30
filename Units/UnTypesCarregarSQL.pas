@@ -19,6 +19,7 @@ type
     class Function CarregarProximoID(ASqlColuna, ANomeTabela: string): Integer;
     class Function AtualizarSaldo(AColuna, ANomeTabela: string): Extended;
     class procedure AdicionarItemNaCompra;
+    class procedure SQLCadastroProdutos;
   end;
 
 implementation
@@ -140,6 +141,30 @@ begin
 
 end;
 
+class procedure TCarregarSQL.SQLCadastroProdutos;
+begin
+  { SELECT CLIENTE.ID,
+    CLIENTE. NOME,
+    CLIENTE.DATANASCIMENTO,
+    CLIENTE.CPF,
+    CLIENTE.RG,
+    CLIENTE.MUNICIPIO,
+    CLIENTE.COMPLEMENTO,
+    CLIENTE.ENDERECO,
+    CLIENTE.TELEFONE,
+    CLIENTE.CELULAR,
+    CLIENTE.SEXO,
+    CLIENTE.CEP,
+    CLIENTE.REFERENCIA,
+    CLIENTE.CODIGO,
+    CLIENTE.EMAIL,
+    CLIENTE.IMAGEM,
+    CLIENTE.BAIRRO,
+    CLIENTE.UF
+    FROM CLIENTE
+  }
+end;
+
 class procedure TCarregarSQL.SubTotalVenda;
 begin
 
@@ -162,9 +187,9 @@ begin
     Open();
 
     if IsEmpty then
-      Result := false
+      Result := False
     else
-      Result := true;
+      Result := True;
   end;
 
 end;

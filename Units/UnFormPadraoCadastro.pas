@@ -82,7 +82,6 @@ type
   public
   protected
     property CampoFiltro: string read FCampoFiltro write FCampoFiltro;
-    procedure InserirSQL(ANomeTabela: string); virtual;
     procedure SetConfigInicial; virtual;
     procedure FiltrarSQL(ACamposMostraGrid, ATextoFiltro,
       ANomeTabela: string); virtual;
@@ -175,8 +174,11 @@ procedure TFormPadraoCadastro.actSalvarExecute(Sender: TObject);
 begin
   CarregarBarraProgresso;
   SetConfigInicial;
-  SqlCadastro.Post;
-  SqlCadastro.ApplyUpdates(0);
+  if dsCadastro.State in [dsInsert, dsEdit] then
+  begin
+    SqlCadastro.Post;
+    SqlCadastro.ApplyUpdates(0);
+  end;
 end;
 
 procedure TFormPadraoCadastro.actUltimoExecute(Sender: TObject);
@@ -259,19 +261,6 @@ procedure TFormPadraoCadastro.FormShow(Sender: TObject);
 begin
   SetConfigInicial;
   ConfigVisual;
-end;
-
-procedure TFormPadraoCadastro.InserirSQL(ANomeTabela: string);
-begin
-  with SqlCadastro do
-  begin
-    Close;
-    SQL.Clear;
-    SQL.Add('SELECT *');
-    SQL.Add('FROM ' + ANomeTabela);
-    Open();
-    Active := True;
-  end;
 end;
 
 procedure TFormPadraoCadastro.SetConfigInicial;
