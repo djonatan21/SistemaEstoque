@@ -92,6 +92,10 @@ type
     SpeedButton2: TSpeedButton;
     actCadastroEmpresa: TAction;
     SpeedButton4: TSpeedButton;
+    SpeedButton7: TSpeedButton;
+    actCadastroDepartamento: TAction;
+    SpeedButton9: TSpeedButton;
+    actConferenciaEstoque: TAction;
     procedure FormShow(Sender: TObject);
     procedure imgBtnCadastroClick(Sender: TObject);
     procedure imgBtnCalculoClick(Sender: TObject);

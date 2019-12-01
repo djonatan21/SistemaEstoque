@@ -1,7 +1,7 @@
 inherited FormCadastroProduto: TFormCadastroProduto
   Caption = 'Cadastro de Produtos'
   ClientHeight = 575
-  ExplicitTop = -81
+  ExplicitTop = -50
   ExplicitHeight = 604
   PixelsPerInch = 96
   TextHeight = 13

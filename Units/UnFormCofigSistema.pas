@@ -71,7 +71,7 @@ var
 implementation
 
 uses
-  UnDmMenuPrincipal, UnDmConectConfigSistema;
+  UnDmMenuPrincipal;
 {$R *.dfm}
 { TFormConfig }
 

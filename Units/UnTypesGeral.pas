@@ -15,9 +15,12 @@ type
     class procedure SetFocusCampo(ASender: TObject; AControle: TWinControl);
     class function ValidarCampoNumerico(ASender: TObject;
       AControle: TWinControl; AText, ANomeCampoMessage: String): String;
-    class function MessageFormatoInvalido(AString: string = ''): Boolean;
+    class function MenssagemFormatoInvalido(AString: string = ''): Boolean;
     class function CarregarImagemEmTImage(ASender: TObject;
       AComponente: TOpenDialog; AImage: TImage): Boolean;
+    class Procedure MenssagemErro(ATextoErro: string);
+  private
+
   end;
 
 implementation
@@ -33,15 +36,20 @@ begin
     try
       AImage.Picture.LoadFromFile(AComponente.FileName);
     except
-      if TGTypeGeral.MessageFormatoInvalido('{OK} para buscar imagem.') then
+      if TGTypeGeral.MenssagemFormatoInvalido('{OK} para buscar imagem.') then
         TGTypeGeral.CarregarImagemEmTImage(ASender, AComponente, AImage);
 
     end;
   end;
 end;
 
-class function TGTypeGeral.MessageFormatoInvalido(AString: string = '')
-  : Boolean;
+class procedure TGTypeGeral.MenssagemErro(ATextoErro: string);
+begin
+  ShowMessage(ATextoErro);
+end;
+
+class function TGTypeGeral.MenssagemFormatoInvalido
+  (AString: string = ''): Boolean;
 begin
   if MessageDlg('Formato invalido. ' + AString, mtWarning, mbOKCancel, 0, mbOK)
     = mrOk then

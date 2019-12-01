@@ -122,8 +122,8 @@ end;
 
 procedure TFormPadraoCadastro.actEditarExecute(Sender: TObject);
 begin
-  SetConfigInicial;
   SqlCadastro.Edit;
+  SetConfigInicial;
 end;
 
 procedure TFormPadraoCadastro.actExcluirExecute(Sender: TObject);
@@ -131,10 +131,14 @@ begin
   if MessageDlg('Deseja Excluir o Registro ?', mtInformation, mbYesNo, 0, mbYes)
     = mrYes then
   begin
-    SetConfigInicial;
-    SqlCadastro.Delete;
-    actSalvar.Execute;
-    CarregarBarraProgresso;
+    try
+      SqlCadastro.Delete;
+      actSalvar.Execute;
+      SetConfigInicial;
+      CarregarBarraProgresso;
+    except
+      // TGTypeGeral.
+    end;
   end;
 end;
 
@@ -173,11 +177,11 @@ end;
 procedure TFormPadraoCadastro.actSalvarExecute(Sender: TObject);
 begin
   CarregarBarraProgresso;
-  SetConfigInicial;
   if dsCadastro.State in [dsInsert, dsEdit] then
   begin
     SqlCadastro.Post;
-    SqlCadastro.ApplyUpdates(0);
+    // SqlCadastro.ApplyUpdates(-1);
+    SetConfigInicial;
   end;
 end;
 

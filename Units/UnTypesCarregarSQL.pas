@@ -28,6 +28,8 @@ uses
   UnDmValidacoesTypesGeral, UnFormMenuPrincipal;
 
 { TCarregarSQL }
+var
+  GUsuarioLogadoSistema: string;
 
 class procedure TCarregarSQL.AdicionarItemNaCompra;
 begin
@@ -86,9 +88,10 @@ begin
   begin
     Close;
     SQL.Clear;
-    SQL.Add('SELECT *');
-    SQL.Add('FROM USUARIOS');
-    // SQL.Add('WHERE USUARIO = ' + LUsuarioLogado.ACodigoUsuarioLogado);
+    SQL.Add('SELECT USUARIOS.USUARIO,');
+    SQL.Add('       USUARIOS.SENHA');
+    SQL.Add('  FROM USUARIOS');
+    SQL.Add(' WHERE USUARIOS.USUARIO ' + GUsuarioLogadoSistema);
     Open();
   end;
 end;
@@ -185,7 +188,7 @@ begin
     SQL.Add(' WHERE USUARIOS.USUARIO  = ' + QuotedStr(UpperCase(AUsuario)));
     SQL.Add('   AND USUARIOS.SENHA = ' + QuotedStr(UpperCase(ASenha)));
     Open();
-
+    GUsuarioLogadoSistema := AUsuario;
     if IsEmpty then
       Result := False
     else

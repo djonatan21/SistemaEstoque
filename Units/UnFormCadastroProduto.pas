@@ -92,11 +92,11 @@ begin
   begin
     FieldByName('ID').AsInteger := TCarregarSQL.CarregarProximoID('ID',
       'PRODUTOS');
-    FieldByName('CODIGO').AsInteger := StrToInt(edtCodigo.Text);
+    FieldByName('CODIGO').AsInteger := StrToIntDef(edtCodigo.Text, 0);
     FieldByName('DESCRICAO').AsString := edtDescricao.Text;
-    FieldByName('VALOR_VENDA').AsFloat := StrToFloat(edtPrecoVenda.Text);
-    FieldByName('VALOR_COMPRA').AsFloat := StrToFloat(edtPrecoCusto.Text);
-    FieldByName('QUANTIDADE').AsInteger := StrToInt(edtQuantEstoque.Text);
+    FieldByName('VALOR_VENDA').AsFloat := StrToFloatDef(edtPrecoVenda.Text, 0);
+    FieldByName('VALOR_COMPRA').AsFloat := StrToFloatDef(edtPrecoCusto.Text, 0);
+    FieldByName('QUANTIDADE').AsInteger := StrToIntDef(edtQuantEstoque.Text, 0);
     // FieldByName('IMAGE'). :=
     FieldByName('CODIGO_BARRA').AsString := edtCodigoBarras.Text;
     FieldByName('UNIDADE').AsInteger := cbUnidade.ItemIndex;
@@ -104,10 +104,11 @@ begin
     FieldByName('MARCA').AsInteger := cbMarca.ItemIndex;
     FieldByName('CATEGORIA').AsInteger := cbCategoria.ItemIndex;
     FieldByName('LOCALIZACAO').AsString := edtLocalizacao.Text;
-    FieldByName('LIMITEESTOQUE').AsInteger := StrToInt(edtQuantEstoque.Text);
+    FieldByName('LIMITEESTOQUE').AsInteger :=
+      StrToIntDef(edtQuantEstoque.Text, 0);
     FieldByName('OBSERVACOES').AsString := memoObservacoes.Text;
-    FieldByName('PESOBRUTO').AsFloat := StrToFloat(edtPesoBruto.Text);
-    FieldByName('PESOLIQUIDO').AsFloat := StrToFloat(edtPesoLiquido.Text);
+    FieldByName('PESOBRUTO').AsFloat := StrToFloatDef(edtPesoBruto.Text, 0);
+    FieldByName('PESOLIQUIDO').AsFloat := StrToFloatDef(edtPesoLiquido.Text, 0);
   end;
 end;
 
