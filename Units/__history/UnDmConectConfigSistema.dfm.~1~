@@ -1,0 +1,10 @@
+object DmMenuPrncipal: TDmMenuPrncipal
+  OldCreateOrder = False
+  Height = 150
+  Width = 215
+  object qryConfigSistema: TFDQuery
+    Connection = DmConexao.fdConect
+    Left = 88
+    Top = 56
+  end
+end
