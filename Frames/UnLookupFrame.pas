@@ -18,9 +18,10 @@ type
     lblDescricao: TLabel;
     lblCaptionLkp: TLabel;
     edtCodigo: TEdit;
-    procedure edtCodigoChange(Sender: TObject);
-    procedure FrameEnter(Sender: TObject);
     procedure btnAbrirConsultaClick(Sender: TObject);
+    procedure edtCodigoEnter(Sender: TObject);
+    procedure edtCodigoKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   public
     FCaptionLKP: String;
     FCampoDescricao: String;
@@ -90,14 +91,15 @@ begin
   end;
 end;
 
-procedure TLookupFrame.edtCodigoChange(Sender: TObject);
+procedure TLookupFrame.edtCodigoEnter(Sender: TObject);
 begin
   CarregarSQL;
 end;
 
-procedure TLookupFrame.FrameEnter(Sender: TObject);
+procedure TLookupFrame.edtCodigoKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
 begin
-  lblCaptionLkp.Caption := FCaptionLKP;
+  CarregarSQL;
 end;
 
 end.

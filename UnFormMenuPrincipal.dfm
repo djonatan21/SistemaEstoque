@@ -2240,7 +2240,7 @@ object FormMenuPrincipal: TFormMenuPrincipal
     Top = 95
     Width = 1398
     Height = 771
-    ActivePage = tsPlanoFundo
+    ActivePage = tsCaixaVendas
     Align = alClient
     BiDiMode = bdRightToLeftReadingOnly
     ParentBiDiMode = False
@@ -2258,8 +2258,6 @@ object FormMenuPrincipal: TFormMenuPrincipal
         DataSource = dsConfiUsuario
         Stretch = True
         TabOrder = 0
-        ExplicitLeft = 1
-        ExplicitTop = -2
       end
     end
     object tsCaixaVendas: TTabSheet
@@ -2957,12 +2955,27 @@ object FormMenuPrincipal: TFormMenuPrincipal
             BiDiMode = bdRightToLeft
             ParentBiDiMode = False
             TabOrder = 0
+            object lblUnidade: TLabel
+              Left = 174
+              Top = 8
+              Width = 53
+              Height = 42
+              BiDiMode = bdLeftToRight
+              Caption = 'UN'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -35
+              Font.Name = 'Tahoma'
+              Font.Style = [fsBold]
+              ParentBiDiMode = False
+              ParentFont = False
+            end
             object edtCodigo: TMaskEdit
               AlignWithMargins = True
               Left = 10
               Top = 78
               Width = 289
-              Height = 51
+              Height = 43
               Margins.Left = 10
               Margins.Top = 10
               Margins.Right = 10
@@ -2976,7 +2989,7 @@ object FormMenuPrincipal: TFormMenuPrincipal
               Color = clYellow
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -32
+              Font.Height = -35
               Font.Name = 'Tahoma'
               Font.Style = [fsBold, fsItalic]
               MaxLength = 18
@@ -2999,18 +3012,18 @@ object FormMenuPrincipal: TFormMenuPrincipal
               Alignment = taCenter
               BevelInner = bvLowered
               BevelOuter = bvNone
+              BiDiMode = bdLeftToRight
               BorderStyle = bsNone
-              CharCase = ecUpperCase
               Color = clYellow
               Font.Charset = DEFAULT_CHARSET
               Font.Color = clWindowText
-              Font.Height = -32
+              Font.Height = -35
               Font.Name = 'Tahoma'
-              Font.Style = [fsBold, fsItalic]
-              MaxLength = 18
+              Font.Style = []
+              ParentBiDiMode = False
               ParentFont = False
               TabOrder = 1
-              Text = '1X'
+              Text = '1'
               OnEnter = edtQuantidadeEnter
               OnKeyDown = edtQuantidadeKeyDown
             end
@@ -3080,7 +3093,6 @@ object FormMenuPrincipal: TFormMenuPrincipal
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      ExplicitLeft = 481
       ExplicitHeight = 16
     end
     object lblData: TLabel
@@ -3097,7 +3109,6 @@ object FormMenuPrincipal: TFormMenuPrincipal
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      ExplicitLeft = 1220
       ExplicitHeight = 16
     end
     object lblEmpresa: TLabel
@@ -3115,7 +3126,6 @@ object FormMenuPrincipal: TFormMenuPrincipal
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      ExplicitLeft = 322
       ExplicitHeight = 16
     end
     object pgbCarregar: TProgressBar
@@ -3127,9 +3137,6 @@ object FormMenuPrincipal: TFormMenuPrincipal
       Margins.Left = 10
       Align = alLeft
       TabOrder = 0
-      ExplicitLeft = 1
-      ExplicitTop = 1
-      ExplicitHeight = 21
     end
   end
   object dsConfiUsuario: TDataSource

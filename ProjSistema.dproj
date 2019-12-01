@@ -168,7 +168,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Units\UnFormTelaCarregamento.pas">
-            <Form>Form1</Form>
+            <Form>FormTelaCarregamento</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Frames\UnFormPesquisaLKP.pas">

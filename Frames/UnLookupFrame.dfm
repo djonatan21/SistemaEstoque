@@ -4,7 +4,6 @@ object LookupFrame: TLookupFrame
   Width = 529
   Height = 29
   TabOrder = 0
-  OnEnter = FrameEnter
   object lblCaptionLkp: TLabel
     AlignWithMargins = True
     Left = 5
@@ -35,11 +34,10 @@ object LookupFrame: TLookupFrame
     ExplicitLeft = 159
     ExplicitTop = -3
     object btnAbrirConsulta: TSpeedButton
-      AlignWithMargins = True
-      Left = 3
-      Top = 2
-      Width = 29
-      Height = 25
+      Left = 1
+      Top = 1
+      Width = 38
+      Height = 27
       Margins.Left = 2
       Margins.Top = 1
       Margins.Right = 2
@@ -103,27 +101,25 @@ object LookupFrame: TLookupFrame
         FFEFEBEBD8CECFD8CECFDAD0D2E0D7D8F5F2F2FFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       OnClick = btnAbrirConsultaClick
-      ExplicitHeight = 27
     end
     object lblDescricao: TLabel
       AlignWithMargins = True
-      Left = 39
+      Left = 44
       Top = 6
-      Width = 55
+      Width = 4
       Height = 17
       Margins.Left = 5
       Margins.Top = 5
       Margins.Right = 5
       Margins.Bottom = 5
       Align = alLeft
-      Caption = 'Descricao'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      ExplicitLeft = 35
+      ExplicitLeft = 39
       ExplicitHeight = 16
     end
   end
@@ -134,6 +130,7 @@ object LookupFrame: TLookupFrame
     Height = 29
     Align = alLeft
     Alignment = taRightJustify
+    BorderStyle = bsNone
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -13
@@ -142,7 +139,7 @@ object LookupFrame: TLookupFrame
     NumbersOnly = True
     ParentFont = False
     TabOrder = 1
-    OnChange = edtCodigoChange
-    ExplicitHeight = 24
+    OnEnter = edtCodigoEnter
+    OnKeyDown = edtCodigoKeyDown
   end
 end

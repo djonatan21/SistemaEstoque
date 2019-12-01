@@ -80,7 +80,7 @@ begin
   try
     if opdCarregarImagens.Execute then
       EditarDados;
-    DmMenuPrincipal.SQLConfigSistema.FieldByName('ImgPlanoFundo').Clear;
+    DmMenuPrincipal.SQLConfigSistema.FieldByName('IMAGEMPLANOFUNDO').Clear;
     dbeImgAlterarPlanoFundo.Picture.LoadFromFile(opdCarregarImagens.FileName);
   except
     if MessageDlg('Formato de Imagem Invalido, Deseja Continuar ?', mtWarning,

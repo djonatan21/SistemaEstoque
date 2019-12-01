@@ -101,6 +101,7 @@ type
     lblData: TLabel;
     lblEmpresa: TLabel;
     TimerCarregar: TTimer;
+    lblUnidade: TLabel;
     procedure FormShow(Sender: TObject);
     procedure imgBtnCadastroClick(Sender: TObject);
     procedure imgBtnCalculoClick(Sender: TObject);
@@ -136,6 +137,7 @@ type
   protected
     procedure SetConfigInicial;
     procedure SetComponentesVisual;
+    procedure SetConfigCaixa;
   end;
 
 var
@@ -147,7 +149,7 @@ uses
   unDmconectConfigSistema, UnFormCadastroProduto, UnFormCofigSistema,
   UnTypesGeral, UnFormCadastroCliente, UnFormcadastroFornecedor, UnFormLogin,
   UnFormCadastroUsuario, UnDmMenuPrincipal, UnTypesCarregarSQL,
-  UnFormCadastroMunicipios;
+  UnFormCadastroMunicipios, UnFormTelaCarregamento;
 
 {$R *.dfm}
 
@@ -212,6 +214,7 @@ begin
   pnlMenuLateral.Visible := False;
   pnlMenuTop.Visible := False;
   ToolMenu.Visible := False;
+  SetConfigCaixa;
 end;
 
 procedure TFormMenuPrincipal.actConfigSistemaExecute(Sender: TObject);
@@ -302,6 +305,11 @@ procedure TFormMenuPrincipal.edtCodigoKeyDown(Sender: TObject; var Key: Word;
 begin
   if Key = VK_RETURN then
   begin
+    if DmMenuPrincipal.SQLCaixa.FieldByName('UNIDADE').AsInteger = 0 then
+      lblUnidade.Caption := 'Un'
+    else
+      lblUnidade.Caption := 'Kg';
+    TCarregarSQL.ConsultarProduto(StrToInt(edtCodigo.Text));
     TGTypeGeral.SetFocusCampo(Sender, edtQuantidade);
   end;
 end;
@@ -358,11 +366,18 @@ end;
 
 procedure TFormMenuPrincipal.SetComponentesVisual;
 begin
-  lblUsuario.Caption := 'USUÁRIO LOGAGO : ' + DmMenuPrincipal.SQLConfigSistema.
+  lblUsuario.Caption := 'USUÁRIO : ' + DmMenuPrincipal.SQLConfigSistema.
     FieldByName('NOME').AsString;
-  // lblEmpresa.Caption := 'EMPRESA LOGAGADA : ' + DmMenuPrincipal.SQLConfigEmpresa.
-  // FieldByName('NOME').AsString;
+  lblEmpresa.Caption := 'EMPRESA : ' + DmMenuPrincipal.SQLConfigEmpresa.
+    FieldByName('NOME').AsString;
   lblData.Caption := 'DATA : ' + DateToStr(Now);
+end;
+
+procedure TFormMenuPrincipal.SetConfigCaixa;
+begin
+  lblOperador.Caption := 'OPERADOR : ' + '00' +
+    IntToStr(DmMenuPrincipal.SQLConfigSistema.FieldByName('ID').AsInteger) +
+    ' - ' + DmMenuPrincipal.SQLConfigSistema.FieldByName('NOME').AsString;
 end;
 
 procedure TFormMenuPrincipal.SetConfigInicial;

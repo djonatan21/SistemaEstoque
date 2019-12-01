@@ -25,8 +25,8 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
       ExplicitHeight = 496
       inherited pgcCadastro: TPageControl
         inherited tsCadastroPrincipal: TTabSheet
-          ExplicitLeft = 6
-          ExplicitTop = 40
+          ExplicitLeft = 4
+          ExplicitTop = 24
           ExplicitWidth = 608
           ExplicitHeight = 419
           inline LookupFrame1: TLookupFrame
@@ -38,11 +38,26 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
             ExplicitLeft = 8
             ExplicitTop = 8
             inherited pnlLkp: TPanel
-              Left = 159
-              ExplicitLeft = 153
+              AlignWithMargins = True
+              Left = 162
+              Top = 3
+              Height = 23
+              ExplicitTop = 0
               inherited btnAbrirConsulta: TSpeedButton
-                ExplicitLeft = 2
-                ExplicitHeight = 25
+                AlignWithMargins = False
+                Left = 1
+                Top = 1
+                Height = 21
+                ExplicitLeft = -1
+                ExplicitTop = 1
+                ExplicitHeight = 21
+              end
+              inherited lblDescricao: TLabel
+                AlignWithMargins = False
+                Left = 30
+                Top = 1
+                Height = 21
+                ExplicitLeft = 30
               end
             end
             inherited edtCodigo: TEdit
@@ -51,8 +66,8 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
               Top = 3
               Height = 23
               MaxLength = 4
+              ExplicitLeft = 114
               ExplicitTop = 3
-              ExplicitHeight = 23
             end
           end
         end

@@ -21,7 +21,7 @@ object FormConfig: TFormConfig
     Top = 0
     Width = 537
     Height = 426
-    ActivePage = tsConfigUsuario
+    ActivePage = tsConfigGeral
     Align = alClient
     TabOrder = 0
     object tsConfigUsuario: TTabSheet
@@ -159,10 +159,6 @@ object FormConfig: TFormConfig
     object tsConfigGeral: TTabSheet
       Caption = 'Configura'#231#245'es gerais'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object gpbConfigSistemaGeral: TGroupBox
         Left = 16
         Top = 19
@@ -183,7 +179,7 @@ object FormConfig: TFormConfig
           Top = 22
           Width = 169
           Height = 91
-          DataField = 'ImgPlanoFundo'
+          DataField = 'IMAGEMPLANOFUNDO'
           DataSource = FormMenuPrincipal.dsConfiUsuario
           Stretch = True
           TabOrder = 0
@@ -193,10 +189,6 @@ object FormConfig: TFormConfig
     object tsFontes: TTabSheet
       Caption = 'tsFontes'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
     end
   end
   object pnlOpcoes: TPanel
