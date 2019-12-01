@@ -4,6 +4,7 @@ uses
   Vcl.Forms,
   UnFormMenuPrincipal in 'UnFormMenuPrincipal.pas' {FormMenuPrincipal},
   UnDmConexao in 'Units\UnDmConexao.pas' {DmConexao: TDataModule},
+  UnDmConectConfigSistema in 'Units\UnDmConectConfigSistema.pas' {DmMenuPrncipal: TDataModule},
   UnFormPadraoCadastro in 'Units\UnFormPadraoCadastro.pas' {FormPadraoCadastro},
   UnFormCadastroProduto in 'Units\UnFormCadastroProduto.pas' {FormCadastroProduto},
   UnFormCofigSistema in 'Units\UnFormCofigSistema.pas' {FormConfig},
@@ -19,8 +20,7 @@ uses
   UnDmMenuPrincipal in 'Units\UnDmMenuPrincipal.pas' {DmMenuPrincipal: TDataModule},
   UnTypesValidar in 'Units\UnTypesValidar.pas',
   UnTypesCarregarSQL in 'Units\UnTypesCarregarSQL.pas',
-  UnFormCadastroCliente in 'Units\UnFormCadastroCliente.pas' {FormCadastroCliente},
-  UnFormTelaCarregamento in 'Units\UnFormTelaCarregamento.pas' {Form1};
+  UnFormCadastroCliente in 'Units\UnFormCadastroCliente.pas' {FormCadastroCliente};
 
 {$R *.res}
 
@@ -28,8 +28,10 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TDmConexao, DmConexao);
-  Application.CreateForm(TDmMenuPrincipal, DmMenuPrincipal);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFormMenuPrincipal, FormMenuPrincipal);
   Application.CreateForm(TDmValidar, DmValidar);
+  Application.CreateForm(TFormCadastroMunicipios, FormCadastroMunicipios);
+  Application.CreateForm(TDmMenuPrincipal, DmMenuPrincipal);
+  Application.CreateForm(TFormCadastroCliente, FormCadastroCliente);
   Application.Run;
 end.
