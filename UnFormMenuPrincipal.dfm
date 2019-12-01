@@ -38,7 +38,7 @@ object FormMenuPrincipal: TFormMenuPrincipal
       Top = 1
       Width = 1472
       Height = 70
-      ActivePage = tsCadastro
+      ActivePage = tsCaixa
       Align = alClient
       TabOrder = 0
       object tsCadastro: TTabSheet

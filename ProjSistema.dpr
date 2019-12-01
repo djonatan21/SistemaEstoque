@@ -21,7 +21,8 @@ uses
   UnTypesValidar in 'Units\UnTypesValidar.pas',
   UnTypesCarregarSQL in 'Units\UnTypesCarregarSQL.pas',
   UnFormCadastroCliente in 'Units\UnFormCadastroCliente.pas' {FormCadastroCliente},
-  UnFormTelaCarregamento in 'Units\UnFormTelaCarregamento.pas' {Form1};
+  UnFormTelaCarregamento in 'Units\UnFormTelaCarregamento.pas' {Form1},
+  UnFormPesquisaLKP in 'Frames\UnFormPesquisaLKP.pas' {FormPesquisaLkp};
 
 {$R *.res}
 
@@ -32,5 +33,6 @@ begin
   Application.CreateForm(TDmValidar, DmValidar);
   Application.CreateForm(TDmMenuPrincipal, DmMenuPrincipal);
   Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFormPesquisaLkp, FormPesquisaLkp);
   Application.Run;
 end.
