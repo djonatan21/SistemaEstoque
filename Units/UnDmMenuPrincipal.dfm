@@ -3,7 +3,6 @@ object DmMenuPrincipal: TDmMenuPrincipal
   Height = 448
   Width = 712
   object SQLVenda: TFDQuery
-    Active = True
     IndexFieldNames = 
       'CODIGO_BARRA;CODIGO_PRODUTO;DESCRICAO;ITEM;QUANTIDADE;UNIDADE;VA' +
       'LOR;VALOR_TOTAL'
@@ -22,7 +21,6 @@ object DmMenuPrincipal: TDmMenuPrincipal
     Top = 80
   end
   object SQLCaixa: TFDQuery
-    Active = True
     Connection = DmConexao.fdConect
     SQL.Strings = (
       'select *'
@@ -41,7 +39,6 @@ object DmMenuPrincipal: TDmMenuPrincipal
     Top = 144
   end
   object SQLConfigEmpresa: TFDQuery
-    Active = True
     Connection = DmConexao.fdConect
     SQL.Strings = (
       'SELECT * '

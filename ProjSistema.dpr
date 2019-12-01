@@ -20,7 +20,8 @@ uses
   UnDmMenuPrincipal in 'Units\UnDmMenuPrincipal.pas' {DmMenuPrincipal: TDataModule},
   UnTypesValidar in 'Units\UnTypesValidar.pas',
   UnTypesCarregarSQL in 'Units\UnTypesCarregarSQL.pas',
-  UnFormCadastroCliente in 'Units\UnFormCadastroCliente.pas' {FormCadastroCliente};
+  UnFormCadastroCliente in 'Units\UnFormCadastroCliente.pas' {FormCadastroCliente},
+  UnFormTelaCarregamento in 'Units\UnFormTelaCarregamento.pas' {Form1};
 
 {$R *.res}
 
@@ -28,10 +29,8 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TDmConexao, DmConexao);
-  Application.CreateForm(TFormMenuPrincipal, FormMenuPrincipal);
   Application.CreateForm(TDmValidar, DmValidar);
-  Application.CreateForm(TFormCadastroMunicipios, FormCadastroMunicipios);
   Application.CreateForm(TDmMenuPrincipal, DmMenuPrincipal);
-  Application.CreateForm(TFormCadastroCliente, FormCadastroCliente);
+  Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.

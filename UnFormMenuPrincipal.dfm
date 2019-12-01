@@ -38,7 +38,7 @@ object FormMenuPrincipal: TFormMenuPrincipal
       Top = 1
       Width = 1472
       Height = 70
-      ActivePage = tsCalculos
+      ActivePage = tsCadastro
       Align = alClient
       TabOrder = 0
       object tsCadastro: TTabSheet
@@ -182,7 +182,7 @@ object FormMenuPrincipal: TFormMenuPrincipal
           ExplicitHeight = 72
         end
         object btnCadastroCliente: TSpeedButton
-          Left = 141
+          Left = 77
           Top = 0
           Width = 72
           Height = 42
@@ -272,7 +272,7 @@ object FormMenuPrincipal: TFormMenuPrincipal
           ExplicitHeight = 72
         end
         object SpeedButton8: TSpeedButton
-          Left = 77
+          Left = 217
           Top = 0
           Width = 64
           Height = 42
@@ -370,12 +370,11 @@ object FormMenuPrincipal: TFormMenuPrincipal
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
             0000}
           Layout = blGlyphTop
-          ExplicitLeft = 142
-          ExplicitTop = -7
-          ExplicitHeight = 72
+          ExplicitLeft = 253
+          ExplicitTop = -19
         end
         object SpeedButton1: TSpeedButton
-          Left = 213
+          Left = 149
           Top = 0
           Width = 68
           Height = 42
@@ -473,6 +472,7 @@ object FormMenuPrincipal: TFormMenuPrincipal
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
             0000}
           Layout = blGlyphTop
+          ExplicitLeft = 213
           ExplicitHeight = 34
         end
         object SpeedButton2: TSpeedButton
@@ -698,8 +698,8 @@ object FormMenuPrincipal: TFormMenuPrincipal
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
             FFFFFFFFFFFFFFFFFFFF}
           Layout = blGlyphTop
-          ExplicitLeft = 213
-          ExplicitHeight = 34
+          ExplicitLeft = 355
+          ExplicitTop = -3
         end
         object SpeedButton7: TSpeedButton
           Left = 349
@@ -835,8 +835,8 @@ object FormMenuPrincipal: TFormMenuPrincipal
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
             FFFFFFFFFFFFFFFFFFFF}
           Layout = blGlyphTop
-          ExplicitLeft = 213
-          ExplicitHeight = 34
+          ExplicitLeft = 287
+          ExplicitTop = -3
         end
       end
       object tsCalculos: TTabSheet
@@ -2254,10 +2254,12 @@ object FormMenuPrincipal: TFormMenuPrincipal
         Width = 1390
         Height = 740
         Align = alClient
-        DataField = 'ImgPlanoFundo'
+        DataField = 'IMAGEMPLANOFUNDO'
         DataSource = dsConfiUsuario
         Stretch = True
         TabOrder = 0
+        ExplicitLeft = 1
+        ExplicitTop = -2
       end
     end
     object tsCaixaVendas: TTabSheet
@@ -3063,6 +3065,72 @@ object FormMenuPrincipal: TFormMenuPrincipal
     Height = 23
     Align = alBottom
     TabOrder = 4
+    object lblUsuario: TLabel
+      AlignWithMargins = True
+      Left = 494
+      Top = 4
+      Width = 56
+      Height = 15
+      Margins.Left = 100
+      Align = alLeft
+      Caption = 'lblUsuario'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      ExplicitLeft = 481
+      ExplicitHeight = 16
+    end
+    object lblData: TLabel
+      AlignWithMargins = True
+      Left = 1439
+      Top = 4
+      Width = 4
+      Height = 15
+      Margins.Right = 30
+      Align = alRight
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      ExplicitLeft = 1220
+      ExplicitHeight = 16
+    end
+    object lblEmpresa: TLabel
+      AlignWithMargins = True
+      Left = 335
+      Top = 4
+      Width = 56
+      Height = 15
+      Margins.Left = 100
+      Align = alLeft
+      Caption = 'lblUsuario'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      ExplicitLeft = 322
+      ExplicitHeight = 16
+    end
+    object pgbCarregar: TProgressBar
+      AlignWithMargins = True
+      Left = 11
+      Top = 4
+      Width = 221
+      Height = 15
+      Margins.Left = 10
+      Align = alLeft
+      TabOrder = 0
+      ExplicitLeft = 1
+      ExplicitTop = 1
+      ExplicitHeight = 21
+    end
   end
   object dsConfiUsuario: TDataSource
     DataSet = DmMenuPrincipal.SQLConfigSistema
@@ -3247,5 +3315,11 @@ object FormMenuPrincipal: TFormMenuPrincipal
     DataSet = DmMenuPrincipal.SQLConfigEmpresa
     Left = 1080
     Top = 232
+  end
+  object TimerCarregar: TTimer
+    Interval = 10
+    OnTimer = TimerCarregarTimer
+    Left = 896
+    Top = 368
   end
 end

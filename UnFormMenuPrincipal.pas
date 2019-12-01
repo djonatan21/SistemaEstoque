@@ -96,6 +96,11 @@ type
     actCadastroDepartamento: TAction;
     SpeedButton9: TSpeedButton;
     actConferenciaEstoque: TAction;
+    pgbCarregar: TProgressBar;
+    lblUsuario: TLabel;
+    lblData: TLabel;
+    lblEmpresa: TLabel;
+    TimerCarregar: TTimer;
     procedure FormShow(Sender: TObject);
     procedure imgBtnCadastroClick(Sender: TObject);
     procedure imgBtnCalculoClick(Sender: TObject);
@@ -127,8 +132,10 @@ type
     procedure tsCaixaVendasShow(Sender: TObject);
     procedure edtQuantidadeEnter(Sender: TObject);
     procedure actCadadastroMunicipioExecute(Sender: TObject);
+    procedure TimerCarregarTimer(Sender: TObject);
   protected
     procedure SetConfigInicial;
+    procedure SetComponentesVisual;
   end;
 
 var
@@ -349,6 +356,15 @@ begin
   actConfigSistema.Execute;
 end;
 
+procedure TFormMenuPrincipal.SetComponentesVisual;
+begin
+  lblUsuario.Caption := 'USUÁRIO LOGAGO : ' + DmMenuPrincipal.SQLConfigSistema.
+    FieldByName('NOME').AsString;
+  // lblEmpresa.Caption := 'EMPRESA LOGAGADA : ' + DmMenuPrincipal.SQLConfigEmpresa.
+  // FieldByName('NOME').AsString;
+  lblData.Caption := 'DATA : ' + DateToStr(Now);
+end;
+
 procedure TFormMenuPrincipal.SetConfigInicial;
 begin
   tsPlanoFundo.TabVisible := False;
@@ -361,6 +377,17 @@ begin
   tsCadastro.Show;
   tsPlanoFundo.Show;
   pnlMenuTop.Visible := true;
+  SetComponentesVisual;
+end;
+
+procedure TFormMenuPrincipal.TimerCarregarTimer(Sender: TObject);
+begin
+  pgbCarregar.Position := pgbCarregar.Position + 1;
+  if pgbCarregar.Position = 100 then
+  begin
+    TimerCarregar.Destroy;
+    pgbCarregar.Position := 0;
+  end;
 end;
 
 procedure TFormMenuPrincipal.tsCaixaVendasShow(Sender: TObject);

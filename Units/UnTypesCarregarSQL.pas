@@ -27,7 +27,6 @@ implementation
 uses
   UnDmValidacoesTypesGeral, UnFormMenuPrincipal;
 
-{ TCarregarSQL }
 var
   GUsuarioLogadoSistema: string;
 
@@ -80,7 +79,7 @@ begin
   end;
 end;
 
-class procedure TCarregarSQL.CarregarConfiguracoesUsuarioLogado();
+class procedure TCarregarSQL.CarregarConfiguracoesUsuarioLogado;
 var
   LUsuarioLogado: CUsuarioLogado;
 begin
@@ -88,10 +87,9 @@ begin
   begin
     Close;
     SQL.Clear;
-    SQL.Add('SELECT USUARIOS.USUARIO,');
-    SQL.Add('       USUARIOS.SENHA');
+    SQL.Add('SELECT *');
     SQL.Add('  FROM USUARIOS');
-    SQL.Add(' WHERE USUARIOS.USUARIO ' + GUsuarioLogadoSistema);
+    SQL.Add(' WHERE USUARIOS.USUARIO =' + GUsuarioLogadoSistema);
     Open();
   end;
 end;

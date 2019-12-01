@@ -67,15 +67,14 @@ var
 begin
   if TCarregarSQL.ValidarLoginUsuario(edtUsuario.Text, edtSenha.Text) then
   begin
-    if not Assigned(FormMenuPrincipal) then
-    begin
-      LCarregarFormMenu := TFormMenuPrincipal.Create(Self);
-      LCarregarFormMenu.Show;
-    end
-    else
-      ShowMessage('Usuario ou Senha Invalidos');
+    TCarregarSQL.CarregarConfiguracoesUsuarioLogado;
+    Close;
+  end
+  else
+  begin
+    ShowMessage('Usuario ou Senha Invalidos');
+    TGTypeGeral.SetFocusCampo(btnAcessar, edtUsuario);
   end;
-  Close;
 end;
 
 end.
