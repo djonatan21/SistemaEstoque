@@ -306,4 +306,12 @@ begin
     ShowMessage('Campo [' + ANomeCampo + '] é de preemchimento obrigatório');
 end;
 
+initialization
+
+RegisterClass(TFormPadraoCadastro);
+
+finalization
+
+UnRegisterClass(TFormPadraoCadastro);
+
 end.

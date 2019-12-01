@@ -13,16 +13,15 @@ uses
 
 type
   TLookupFrame = class(TFrame)
-    pnlLkp: TPanel;
     btnAbrirConsulta: TSpeedButton;
-    lblDescricao: TLabel;
     lblCaptionLkp: TLabel;
-    edtCodigo: TEdit;
+    edtDescricao: TEdit;
+    dbeCodigo: TDBEdit;
     procedure btnAbrirConsultaClick(Sender: TObject);
-    procedure edtCodigoEnter(Sender: TObject);
     procedure edtCodigoKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
   public
+    FColunaNomePesqisa: string;
     FCaptionLKP: String;
     FCampoDescricao: String;
     FNomeTabela: String;
@@ -35,10 +34,13 @@ type
     property CampoDescricao: String read FCampoDescricao write FCampoDescricao;
     property CampoBanco: String read FCampoBanco write FCampoBanco;
     property ColunaCodigo: string read FColunaCodigo write FColunaCodigo;
+    property ColunaNomePesqisa: string read FColunaNomePesqisa
+      write FColunaNomePesqisa;
     property CampoSalvarBanco: string read FCampoSalvarBanco
       write FCampoSalvarBanco;
     procedure CarregarSQL;
     procedure AbrirFormPesquisaLkp;
+    constructor Create(AOwner: TComponent); virtual;
   end;
 
 implementation
@@ -78,22 +80,21 @@ begin
       sql.Clear;
       sql.Add('SELECT ' + FColunaCodigo);
       sql.Add('FROM' + FNomeTabela);
-      sql.Add('WHERE ' + FColunaCodigo + ' = ' + edtCodigo.Text);
+      sql.Add('WHERE ' + FColunaCodigo + ' = ' + dbeCodigo.Text);
       Open();
       if IsEmpty then
         ShowMessage('Código não Cadastrado!!')
       else
-        lblDescricao.Caption := FieldByName(FCampoDescricao).AsString;
-      FieldByName(FCampoSalvarBanco).AsInteger := StrToInt(edtCodigo.Text);
+        edtDescricao.Text := FieldByName(FCampoDescricao).AsString;
+      FieldByName(FCampoSalvarBanco).AsInteger := StrToInt(dbeCodigo.Text);
     end;
   finally
     FreeAndNil(LCarregarSQL);
   end;
 end;
 
-procedure TLookupFrame.edtCodigoEnter(Sender: TObject);
+constructor TLookupFrame.Create(AOwner: TComponent);
 begin
-  CarregarSQL;
 end;
 
 procedure TLookupFrame.edtCodigoKeyDown(Sender: TObject; var Key: Word;

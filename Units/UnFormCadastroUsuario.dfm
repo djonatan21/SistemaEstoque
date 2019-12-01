@@ -2,15 +2,14 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
   Caption = 'Cadastro de Us'#250'ario'
   PixelsPerInch = 96
   TextHeight = 13
-  inherited pnlOpcoes: TPanel
-    ExplicitLeft = 733
-  end
   inherited pgcFormCadastro: TPageControl
-    ExplicitWidth = 733
+    ActivePage = tsCadastro
     inherited tsConsultas: TTabSheet
-      ExplicitWidth = 725
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 616
+      ExplicitHeight = 496
       inherited pnlConsultas: TPanel
-        ExplicitWidth = 725
         inherited gpbConsultar: TGroupBox
           inherited btnFiltrar: TSpeedButton
             Width = 73
@@ -19,9 +18,11 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
         end
       end
       inherited pgcConsultas: TPageControl
-        ExplicitWidth = 725
         inherited tsConsultasPrincipal: TTabSheet
-          ExplicitWidth = 717
+          ExplicitLeft = 4
+          ExplicitTop = 24
+          ExplicitWidth = 608
+          ExplicitHeight = 355
           inherited dbConsultas: TDBGrid
             AlignWithMargins = True
             Left = 3
@@ -36,9 +37,11 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
       end
     end
     inherited tsCadastro: TTabSheet
-      ExplicitWidth = 725
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 616
+      ExplicitHeight = 496
       inherited pgcCadastro: TPageControl
-        ExplicitWidth = 725
         inherited tsCadastroPrincipal: TTabSheet
           ExplicitLeft = 4
           ExplicitTop = 24
@@ -154,7 +157,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
               Top = 15
               Width = 105
               Height = 105
-              DataField = 'ImgPlanoFundo'
+              DataField = 'IMAGEMPLANOFUNDO'
               DataSource = dsCadastro
               TabOrder = 0
             end
@@ -289,13 +292,12 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
           end
         end
       end
-      inherited pnlCadastro: TPanel
-        ExplicitWidth = 725
-      end
     end
   end
   inherited pnlFoter: TPanel
-    ExplicitWidth = 803
+    inherited lblStatus: TLabel
+      Height = 15
+    end
   end
   inherited SqlCadastro: TFDQuery
     Left = 472

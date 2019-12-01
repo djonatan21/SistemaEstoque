@@ -1,7 +1,6 @@
 inherited FormCadastroProduto: TFormCadastroProduto
   Caption = 'Cadastro de Produtos'
   ClientHeight = 575
-  ExplicitTop = -50
   ExplicitHeight = 604
   PixelsPerInch = 96
   TextHeight = 13
@@ -18,6 +17,9 @@ inherited FormCadastroProduto: TFormCadastroProduto
     ActivePage = tsCadastro
     ExplicitHeight = 558
     inherited tsConsultas: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 616
       ExplicitHeight = 530
       inherited pnlConsultas: TPanel
         inherited gprFiltro: TGroupBox
@@ -49,6 +51,9 @@ inherited FormCadastroProduto: TFormCadastroProduto
         Height = 417
         ExplicitHeight = 417
         inherited tsConsultasPrincipal: TTabSheet
+          ExplicitLeft = 4
+          ExplicitTop = 24
+          ExplicitWidth = 608
           ExplicitHeight = 389
           inherited dbConsultas: TDBGrid
             AlignWithMargins = True
@@ -61,13 +66,17 @@ inherited FormCadastroProduto: TFormCadastroProduto
       end
     end
     inherited tsCadastro: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 616
       ExplicitHeight = 530
       inherited pgcCadastro: TPageControl
         Height = 481
         ExplicitHeight = 481
         inherited tsCadastroPrincipal: TTabSheet
-          ExplicitLeft = -4
-          ExplicitTop = 40
+          ExplicitLeft = 4
+          ExplicitTop = 24
+          ExplicitWidth = 608
           ExplicitHeight = 453
           object Label1: TLabel
             Left = 78
@@ -511,6 +520,21 @@ inherited FormCadastroProduto: TFormCadastroProduto
               ExplicitLeft = -31
             end
           end
+          inline LkpProdutos1: TLkpProdutos
+            Left = 8
+            Top = 8
+            Width = 535
+            Height = 26
+            Margins.Left = 0
+            Margins.Right = 0
+            TabOrder = 15
+            ExplicitLeft = 8
+            ExplicitTop = 8
+            inherited dbeCodigo: TDBEdit
+              DataField = 'CODIGO'
+              DataSource = dsCadastro
+            end
+          end
         end
       end
     end
@@ -518,6 +542,9 @@ inherited FormCadastroProduto: TFormCadastroProduto
   inherited pnlFoter: TPanel
     Top = 558
     ExplicitTop = 558
+    inherited lblStatus: TLabel
+      Height = 15
+    end
   end
   inherited SqlCadastro: TFDQuery
     SQL.Strings = (

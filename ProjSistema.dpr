@@ -22,7 +22,8 @@ uses
   UnTypesCarregarSQL in 'Units\UnTypesCarregarSQL.pas',
   UnFormCadastroCliente in 'Units\UnFormCadastroCliente.pas' {FormCadastroCliente},
   UnFormTelaCarregamento in 'Units\UnFormTelaCarregamento.pas' {FormTelaCarregamento},
-  UnFormPesquisaLKP in 'Frames\UnFormPesquisaLKP.pas' {FormPesquisaLkp};
+  UnFormPesquisaLKP in 'Frames\UnFormPesquisaLKP.pas' {FormPesquisaLkp},
+  UnLokupProdutos in 'Frames\UnLokupProdutos.pas' {LkpProdutos: TFrame};
 
 {$R *.res}
 

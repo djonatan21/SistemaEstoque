@@ -77,4 +77,12 @@ begin
   end;
 end;
 
+initialization
+
+RegisterClass(TFormLogin);
+
+finalization
+
+UnRegisterClass(TFormLogin);
+
 end.

@@ -4,7 +4,7 @@ interface
 
 uses
   UnFormLogin, Vcl.Controls, System.SysUtils, Vcl.Dialogs,
-  Vcl.ExtCtrls;
+  Vcl.ExtCtrls, Vcl.Forms;
 
 type
   CGeralTypes = Record
@@ -19,7 +19,7 @@ type
     class function CarregarImagemEmTImage(ASender: TObject;
       AComponente: TOpenDialog; AImage: TImage): Boolean;
     class Procedure MenssagemErro(ATextoErro: string);
-  private
+    class procedure IstanciarForm(AClassForm: TFormClass);
 
   end;
 
@@ -40,6 +40,18 @@ begin
         TGTypeGeral.CarregarImagemEmTImage(ASender, AComponente, AImage);
 
     end;
+  end;
+end;
+
+class procedure TGTypeGeral.IstanciarForm(AClassForm: TFormClass);
+var
+  LCarregarForm: TForm;
+begin
+  LCarregarForm := AClassForm.Create(Application);
+  try
+    LCarregarForm.ShowModal;
+  finally
+    FreeAndNil(LCarregarForm);
   end;
 end;
 

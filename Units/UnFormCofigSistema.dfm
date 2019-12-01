@@ -26,6 +26,10 @@ object FormConfig: TFormConfig
     TabOrder = 0
     object tsConfigUsuario: TTabSheet
       Caption = 'Usuario'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object GroupBox1: TGroupBox
         Left = 24
         Top = 26
@@ -189,6 +193,10 @@ object FormConfig: TFormConfig
     object tsFontes: TTabSheet
       Caption = 'tsFontes'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
   end
   object pnlOpcoes: TPanel

@@ -58,7 +58,7 @@ var
 implementation
 
 uses
-  UnUSUARIOSTypes, UnTypesGeral,UnTypesCarregarSQL;
+  UnUSUARIOSTypes, UnTypesGeral, UnTypesCarregarSQL;
 
 {$R *.dfm}
 
@@ -112,5 +112,13 @@ begin
   // ValidarCamposTexto(Sender, dbEdtNome, dbEdtNome.Text, 'Nome');
   inherited;
 end;
+
+initialization
+
+RegisterClass(TFormCadastroUsuario);
+
+finalization
+
+UnRegisterClass(TFormCadastroUsuario);
 
 end.

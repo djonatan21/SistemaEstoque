@@ -161,4 +161,12 @@ begin
   tsConfigUsuario.Show;
 end;
 
+initialization
+
+RegisterClass(TFormConfig);
+
+finalization
+
+UnRegisterClass(TFormConfig);
+
 end.

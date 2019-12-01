@@ -12,7 +12,8 @@ uses
   Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.ComCtrls,
   Vcl.Imaging.pngimage, Vcl.ExtCtrls, System.Actions, Vcl.ActnList, Vcl.DBCtrls,
   Vcl.Mask, System.Rtti, System.Bindings.Outputs, Vcl.Bind.Editors,
-  Data.Bind.EngExt, Vcl.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope;
+  Data.Bind.EngExt, Vcl.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope,
+  UnLookupFrame, UnLokupProdutos;
 
 type
   TFormCadastroProduto = class(TFormPadraoCadastro)
@@ -46,6 +47,7 @@ type
     edtQuantEstoque: TMaskEdit;
     memoObservacoes: TMemo;
     pnlImgProduto: TPanel;
+    LkpProdutos1: TLkpProdutos;
     procedure actNovoExecute(Sender: TObject);
     procedure actSalvarExecute(Sender: TObject);
     procedure imgProdutoClick(Sender: TObject);
@@ -116,5 +118,13 @@ procedure TFormCadastroProduto.SetConfigInicial;
 begin
   inherited;
 end;
+
+initialization
+
+RegisterClass(TFormCadastroProduto);
+
+finalization
+
+UnRegisterClass(TFormCadastroProduto);
 
 end.

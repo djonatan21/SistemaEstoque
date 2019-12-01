@@ -159,52 +159,23 @@ begin
 end;
 
 procedure TFormMenuPrincipal.actCadadastroMunicipioExecute(Sender: TObject);
-var
-  LCarregarForm: TFormCadastroMunicipios;
 begin
-  LCarregarForm := TFormCadastroMunicipios.Create(Self);
-  try
-    LCarregarForm.ShowModal;
-  finally
-    FreeAndNil(LCarregarForm);
-  end;
+  TGTypeGeral.IstanciarForm(TFormCadastroMunicipios);
 end;
 
 procedure TFormMenuPrincipal.actCadastroClienteExecute(Sender: TObject);
-var
-  LCarregarForm: TFormCadastroCliente;
 begin
-  LCarregarForm := FormCadastroCliente.Create(Self);
-  try
-    LCarregarForm.ShowModal;
-  finally
-    FreeAndNil(LCarregarForm);
-  end;
+  TGTypeGeral.IstanciarForm(TFormCadastroCliente);
 end;
 
 procedure TFormMenuPrincipal.actCadastroFonecedorExecute(Sender: TObject);
-var
-  LCarregarForm: TFormCadastroFornecedor;
 begin
-  LCarregarForm := TFormCadastroFornecedor.Create(Self);
-  try
-    LCarregarForm.ShowModal;
-  finally
-    FreeAndNil(LCarregarForm);
-  end;
-
+  TGTypeGeral.IstanciarForm(TFormCadastroFornecedor);
 end;
 
 procedure TFormMenuPrincipal.actCadastroProdutoExecute(Sender: TObject);
-var
-  LCarregarForm: TFormCadastroProduto;
 begin
-  LCarregarForm := TFormCadastroProduto.Create(Self);
-  try
-    LCarregarForm.ShowModal;
-  finally
-    FreeAndNil(LCarregarForm);
-  end;
+  TGTypeGeral.IstanciarForm(TFormCadastroProduto);
 end;
 
 procedure TFormMenuPrincipal.actCaixaVendasExecute(Sender: TObject);
@@ -218,15 +189,8 @@ begin
 end;
 
 procedure TFormMenuPrincipal.actConfigSistemaExecute(Sender: TObject);
-var
-  LCarregarForm: TFormConfig;
 begin
-  LCarregarForm := TFormConfig.Create(Self);
-  try
-    LCarregarForm.ShowModal;
-  finally
-    FreeAndNil(LCarregarForm);
-  end;
+  TGTypeGeral.IstanciarForm(TFormConfig);
 end;
 
 procedure TFormMenuPrincipal.actFinalizarCaixaExecute(Sender: TObject);
@@ -245,29 +209,13 @@ begin
 end;
 
 procedure TFormMenuPrincipal.actLoginExecute(Sender: TObject);
-var
-  LAlterarUsuario: TFormLogin;
 begin
-  LAlterarUsuario := TFormLogin.Create(Self);
-  try
-    LAlterarUsuario.ShowModal;
-  finally
-    FreeAndNil(LAlterarUsuario);
-  end;
-
+  TGTypeGeral.IstanciarForm(TFormLogin);
 end;
 
 procedure TFormMenuPrincipal.actCadastroUsuarioExecute(Sender: TObject);
-var
-  LCarregarCadastroUsuario: TFormCadastroUsuario;
 begin
-  LCarregarCadastroUsuario := TFormCadastroUsuario.Create(Self);
-  try
-    LCarregarCadastroUsuario.ShowModal;
-  finally
-    FreeAndNil(LCarregarCadastroUsuario);
-  end;
-
+  TGTypeGeral.IstanciarForm(TFormCadastroUsuario);
 end;
 
 procedure TFormMenuPrincipal.btnCadastroClick(Sender: TObject);
@@ -414,5 +362,13 @@ procedure TFormMenuPrincipal.btnFinalizarSistemaClick(Sender: TObject);
 begin
   tsConfig.Show;
 end;
+
+initialization
+
+RegisterClass(TFormMenuPrincipal);
+
+finalization
+
+UnRegisterClass(TFormMenuPrincipal);
 
 end.

@@ -27,4 +27,12 @@ implementation
 
 {$R *.dfm}
 
+initialization
+
+RegisterClass(TFormCadastroFornecedor);
+
+finalization
+
+UnRegisterClass(TFormCadastroFornecedor);
+
 end.

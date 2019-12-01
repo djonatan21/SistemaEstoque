@@ -534,6 +534,10 @@ object FormPadraoCadastro: TFormPadraoCadastro
     TabOrder = 1
     object tsConsultas: TTabSheet
       Caption = 'Consultas'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pnlConsultas: TPanel
         Left = 0
         Top = 0
@@ -676,6 +680,10 @@ object FormPadraoCadastro: TFormPadraoCadastro
         TabOrder = 1
         object tsConsultasPrincipal: TTabSheet
           Caption = 'Consultas'
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           object dbConsultas: TDBGrid
             Left = 0
             Top = 0
@@ -705,6 +713,10 @@ object FormPadraoCadastro: TFormPadraoCadastro
     object tsCadastro: TTabSheet
       Caption = 'Cadastro'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pgcCadastro: TPageControl
         Left = 0
         Top = 49
@@ -714,6 +726,10 @@ object FormPadraoCadastro: TFormPadraoCadastro
         Align = alClient
         TabOrder = 0
         object tsCadastroPrincipal: TTabSheet
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
         end
       end
       object pnlCadastro: TPanel
@@ -995,10 +1011,9 @@ object FormPadraoCadastro: TFormPadraoCadastro
       Left = 205
       Top = 1
       Width = 84
-      Height = 15
+      Height = 13
       Align = alLeft
       Caption = '---------------------'
-      ExplicitHeight = 13
     end
     object pgbAguarde: TProgressBar
       Left = 1

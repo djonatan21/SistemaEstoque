@@ -29,47 +29,6 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
           ExplicitTop = 24
           ExplicitWidth = 608
           ExplicitHeight = 419
-          inline LookupFrame1: TLookupFrame
-            Left = 8
-            Top = 8
-            Width = 529
-            Height = 29
-            TabOrder = 0
-            ExplicitLeft = 8
-            ExplicitTop = 8
-            inherited pnlLkp: TPanel
-              AlignWithMargins = True
-              Left = 162
-              Top = 3
-              Height = 23
-              ExplicitTop = 0
-              inherited btnAbrirConsulta: TSpeedButton
-                AlignWithMargins = False
-                Left = 1
-                Top = 1
-                Height = 21
-                ExplicitLeft = -1
-                ExplicitTop = 1
-                ExplicitHeight = 21
-              end
-              inherited lblDescricao: TLabel
-                AlignWithMargins = False
-                Left = 30
-                Top = 1
-                Height = 21
-                ExplicitLeft = 30
-              end
-            end
-            inherited edtCodigo: TEdit
-              AlignWithMargins = True
-              Left = 114
-              Top = 3
-              Height = 23
-              MaxLength = 4
-              ExplicitLeft = 114
-              ExplicitTop = 3
-            end
-          end
         end
       end
     end
