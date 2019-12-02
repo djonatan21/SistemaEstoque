@@ -1,0 +1,77 @@
+unit UnFormTelaCarregamento;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
+  Vcl.ComCtrls;
+
+type
+  TForm1 = class(TForm)
+    Image1: TImage;
+    Timer1: TTimer;
+    ProgressBar1: TProgressBar;
+    ListBox1: TListBox;
+    procedure Timer1Timer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  protected
+    procedure CarregarMenuPrincipal;
+    procedure AdicinarItemMenu;
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+uses
+  UnFormMenuPrincipal;
+
+{$R *.dfm}
+
+procedure TForm1.AdicinarItemMenu;
+begin
+  case ProgressBar1.Position of
+    20:
+      ListBox1.AddItem('Carregar Configurações Usuario');
+    40:
+      ListBox1.AddItem('Carregar Configurações Usuario');
+    50:
+      ListBox1.AddItem('Carregar Configurações Usuario');
+    60:
+      ListBox1.AddItem('Carregar Configurações Usuario');
+    70:
+      ListBox1.AddItem('Carregar Configurações Usuario');
+    80:
+      ListBox1.AddItem('Carregar Configurações Usuario');
+    90:
+      ListBox1.AddItem('Carregar Configurações Usuario');
+    100:
+      ListBox1.AddItem('Carregar Configurações Usuario');
+  end;
+end;
+
+procedure TForm1.CarregarMenuPrincipal;
+var
+  LCarregarMenuPrincipal: TFormMenuPrincipal;
+begin
+  LCarregarMenuPrincipal := TFormMenuPrincipal.Create(Self);
+  LCarregarMenuPrincipal.Show;
+  Form1.Visible := False;
+  Timer1.Destroy;
+end;
+
+procedure TForm1.Timer1Timer(Sender: TObject);
+begin
+  ProgressBar1.Position := ProgressBar1.Position + 1;
+  AdicinarItemMenu;
+  if ProgressBar1.Position = 100 then
+    CarregarMenuPrincipal;
+end;
+
+end.

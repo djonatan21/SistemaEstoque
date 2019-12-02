@@ -1,0 +1,164 @@
+unit UnFormCofigSistema;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.Buttons, Vcl.ExtCtrls,
+  Vcl.Imaging.pngimage, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TFormConfig = class(TForm)
+    pgcConfig: TPageControl;
+    tsConfigUsuario: TTabSheet;
+    pnlOpcoes: TPanel;
+    btnSalvar: TSpeedButton;
+    btnAplicar: TSpeedButton;
+    btnCanselar: TSpeedButton;
+    tsConfigGeral: TTabSheet;
+    tsFontes: TTabSheet;
+    pnlMenuOpcoes: TPanel;
+    Panel1: TPanel;
+    SpeedButton2: TSpeedButton;
+    pnlEspaco: TPanel;
+    SpeedButton1: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    SpeedButton4: TSpeedButton;
+    SpeedButton5: TSpeedButton;
+    Label1: TLabel;
+    imgEmgrenagem: TImage;
+    GroupBox1: TGroupBox;
+    dbeConfgNomeUsuario: TDBEdit;
+    btnAlterarSenha: TSpeedButton;
+    SpeedButton6: TSpeedButton;
+    SpeedButton7: TSpeedButton;
+    SpeedButton8: TSpeedButton;
+    dbeConfgEmpresa: TDBEdit;
+    dbeConfgEmail: TDBEdit;
+    dbeConfgSenha: TDBEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    gpbConfigSistemaGeral: TGroupBox;
+    dbeImgAlterarPlanoFundo: TDBImage;
+    btnAlterarPlanoFundo: TSpeedButton;
+    opdCarregarImagens: TOpenDialog;
+    procedure SpeedButton5Click(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure btnCanselarClick(Sender: TObject);
+    procedure btnAlterarPlanoFundoClick(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+    procedure btnAplicarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  protected
+    procedure SetConfigInicial;
+    procedure InserirDados;
+    procedure SalvarDados;
+    procedure EditarDados;
+
+  end;
+
+var
+  FormConfig: TFormConfig;
+
+implementation
+
+uses
+  UnDmMenuPrincipal;
+{$R *.dfm}
+{ TFormConfig }
+
+procedure TFormConfig.btnAlterarPlanoFundoClick(Sender: TObject);
+begin
+  try
+    if opdCarregarImagens.Execute then
+      EditarDados;
+    DmMenuPrincipal.SQLConfigSistema.FieldByName('IMAGEMPLANOFUNDO').Clear;
+    dbeImgAlterarPlanoFundo.Picture.LoadFromFile(opdCarregarImagens.FileName);
+  except
+    if MessageDlg('Formato de Imagem Invalido, Deseja Continuar ?', mtWarning,
+      mbYesNo, 0, mbYes) = mrNo then
+    begin
+      btnAlterarPlanoFundoClick(Sender);
+    end;
+  end;
+
+end;
+
+procedure TFormConfig.btnAplicarClick(Sender: TObject);
+begin
+  SalvarDados;
+end;
+
+procedure TFormConfig.btnCanselarClick(Sender: TObject);
+begin
+  Close;
+
+end;
+
+procedure TFormConfig.btnSalvarClick(Sender: TObject);
+begin
+  DmMenuPrincipal.SQLConfigSistema.Post;
+end;
+
+procedure TFormConfig.EditarDados;
+begin
+  try
+    DmMenuPrincipal.SQLConfigSistema.Edit;
+  except
+    ShowMessage('Erro, Não Foi Pocivel Editar Registro!!');
+  end;
+end;
+
+procedure TFormConfig.FormShow(Sender: TObject);
+begin
+  SetConfigInicial;
+end;
+
+procedure TFormConfig.InserirDados;
+begin
+  DmMenuPrincipal.SQLConfigSistema.Insert;
+end;
+
+procedure TFormConfig.SalvarDados;
+begin
+  try
+    DmMenuPrincipal.SQLConfigSistema.Post;
+    DmMenuPrincipal.SQLConfigSistema.ApplyUpdates(0);
+  except
+    ShowMessage('Erro ao Salvar Registro!!!')
+  end;
+end;
+
+procedure TFormConfig.SetConfigInicial;
+begin
+  tsConfigUsuario.TabVisible := false;
+  tsConfigGeral.TabVisible := false;
+  tsFontes.TabVisible := false;
+  tsConfigUsuario.Show;
+
+end;
+
+procedure TFormConfig.SpeedButton3Click(Sender: TObject);
+begin
+  tsFontes.Show;
+end;
+
+procedure TFormConfig.SpeedButton4Click(Sender: TObject);
+begin
+  tsConfigGeral.Show;
+end;
+
+procedure TFormConfig.SpeedButton5Click(Sender: TObject);
+begin
+  tsConfigUsuario.Show;
+end;
+
+end.

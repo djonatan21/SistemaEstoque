@@ -1,0 +1,23 @@
+inherited Frame1: TFrame1
+  Width = 527
+  ExplicitWidth = 527
+  inherited lblCaptionLkp: TLabel
+    Width = 101
+    ExplicitLeft = 0
+    ExplicitWidth = 101
+    ExplicitHeight = 16
+  end
+  inherited btnAbrirConsulta: TSpeedButton
+    Left = 143
+  end
+  inherited edtCodigo: TEdit
+    Left = 101
+    ExplicitLeft = 101
+    ExplicitHeight = 24
+  end
+  inherited edtDescricao: TEdit
+    Left = 181
+    ExplicitLeft = 181
+    ExplicitHeight = 24
+  end
+end
