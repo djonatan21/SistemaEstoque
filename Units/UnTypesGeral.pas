@@ -19,7 +19,7 @@ type
     class function CarregarImagemEmTImage(ASender: TObject;
       AComponente: TOpenDialog; AImage: TImage): Boolean;
     class Procedure MenssagemErro(ATextoErro: string);
-    class procedure IstanciarForm(AClassForm: TFormClass);
+    class procedure CarregarFormulario(AClassForm: TFormClass);
 
   end;
 
@@ -43,7 +43,7 @@ begin
   end;
 end;
 
-class procedure TGTypeGeral.IstanciarForm(AClassForm: TFormClass);
+class procedure TGTypeGeral.CarregarFormulario(AClassForm: TFormClass);
 var
   LCarregarForm: TForm;
 begin

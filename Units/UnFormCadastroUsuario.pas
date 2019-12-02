@@ -79,7 +79,7 @@ end;
 
 procedure TFormCadastroUsuario.actFiltrarExecute(Sender: TObject);
 begin
-  FiltrarSQL('USUARIOS.ID', edtConsultas.Text, NomeTabela);
+  FiltrarSQL(edtConsultas.Text, NomeTabela);
   inherited;
 end;
 

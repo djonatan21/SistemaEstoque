@@ -19,8 +19,6 @@ type
     pgcFormCadastro: TPageControl;
     tsConsultas: TTabSheet;
     pnlConsultas: TPanel;
-    pgcConsultas: TPageControl;
-    tsConsultasPrincipal: TTabSheet;
     dbConsultas: TDBGrid;
     tsCadastro: TTabSheet;
     pgcCadastro: TPageControl;
@@ -83,8 +81,7 @@ type
   protected
     property CampoFiltro: string read FCampoFiltro write FCampoFiltro;
     procedure SetConfigInicial; virtual;
-    procedure FiltrarSQL(ACamposMostraGrid, ATextoFiltro,
-      ANomeTabela: string); virtual;
+    procedure FiltrarSQL(ATextoFiltro, ANomeTabela: string); virtual;
     procedure CarregarItemComboBox(ATextExibicao, ANomeItem: string); virtual;
     procedure ConfigVisual; virtual;
     procedure ValidarCamposTexto(Sender: TObject; dbeEdit: TEdit;
@@ -137,7 +134,7 @@ begin
       SetConfigInicial;
       CarregarBarraProgresso;
     except
-      // TGTypeGeral.
+      ShowMessage('Erro não foi possivel completar exclusão');
     end;
   end;
 end;
@@ -231,29 +228,28 @@ begin
   btnFiltrar.Enabled := edtConsultas.Text <> '';
 end;
 
-procedure TFormPadraoCadastro.FiltrarSQL(ACamposMostraGrid, ATextoFiltro,
-  ANomeTabela: string);
+procedure TFormPadraoCadastro.FiltrarSQL(ATextoFiltro, ANomeTabela: string);
 begin
   with SQLConsultas do
   begin
     Close;
-    SQL.Clear;
-    SQL.Add('SELECT ' + ACamposMostraGrid);
-    SQL.Add('FROM ' + ANomeTabela);
+    sql.Clear;
+    sql.Add('SELECT *');
+    sql.Add('FROM ' + ANomeTabela);
     if edtConsultas.Text <> EmptyStr then
     begin
-      SQL.Add('WHERE ' + ANomeTabela + '.' + LCoutListItems
+      sql.Add('WHERE ' + ANomeTabela + '.' + LCoutListItems
         [cbxModoFiltro.ItemIndex]);
 
       case cbxModoFiltro.ItemIndex of
         1:
-          SQL.Add('LIKE ' + QuotedStr(ATextoFiltro + '%'));
+          sql.Add('LIKE ' + QuotedStr(ATextoFiltro + '%'));
         2:
-          SQL.Add('LIKE ' + QuotedStr('%' + ATextoFiltro + '%'));
+          sql.Add('LIKE ' + QuotedStr('%' + ATextoFiltro + '%'));
         3:
-          SQL.Add('LIKE ' + QuotedStr('%' + ATextoFiltro));
+          sql.Add('LIKE ' + QuotedStr('%' + ATextoFiltro));
         4:
-          SQL.Add('= ' + ATextoFiltro);
+          sql.Add('= ' + ATextoFiltro);
       end;
     end;
     Open();

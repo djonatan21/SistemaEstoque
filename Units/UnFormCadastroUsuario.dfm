@@ -3,12 +3,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
   PixelsPerInch = 96
   TextHeight = 13
   inherited pgcFormCadastro: TPageControl
-    ActivePage = tsCadastro
     inherited tsConsultas: TTabSheet
-      ExplicitLeft = 4
-      ExplicitTop = 24
-      ExplicitWidth = 616
-      ExplicitHeight = 496
       inherited pnlConsultas: TPanel
         inherited gpbConsultar: TGroupBox
           inherited btnFiltrar: TSpeedButton
@@ -17,36 +12,10 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
           end
         end
       end
-      inherited pgcConsultas: TPageControl
-        inherited tsConsultasPrincipal: TTabSheet
-          ExplicitLeft = 4
-          ExplicitTop = 24
-          ExplicitWidth = 608
-          ExplicitHeight = 355
-          inherited dbConsultas: TDBGrid
-            AlignWithMargins = True
-            Left = 3
-            Top = 3
-            Width = 602
-            Height = 349
-            Color = clInactiveCaption
-            DataSource = dsConsultas
-            Font.Style = [fsItalic]
-          end
-        end
-      end
     end
     inherited tsCadastro: TTabSheet
-      ExplicitLeft = 4
-      ExplicitTop = 24
-      ExplicitWidth = 616
-      ExplicitHeight = 496
       inherited pgcCadastro: TPageControl
         inherited tsCadastroPrincipal: TTabSheet
-          ExplicitLeft = 4
-          ExplicitTop = 24
-          ExplicitWidth = 608
-          ExplicitHeight = 419
           object Label9: TLabel
             Left = 222
             Top = 9
@@ -294,11 +263,6 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
       end
     end
   end
-  inherited pnlFoter: TPanel
-    inherited lblStatus: TLabel
-      Height = 15
-    end
-  end
   inherited SqlCadastro: TFDQuery
     Left = 472
     Top = 32
@@ -323,6 +287,8 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
     Top = 105
   end
   inherited SQLConsultas: TFDQuery
+    SQL.Strings = (
+      'SELECT * FROM USUARIOS')
     Left = 408
     Top = 32
   end

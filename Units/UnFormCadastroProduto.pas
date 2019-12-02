@@ -47,10 +47,10 @@ type
     edtQuantEstoque: TMaskEdit;
     memoObservacoes: TMemo;
     pnlImgProduto: TPanel;
-    LkpProdutos1: TLkpProdutos;
     procedure actNovoExecute(Sender: TObject);
     procedure actSalvarExecute(Sender: TObject);
     procedure imgProdutoClick(Sender: TObject);
+    procedure actPesquisarExecute(Sender: TObject);
   private
   public
   protected
@@ -73,6 +73,12 @@ begin
   inherited;
   edtCodigo.Text := IntToStr(TCarregarSQL.CarregarProximoID('CODIGO',
     'PRODUTOS'));
+end;
+
+procedure TFormCadastroProduto.actPesquisarExecute(Sender: TObject);
+begin
+  inherited;
+  FiltrarSQL(edtConsultas.Text, 'PRODUTOS');
 end;
 
 procedure TFormCadastroProduto.actSalvarExecute(Sender: TObject);

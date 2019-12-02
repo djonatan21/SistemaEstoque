@@ -1,25 +1,19 @@
 inherited FormCadastroProduto: TFormCadastroProduto
   Caption = 'Cadastro de Produtos'
-  ClientHeight = 575
-  ExplicitHeight = 604
+  ExplicitTop = -16
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlOpcoes: TPanel
-    Height = 558
     ExplicitHeight = 558
     inherited btnSair: TSpeedButton
-      Top = 498
-      ExplicitTop = 498
+      Top = 464
+      ExplicitTop = 464
     end
   end
   inherited pgcFormCadastro: TPageControl
-    Height = 558
     ActivePage = tsCadastro
     ExplicitHeight = 558
     inherited tsConsultas: TTabSheet
-      ExplicitLeft = 4
-      ExplicitTop = 24
-      ExplicitWidth = 616
       ExplicitHeight = 530
       inherited pnlConsultas: TPanel
         inherited gprFiltro: TGroupBox
@@ -47,40 +41,68 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
         end
       end
-      inherited pgcConsultas: TPageControl
-        Height = 417
-        ExplicitHeight = 417
-        inherited tsConsultasPrincipal: TTabSheet
-          ExplicitLeft = 4
-          ExplicitTop = 24
-          ExplicitWidth = 608
-          ExplicitHeight = 389
-          inherited dbConsultas: TDBGrid
-            AlignWithMargins = True
-            Left = 3
-            Top = 3
-            Width = 602
-            Height = 383
+      inherited dbConsultas: TDBGrid
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'CODIGO'
+            Title.Caption = 'C'#243'digo'
+            Width = 54
+            Visible = True
           end
-        end
+          item
+            Expanded = False
+            FieldName = 'DESCRICAO'
+            Title.Caption = 'Descri'#231#227'o'
+            Width = 154
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CODIGO_BARRA'
+            Title.Caption = 'C'#243'digo de Barras'
+            Width = 96
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'QUANTIDADE'
+            Title.Caption = 'Quantidade'
+            Width = 59
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'UNIDADE'
+            Title.Caption = 'Unidade'
+            Width = 51
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'VALOR_COMPRA'
+            Title.Caption = 'Pre'#231'o de Custo'
+            Width = 77
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'VALOR_VENDA'
+            Title.Caption = 'Pre'#231'o de Venda'
+            Width = 85
+            Visible = True
+          end>
       end
     end
     inherited tsCadastro: TTabSheet
-      ExplicitLeft = 4
-      ExplicitTop = 24
-      ExplicitWidth = 616
       ExplicitHeight = 530
       inherited pgcCadastro: TPageControl
-        Height = 481
         ExplicitHeight = 481
         inherited tsCadastroPrincipal: TTabSheet
-          ExplicitLeft = 4
-          ExplicitTop = 24
-          ExplicitWidth = 608
           ExplicitHeight = 453
           object Label1: TLabel
             Left = 78
-            Top = 33
+            Top = 3
             Width = 44
             Height = 16
             Caption = 'C'#243'digo:'
@@ -93,7 +115,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object Label2: TLabel
             Left = 19
-            Top = 63
+            Top = 33
             Width = 103
             Height = 16
             Caption = 'C'#243'digo de barras:'
@@ -106,7 +128,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object Label3: TLabel
             Left = 62
-            Top = 93
+            Top = 63
             Width = 60
             Height = 16
             Caption = 'Descri'#231#227'o:'
@@ -119,7 +141,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object Label4: TLabel
             Left = 56
-            Top = 122
+            Top = 92
             Width = 66
             Height = 16
             Caption = 'Categorias:'
@@ -132,7 +154,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object Label5: TLabel
             Left = 82
-            Top = 151
+            Top = 121
             Width = 40
             Height = 16
             Caption = 'Marca:'
@@ -145,7 +167,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object Label6: TLabel
             Left = 52
-            Top = 180
+            Top = 150
             Width = 70
             Height = 16
             Caption = 'Localiza'#231#227'o:'
@@ -158,7 +180,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object Label7: TLabel
             Left = 29
-            Top = 211
+            Top = 181
             Width = 93
             Height = 16
             Caption = 'Pre'#231'o de venda:'
@@ -171,7 +193,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object Label8: TLabel
             Left = 33
-            Top = 241
+            Top = 211
             Width = 89
             Height = 16
             Caption = 'Pre'#231'o de custo:'
@@ -184,7 +206,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object Label9: TLabel
             Left = 40
-            Top = 272
+            Top = 242
             Width = 82
             Height = 16
             Caption = 'Estoque atual:'
@@ -197,7 +219,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object Label10: TLabel
             Left = 7
-            Top = 303
+            Top = 273
             Width = 115
             Height = 16
             Caption = 'Unidade de medida:'
@@ -210,7 +232,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object Label11: TLabel
             Left = 336
-            Top = 122
+            Top = 92
             Width = 66
             Height = 16
             Caption = 'Peso bruto:'
@@ -223,7 +245,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object Label12: TLabel
             Left = 16
-            Top = 334
+            Top = 304
             Width = 106
             Height = 16
             Caption = 'Limite de estoque:'
@@ -236,7 +258,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object Label13: TLabel
             Left = 44
-            Top = 363
+            Top = 333
             Width = 78
             Height = 16
             Caption = 'Observa'#231#245'es:'
@@ -249,7 +271,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object Label14: TLabel
             Left = 329
-            Top = 151
+            Top = 121
             Width = 73
             Height = 16
             Caption = 'Peso l'#237'quido:'
@@ -262,7 +284,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object edtCodigo: TMaskEdit
             Left = 128
-            Top = 32
+            Top = 2
             Width = 105
             Height = 21
             MaxLength = 18
@@ -271,7 +293,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object edtCodigoBarras: TMaskEdit
             Left = 128
-            Top = 62
+            Top = 32
             Width = 152
             Height = 21
             MaxLength = 18
@@ -280,7 +302,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object edtDescricao: TMaskEdit
             Left = 128
-            Top = 92
+            Top = 62
             Width = 401
             Height = 21
             MaxLength = 255
@@ -289,7 +311,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object edtLocalizacao: TMaskEdit
             Left = 128
-            Top = 179
+            Top = 149
             Width = 401
             Height = 21
             MaxLength = 100
@@ -298,7 +320,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object edtPrecoVenda: TMaskEdit
             Left = 128
-            Top = 210
+            Top = 180
             Width = 121
             Height = 21
             MaxLength = 18
@@ -307,7 +329,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object edtPrecoCusto: TMaskEdit
             Left = 128
-            Top = 240
+            Top = 210
             Width = 121
             Height = 21
             MaxLength = 18
@@ -316,7 +338,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object edtPesoBruto: TMaskEdit
             Left = 408
-            Top = 121
+            Top = 91
             Width = 121
             Height = 21
             MaxLength = 18
@@ -325,35 +347,35 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object cbCategoria: TComboBox
             Left = 128
-            Top = 121
+            Top = 91
             Width = 145
             Height = 21
             TabOrder = 7
           end
           object cbMarca: TComboBox
             Left = 128
-            Top = 150
+            Top = 120
             Width = 145
             Height = 21
             TabOrder = 8
           end
           object cbUnidade: TComboBox
             Left = 128
-            Top = 302
+            Top = 272
             Width = 145
             Height = 21
             TabOrder = 9
           end
           object cbLimiteEstoque: TComboBox
             Left = 128
-            Top = 332
+            Top = 302
             Width = 145
             Height = 21
             TabOrder = 10
           end
           object edtPesoLiquido: TMaskEdit
             Left = 408
-            Top = 150
+            Top = 120
             Width = 121
             Height = 21
             MaxLength = 18
@@ -362,7 +384,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object edtQuantEstoque: TMaskEdit
             Left = 128
-            Top = 271
+            Top = 241
             Width = 121
             Height = 21
             MaxLength = 18
@@ -371,7 +393,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object memoObservacoes: TMemo
             Left = 128
-            Top = 365
+            Top = 335
             Width = 401
             Height = 76
             MaxLength = 255
@@ -379,7 +401,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
           end
           object pnlImgProduto: TPanel
             Left = 344
-            Top = 218
+            Top = 176
             Width = 185
             Height = 126
             Align = alCustom
@@ -517,22 +539,8 @@ inherited FormCadastroProduto: TFormCadastroProduto
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
                 FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
               OnClick = imgProdutoClick
-              ExplicitLeft = -31
-            end
-          end
-          inline LkpProdutos1: TLkpProdutos
-            Left = 8
-            Top = 8
-            Width = 535
-            Height = 26
-            Margins.Left = 0
-            Margins.Right = 0
-            TabOrder = 15
-            ExplicitLeft = 8
-            ExplicitTop = 8
-            inherited dbeCodigo: TDBEdit
-              DataField = 'CODIGO'
-              DataSource = dsCadastro
+              ExplicitLeft = 48
+              ExplicitWidth = 136
             end
           end
         end
@@ -540,11 +548,7 @@ inherited FormCadastroProduto: TFormCadastroProduto
     end
   end
   inherited pnlFoter: TPanel
-    Top = 558
     ExplicitTop = 558
-    inherited lblStatus: TLabel
-      Height = 15
-    end
   end
   inherited SqlCadastro: TFDQuery
     SQL.Strings = (
@@ -566,27 +570,33 @@ inherited FormCadastroProduto: TFormCadastroProduto
       '               PRODUTOS.PESOBRUTO,    '
       '               PRODUTOS.PESOLIQUIDO'
       'FROM PRODUTOS ')
-    Left = 72
-    Top = 80
+    Left = 304
+    Top = 24
   end
   inherited dsCadastro: TDataSource
-    Left = 440
-    Top = 104
+    Left = 504
+    Top = 24
   end
   inherited actCadastro: TActionList
-    Left = 496
-    Top = 104
+    Left = 544
+    Top = 32
+    inherited actPesquisar: TAction
+      OnExecute = actPesquisarExecute
+    end
   end
   inherited opdCarregarArquivo: TOpenDialog
-    Left = 216
-    Top = 97
+    Left = 360
+    Top = 25
   end
   inherited SQLConsultas: TFDQuery
-    Left = 304
-    Top = 104
+    Active = True
+    SQL.Strings = (
+      'select * from PRODUTOS')
+    Left = 408
+    Top = 32
   end
   inherited dsConsultas: TDataSource
-    Left = 368
-    Top = 104
+    Left = 464
+    Top = 24
   end
 end

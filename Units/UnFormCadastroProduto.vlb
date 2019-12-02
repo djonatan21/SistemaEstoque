@@ -95,9 +95,6 @@ Coordinates=288,790,70,33
 [gpbConsultar]
 Coordinates=808,10,81,51
 
-[pgcConsultas]
-Coordinates=788,542,82,33
-
 [actSair]
 Coordinates=130,790,48,33
 
@@ -137,17 +134,11 @@ Coordinates=248,542,65,33
 [pnlOpcoes]
 Coordinates=810,490,67,51
 
-[dbConsultas]
-Coordinates=152,542,76,33
-
-[tsConsultasPrincipal]
-Coordinates=10,542,116,33
-
 [actPrimeiro]
 Coordinates=604,551,71,33
 
 []
-Coordinates=138,276,82,33
+Coordinates=788,542,82,33
 
 [imgProduto]
 Coordinates=530,250,72,51

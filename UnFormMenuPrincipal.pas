@@ -160,22 +160,22 @@ end;
 
 procedure TFormMenuPrincipal.actCadadastroMunicipioExecute(Sender: TObject);
 begin
-  TGTypeGeral.IstanciarForm(TFormCadastroMunicipios);
+  TGTypeGeral.CarregarFormulario(TFormCadastroMunicipios);
 end;
 
 procedure TFormMenuPrincipal.actCadastroClienteExecute(Sender: TObject);
 begin
-  TGTypeGeral.IstanciarForm(TFormCadastroCliente);
+  TGTypeGeral.CarregarFormulario(TFormCadastroCliente);
 end;
 
 procedure TFormMenuPrincipal.actCadastroFonecedorExecute(Sender: TObject);
 begin
-  TGTypeGeral.IstanciarForm(TFormCadastroFornecedor);
+  TGTypeGeral.CarregarFormulario(TFormCadastroFornecedor);
 end;
 
 procedure TFormMenuPrincipal.actCadastroProdutoExecute(Sender: TObject);
 begin
-  TGTypeGeral.IstanciarForm(TFormCadastroProduto);
+  TGTypeGeral.CarregarFormulario(TFormCadastroProduto);
 end;
 
 procedure TFormMenuPrincipal.actCaixaVendasExecute(Sender: TObject);
@@ -190,7 +190,7 @@ end;
 
 procedure TFormMenuPrincipal.actConfigSistemaExecute(Sender: TObject);
 begin
-  TGTypeGeral.IstanciarForm(TFormConfig);
+  TGTypeGeral.CarregarFormulario(TFormConfig);
 end;
 
 procedure TFormMenuPrincipal.actFinalizarCaixaExecute(Sender: TObject);
@@ -210,12 +210,12 @@ end;
 
 procedure TFormMenuPrincipal.actLoginExecute(Sender: TObject);
 begin
-  TGTypeGeral.IstanciarForm(TFormLogin);
+  TGTypeGeral.CarregarFormulario(TFormLogin);
 end;
 
 procedure TFormMenuPrincipal.actCadastroUsuarioExecute(Sender: TObject);
 begin
-  TGTypeGeral.IstanciarForm(TFormCadastroUsuario);
+  TGTypeGeral.CarregarFormulario(TFormCadastroUsuario);
 end;
 
 procedure TFormMenuPrincipal.btnCadastroClick(Sender: TObject);

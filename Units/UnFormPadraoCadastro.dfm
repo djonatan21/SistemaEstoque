@@ -534,10 +534,6 @@ object FormPadraoCadastro: TFormPadraoCadastro
     TabOrder = 1
     object tsConsultas: TTabSheet
       Caption = 'Consultas'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object pnlConsultas: TPanel
         Left = 0
         Top = 0
@@ -670,53 +666,34 @@ object FormPadraoCadastro: TFormPadraoCadastro
           end
         end
       end
-      object pgcConsultas: TPageControl
+      object dbConsultas: TDBGrid
         Left = 0
         Top = 113
         Width = 616
         Height = 383
-        ActivePage = tsConsultasPrincipal
         Align = alClient
+        DataSource = dsConsultas
+        FixedColor = clHotLight
+        GradientEndColor = clSkyBlue
+        GradientStartColor = clSkyBlue
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        ParentFont = False
         TabOrder = 1
-        object tsConsultasPrincipal: TTabSheet
-          Caption = 'Consultas'
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
-          object dbConsultas: TDBGrid
-            Left = 0
-            Top = 0
-            Width = 608
-            Height = 355
-            Align = alClient
-            FixedColor = clHotLight
-            GradientEndColor = clSkyBlue
-            GradientStartColor = clSkyBlue
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Tahoma'
-            Font.Style = []
-            Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-            ParentFont = False
-            TabOrder = 0
-            TitleFont.Charset = DEFAULT_CHARSET
-            TitleFont.Color = clWindowText
-            TitleFont.Height = -11
-            TitleFont.Name = 'Tahoma'
-            TitleFont.Style = []
-          end
-        end
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
       end
     end
     object tsCadastro: TTabSheet
       Caption = 'Cadastro'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object pgcCadastro: TPageControl
         Left = 0
         Top = 49
@@ -726,10 +703,6 @@ object FormPadraoCadastro: TFormPadraoCadastro
         Align = alClient
         TabOrder = 0
         object tsCadastroPrincipal: TTabSheet
-          ExplicitLeft = 0
-          ExplicitTop = 0
-          ExplicitWidth = 0
-          ExplicitHeight = 0
         end
       end
       object pnlCadastro: TPanel
@@ -1011,9 +984,10 @@ object FormPadraoCadastro: TFormPadraoCadastro
       Left = 205
       Top = 1
       Width = 84
-      Height = 13
+      Height = 15
       Align = alLeft
       Caption = '---------------------'
+      ExplicitHeight = 13
     end
     object pgbAguarde: TProgressBar
       Left = 1
