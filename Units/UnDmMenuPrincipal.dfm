@@ -21,7 +21,6 @@ object DmMenuPrincipal: TDmMenuPrincipal
     Top = 80
   end
   object SQLCaixa: TFDQuery
-    Active = True
     Connection = DmConexao.fdConect
     SQL.Strings = (
       'select *'
@@ -30,7 +29,6 @@ object DmMenuPrincipal: TDmMenuPrincipal
     Top = 16
   end
   object SQLConfigSistema: TFDQuery
-    Active = True
     Connection = DmConexao.fdConect
     SQL.Strings = (
       'SELECT * '
@@ -40,7 +38,6 @@ object DmMenuPrincipal: TDmMenuPrincipal
     Top = 144
   end
   object SQLConfigEmpresa: TFDQuery
-    Active = True
     Connection = DmConexao.fdConect
     SQL.Strings = (
       'SELECT * '

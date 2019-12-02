@@ -8,8 +8,9 @@ object DmConexao: TDmConexao
       'OpenMode=ReadWrite'
       'LockingMode=Normal'
       'DriverID=SQLite')
+    Connected = True
     LoginPrompt = False
-    Left = 56
-    Top = 24
+    Left = 32
+    Top = 72
   end
 end

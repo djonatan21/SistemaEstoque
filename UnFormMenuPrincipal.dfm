@@ -43,6 +43,10 @@ object FormMenuPrincipal: TFormMenuPrincipal
       TabOrder = 0
       object tsCadastro: TTabSheet
         Caption = 'tsCadastro'
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object SpeedButton6: TSpeedButton
           Left = 0
           Top = 0
@@ -842,6 +846,10 @@ object FormMenuPrincipal: TFormMenuPrincipal
       object tsCalculos: TTabSheet
         Caption = 'tsCalculos'
         ImageIndex = 1
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object SpeedButton9: TSpeedButton
           Left = 0
           Top = 0
@@ -947,10 +955,18 @@ object FormMenuPrincipal: TFormMenuPrincipal
         Caption = 'TabSheet4'
         ImageIndex = 3
         TabVisible = False
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
       end
       object tsCaixa: TTabSheet
         Caption = 'tsCaixa'
         ImageIndex = 4
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object btnAbrirCaixa: TSpeedButton
           Left = 0
           Top = 0
@@ -1056,6 +1072,10 @@ object FormMenuPrincipal: TFormMenuPrincipal
       object tsConfig: TTabSheet
         Caption = 'tsConfig'
         ImageIndex = 4
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object SpeedButton3: TSpeedButton
           Left = 77
           Top = 0
@@ -1336,6 +1356,10 @@ object FormMenuPrincipal: TFormMenuPrincipal
       object tsRelatorios: TTabSheet
         Caption = 'tsRelatorios'
         ImageIndex = 5
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
       end
     end
   end
@@ -2212,6 +2236,10 @@ object FormMenuPrincipal: TFormMenuPrincipal
     TabOrder = 2
     object tsPlanoFundo: TTabSheet
       Caption = 'Area de Trabalho'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object dbeImgPlanoFundo: TDBImage
         Left = 0
         Top = 0
@@ -2228,6 +2256,10 @@ object FormMenuPrincipal: TFormMenuPrincipal
       Caption = 'tsCaixaVendas'
       ImageIndex = 1
       OnShow = tsCaixaVendasShow
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pnlPrincipalCaixa: TPanel
         Left = 0
         Top = 0
@@ -3048,7 +3080,7 @@ object FormMenuPrincipal: TFormMenuPrincipal
       Left = 255
       Top = 4
       Width = 56
-      Height = 15
+      Height = 16
       Margins.Left = 20
       Align = alLeft
       Caption = 'lblUsuario'
@@ -3058,14 +3090,13 @@ object FormMenuPrincipal: TFormMenuPrincipal
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      ExplicitTop = 6
     end
     object lblData: TLabel
       AlignWithMargins = True
       Left = 1439
       Top = 4
       Width = 4
-      Height = 15
+      Height = 16
       Margins.Right = 30
       Align = alRight
       Font.Charset = DEFAULT_CHARSET
@@ -3074,14 +3105,13 @@ object FormMenuPrincipal: TFormMenuPrincipal
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      ExplicitHeight = 16
     end
     object lblEmpresa: TLabel
       AlignWithMargins = True
       Left = 354
       Top = 4
       Width = 56
-      Height = 15
+      Height = 16
       Margins.Left = 40
       Align = alLeft
       Caption = 'lblUsuario'
@@ -3091,15 +3121,13 @@ object FormMenuPrincipal: TFormMenuPrincipal
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      ExplicitLeft = 335
-      ExplicitHeight = 16
     end
     object lblNomeFantazia: TLabel
       AlignWithMargins = True
       Left = 453
       Top = 4
       Width = 56
-      Height = 15
+      Height = 16
       Margins.Left = 40
       Align = alLeft
       Caption = 'lblUsuario'
@@ -3109,8 +3137,6 @@ object FormMenuPrincipal: TFormMenuPrincipal
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      ExplicitLeft = 498
-      ExplicitTop = 2
     end
     object pgbCarregar: TProgressBar
       AlignWithMargins = True
