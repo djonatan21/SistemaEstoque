@@ -107,7 +107,7 @@ begin
     FieldByName('QUANTIDADE').AsInteger := StrToIntDef(edtQuantEstoque.Text, 0);
     // FieldByName('IMAGE'). :=
     FieldByName('CODIGO_BARRA').AsString := edtCodigoBarras.Text;
-    FieldByName('UNIDADE').AsInteger := cbUnidade.ItemIndex;
+    FieldByName('UNIDADE').AsString := cbUnidade.Text;
     FieldByName('CATEGORIA').AsInteger := cbCategoria.ItemIndex;
     FieldByName('MARCA').AsInteger := cbMarca.ItemIndex;
     FieldByName('CATEGORIA').AsInteger := cbCategoria.ItemIndex;

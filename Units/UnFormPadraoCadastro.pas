@@ -11,10 +11,10 @@ uses
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  System.Actions, Vcl.ActnList;
+  System.Actions, Vcl.ActnList, UnFormPadraoFramework;
 
 type
-  TFormPadraoCadastro = class(TForm)
+  TFormPadraoCadastro = class(TFormPadraoFramwork)
     pnlOpcoes: TPanel;
     pgcFormCadastro: TPageControl;
     tsConsultas: TTabSheet;
@@ -179,6 +179,7 @@ begin
     SqlCadastro.Post;
     // SqlCadastro.ApplyUpdates(-1);
     SetConfigInicial;
+    tsConsultas.Show;
   end;
 end;
 

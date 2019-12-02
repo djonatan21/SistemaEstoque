@@ -180,6 +180,22 @@
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
+        <DCCReference Include="Units\UnFormAtualizarEstoque.pas">
+            <Form>FormAtualizarEstoque</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Units\UnFormPadraoFramework.pas">
+            <Form>FormPadraoFramwork</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Units\UnFormCadastroEmpresa.pas">
+            <Form>FormCadastroEmpresa</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Units\UnFormCadastroDepartamento.pas">
+            <Form>FormCadastroDepartamento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

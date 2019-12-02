@@ -1,22 +1,15 @@
-object FormPadraoCadastro: TFormPadraoCadastro
-  Left = 0
-  Top = 0
+inherited FormPadraoCadastro: TFormPadraoCadastro
   BorderIcons = []
   BorderStyle = bsSingle
   Caption = 'Form'#250'laro Padr'#227'o de Cadastro'
   ClientHeight = 541
   ClientWidth = 694
-  Color = clBtnFace
   Constraints.MinHeight = 570
   Constraints.MinWidth = 700
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'Tahoma'
-  Font.Style = []
-  OldCreateOrder = False
   Position = poDesktopCenter
   OnShow = FormShow
+  ExplicitWidth = 700
+  ExplicitHeight = 570
   PixelsPerInch = 96
   TextHeight = 13
   object pnlOpcoes: TPanel
@@ -694,6 +687,10 @@ object FormPadraoCadastro: TFormPadraoCadastro
     object tsCadastro: TTabSheet
       Caption = 'Cadastro'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pgcCadastro: TPageControl
         Left = 0
         Top = 49
@@ -703,6 +700,10 @@ object FormPadraoCadastro: TFormPadraoCadastro
         Align = alClient
         TabOrder = 0
         object tsCadastroPrincipal: TTabSheet
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
         end
       end
       object pnlCadastro: TPanel

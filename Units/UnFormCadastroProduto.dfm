@@ -11,7 +11,6 @@ inherited FormCadastroProduto: TFormCadastroProduto
     end
   end
   inherited pgcFormCadastro: TPageControl
-    ActivePage = tsCadastro
     ExplicitHeight = 558
     inherited tsConsultas: TTabSheet
       ExplicitHeight = 530
@@ -47,49 +46,49 @@ inherited FormCadastroProduto: TFormCadastroProduto
             Expanded = False
             FieldName = 'CODIGO'
             Title.Caption = 'C'#243'digo'
-            Width = 54
+            Width = 52
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'DESCRICAO'
             Title.Caption = 'Descri'#231#227'o'
-            Width = 154
+            Width = 142
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'CODIGO_BARRA'
             Title.Caption = 'C'#243'digo de Barras'
-            Width = 96
+            Width = 112
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'QUANTIDADE'
             Title.Caption = 'Quantidade'
-            Width = 59
+            Width = 62
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'UNIDADE'
             Title.Caption = 'Unidade'
-            Width = 51
+            Width = 46
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'VALOR_COMPRA'
             Title.Caption = 'Pre'#231'o de Custo'
-            Width = 77
+            Width = 81
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'VALOR_VENDA'
             Title.Caption = 'Pre'#231'o de Venda'
-            Width = 85
+            Width = 81
             Visible = True
           end>
       end
@@ -350,7 +349,12 @@ inherited FormCadastroProduto: TFormCadastroProduto
             Top = 91
             Width = 145
             Height = 21
+            ItemIndex = 0
             TabOrder = 7
+            Text = 'Perecivel'
+            Items.Strings = (
+              'Perecivel'
+              'N'#227'o Perecivel')
           end
           object cbMarca: TComboBox
             Left = 128
@@ -362,16 +366,26 @@ inherited FormCadastroProduto: TFormCadastroProduto
           object cbUnidade: TComboBox
             Left = 128
             Top = 272
-            Width = 145
+            Width = 49
             Height = 21
+            ItemIndex = 0
             TabOrder = 9
+            Text = 'Un'
+            Items.Strings = (
+              'Un'
+              'Kg')
           end
           object cbLimiteEstoque: TComboBox
             Left = 128
             Top = 302
-            Width = 145
+            Width = 121
             Height = 21
+            ItemIndex = 0
             TabOrder = 10
+            Text = 'At'#233' 100 Un/Kg'
+            Items.Strings = (
+              'At'#233' 100 Un/Kg'
+              'At'#233' 200 Un/Kg')
           end
           object edtPesoLiquido: TMaskEdit
             Left = 408

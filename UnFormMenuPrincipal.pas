@@ -102,6 +102,7 @@ type
     lblEmpresa: TLabel;
     TimerCarregar: TTimer;
     lblUnidade: TLabel;
+    actAtualizarEstoque: TAction;
     procedure FormShow(Sender: TObject);
     procedure imgBtnCadastroClick(Sender: TObject);
     procedure imgBtnCalculoClick(Sender: TObject);
@@ -134,6 +135,9 @@ type
     procedure edtQuantidadeEnter(Sender: TObject);
     procedure actCadadastroMunicipioExecute(Sender: TObject);
     procedure TimerCarregarTimer(Sender: TObject);
+    procedure actAtualizarEstoqueExecute(Sender: TObject);
+    procedure actCadastroEmpresaExecute(Sender: TObject);
+    procedure actCadastroDepartamentoExecute(Sender: TObject);
   protected
     procedure SetConfigInicial;
     procedure SetComponentesVisual;
@@ -149,13 +153,19 @@ uses
   unDmconectConfigSistema, UnFormCadastroProduto, UnFormCofigSistema,
   UnTypesGeral, UnFormCadastroCliente, UnFormcadastroFornecedor, UnFormLogin,
   UnFormCadastroUsuario, UnDmMenuPrincipal, UnTypesCarregarSQL,
-  UnFormCadastroMunicipios, UnFormTelaCarregamento;
+  UnFormCadastroMunicipios, UnFormTelaCarregamento, UnFormAtualizarEstoque,
+  UnFormCadastroEmpresa,UnFormCadastroDepartamento;
 
 {$R *.dfm}
 
 procedure TFormMenuPrincipal.actAdicionarItemExecute(Sender: TObject);
 begin
   TCarregarSQL.AdicionarItemNaCompra;
+end;
+
+procedure TFormMenuPrincipal.actAtualizarEstoqueExecute(Sender: TObject);
+begin
+  TGTypeGeral.CarregarFormulario(TFormAtualizarEstoque);
 end;
 
 procedure TFormMenuPrincipal.actCadadastroMunicipioExecute(Sender: TObject);
@@ -166,6 +176,16 @@ end;
 procedure TFormMenuPrincipal.actCadastroClienteExecute(Sender: TObject);
 begin
   TGTypeGeral.CarregarFormulario(TFormCadastroCliente);
+end;
+
+procedure TFormMenuPrincipal.actCadastroDepartamentoExecute(Sender: TObject);
+begin
+    TGTypeGeral.CarregarFormulario(TFormCadastroDepartamento);
+end;
+
+procedure TFormMenuPrincipal.actCadastroEmpresaExecute(Sender: TObject);
+begin
+  TGTypeGeral.CarregarFormulario(TFormCadastroEmpresa);
 end;
 
 procedure TFormMenuPrincipal.actCadastroFonecedorExecute(Sender: TObject);

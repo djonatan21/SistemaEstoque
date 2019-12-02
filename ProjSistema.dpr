@@ -23,7 +23,11 @@ uses
   UnFormCadastroCliente in 'Units\UnFormCadastroCliente.pas' {FormCadastroCliente},
   UnFormTelaCarregamento in 'Units\UnFormTelaCarregamento.pas' {FormTelaCarregamento},
   UnFormPesquisaLKP in 'Frames\UnFormPesquisaLKP.pas' {FormPesquisaLkp},
-  UnLokupProdutos in 'Frames\UnLokupProdutos.pas' {LkpProdutos: TFrame};
+  UnLokupProdutos in 'Frames\UnLokupProdutos.pas' {LkpProdutos: TFrame},
+  UnFormAtualizarEstoque in 'Units\UnFormAtualizarEstoque.pas' {FormAtualizarEstoque},
+  UnFormPadraoFramework in 'Units\UnFormPadraoFramework.pas' {FormPadraoFramwork},
+  UnFormCadastroEmpresa in 'Units\UnFormCadastroEmpresa.pas' {FormCadastroEmpresa},
+  UnFormCadastroDepartamento in 'Units\UnFormCadastroDepartamento.pas' {FormCadastroDepartamento};
 
 {$R *.res}
 
@@ -35,5 +39,9 @@ begin
   Application.CreateForm(TDmMenuPrincipal, DmMenuPrincipal);
   Application.CreateForm(TFormTelaCarregamento, FormTelaCarregamento);
   Application.CreateForm(TFormPesquisaLkp, FormPesquisaLkp);
+  Application.CreateForm(TFormAtualizarEstoque, FormAtualizarEstoque);
+  Application.CreateForm(TFormPadraoFramwork, FormPadraoFramwork);
+  Application.CreateForm(TFormCadastroEmpresa, FormCadastroEmpresa);
+  Application.CreateForm(TFormCadastroDepartamento, FormCadastroDepartamento);
   Application.Run;
 end.
