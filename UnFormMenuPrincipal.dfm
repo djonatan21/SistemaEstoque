@@ -2204,7 +2204,7 @@ object FormMenuPrincipal: TFormMenuPrincipal
     Top = 95
     Width = 1398
     Height = 771
-    ActivePage = tsCaixaVendas
+    ActivePage = tsPlanoFundo
     Align = alClient
     BiDiMode = bdRightToLeftReadingOnly
     ParentBiDiMode = False
@@ -3042,13 +3042,14 @@ object FormMenuPrincipal: TFormMenuPrincipal
     Height = 23
     Align = alBottom
     TabOrder = 4
+    ExplicitTop = 865
     object lblUsuario: TLabel
       AlignWithMargins = True
-      Left = 494
+      Left = 255
       Top = 4
       Width = 56
       Height = 15
-      Margins.Left = 100
+      Margins.Left = 20
       Align = alLeft
       Caption = 'lblUsuario'
       Font.Charset = DEFAULT_CHARSET
@@ -3057,7 +3058,7 @@ object FormMenuPrincipal: TFormMenuPrincipal
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      ExplicitHeight = 16
+      ExplicitTop = 6
     end
     object lblData: TLabel
       AlignWithMargins = True
@@ -3077,11 +3078,11 @@ object FormMenuPrincipal: TFormMenuPrincipal
     end
     object lblEmpresa: TLabel
       AlignWithMargins = True
-      Left = 335
+      Left = 354
       Top = 4
       Width = 56
       Height = 15
-      Margins.Left = 100
+      Margins.Left = 40
       Align = alLeft
       Caption = 'lblUsuario'
       Font.Charset = DEFAULT_CHARSET
@@ -3090,7 +3091,26 @@ object FormMenuPrincipal: TFormMenuPrincipal
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
+      ExplicitLeft = 335
       ExplicitHeight = 16
+    end
+    object lblNomeFantazia: TLabel
+      AlignWithMargins = True
+      Left = 453
+      Top = 4
+      Width = 56
+      Height = 15
+      Margins.Left = 40
+      Align = alLeft
+      Caption = 'lblUsuario'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      ExplicitLeft = 498
+      ExplicitTop = 2
     end
     object pgbCarregar: TProgressBar
       AlignWithMargins = True

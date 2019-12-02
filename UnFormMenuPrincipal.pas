@@ -103,6 +103,7 @@ type
     TimerCarregar: TTimer;
     lblUnidade: TLabel;
     actAtualizarEstoque: TAction;
+    lblNomeFantazia: TLabel;
     procedure FormShow(Sender: TObject);
     procedure imgBtnCadastroClick(Sender: TObject);
     procedure imgBtnCalculoClick(Sender: TObject);
@@ -154,7 +155,7 @@ uses
   UnTypesGeral, UnFormCadastroCliente, UnFormcadastroFornecedor, UnFormLogin,
   UnFormCadastroUsuario, UnDmMenuPrincipal, UnTypesCarregarSQL,
   UnFormCadastroMunicipios, UnFormTelaCarregamento, UnFormAtualizarEstoque,
-  UnFormCadastroEmpresa,UnFormCadastroDepartamento;
+  UnFormCadastroEmpresa, UnFormCadastroDepartamento;
 
 {$R *.dfm}
 
@@ -180,7 +181,7 @@ end;
 
 procedure TFormMenuPrincipal.actCadastroDepartamentoExecute(Sender: TObject);
 begin
-    TGTypeGeral.CarregarFormulario(TFormCadastroDepartamento);
+  TGTypeGeral.CarregarFormulario(TFormCadastroDepartamento);
 end;
 
 procedure TFormMenuPrincipal.actCadastroEmpresaExecute(Sender: TObject);
@@ -339,6 +340,8 @@ begin
   lblEmpresa.Caption := 'EMPRESA : ' + DmMenuPrincipal.SQLConfigEmpresa.
     FieldByName('NOME').AsString;
   lblData.Caption := 'DATA : ' + DateToStr(Now);
+  lblNomeFantazia.Caption := 'NOME FANTAZIA : ' +
+    DmMenuPrincipal.SQLConfigEmpresa.FieldByName('NOMEFANTAZIA').AsString;
 end;
 
 procedure TFormMenuPrincipal.SetConfigCaixa;
