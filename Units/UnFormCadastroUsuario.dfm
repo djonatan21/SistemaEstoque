@@ -3,7 +3,12 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
   PixelsPerInch = 96
   TextHeight = 13
   inherited pgcFormCadastro: TPageControl
+    ActivePage = tsCadastro
     inherited tsConsultas: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 616
+      ExplicitHeight = 496
       inherited pnlConsultas: TPanel
         inherited gpbConsultar: TGroupBox
           inherited btnFiltrar: TSpeedButton
@@ -14,8 +19,16 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
       end
     end
     inherited tsCadastro: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 616
+      ExplicitHeight = 496
       inherited pgcCadastro: TPageControl
         inherited tsCadastroPrincipal: TTabSheet
+          ExplicitLeft = -44
+          ExplicitTop = 20
+          ExplicitWidth = 608
+          ExplicitHeight = 419
           object Label9: TLabel
             Left = 222
             Top = 9
@@ -148,14 +161,6 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
               DataSource = dsCadastro
               TabOrder = 2
             end
-            object dbeCbxTipoPermisao: TDBComboBox
-              Left = 136
-              Top = 180
-              Width = 145
-              Height = 21
-              DataSource = dsCadastro
-              TabOrder = 3
-            end
             object dbEdtCodigo: TDBEdit
               Left = 136
               Top = 45
@@ -164,7 +169,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
               DataField = 'ID'
               DataSource = dsCadastro
               Enabled = False
-              TabOrder = 4
+              TabOrder = 3
             end
             object dbEdtNome: TDBEdit
               Left = 136
@@ -173,7 +178,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
               Height = 21
               DataField = 'NOME'
               DataSource = dsCadastro
-              TabOrder = 5
+              TabOrder = 4
             end
             object dbEdtEmail: TDBEdit
               Left = 137
@@ -182,6 +187,18 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
               Height = 21
               DataField = 'EMAIL'
               DataSource = dsCadastro
+              TabOrder = 5
+            end
+            object dbeCbTipoPermicao: TDBLookupComboBox
+              Left = 136
+              Top = 180
+              Width = 145
+              Height = 21
+              DataField = 'TIPOPERMICAO'
+              DataSource = dsCadastro
+              KeyField = 'ID'
+              ListField = 'TIPO'
+              ListSource = dsConsultas
               TabOrder = 6
             end
           end
@@ -263,8 +280,14 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
       end
     end
   end
+  inherited pnlFoter: TPanel
+    inherited lblStatus: TLabel
+      Height = 15
+    end
+  end
   inherited SqlCadastro: TFDQuery
-    Left = 472
+    Active = True
+    Left = 504
     Top = 32
   end
   inherited dsCadastro: TDataSource
@@ -272,7 +295,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
     Top = 32
   end
   inherited actCadastro: TActionList
-    Left = 616
+    Left = 544
     Top = 96
     object actAlterarFoto: TAction [7]
       Caption = 'Alterar Foto'
@@ -289,7 +312,11 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
   inherited SQLConsultas: TFDQuery
     SQL.Strings = (
       'SELECT * FROM USUARIOS')
-    Left = 408
+    Left = 424
     Top = 32
+  end
+  inherited dsConsultas: TDataSource
+    Left = 336
+    Top = 168
   end
 end

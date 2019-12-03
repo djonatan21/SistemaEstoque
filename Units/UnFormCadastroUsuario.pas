@@ -19,7 +19,6 @@ type
     dbcbxSetor: TDBComboBox;
     dbeCbxCargo: TDBComboBox;
     gpbLogin: TGroupBox;
-    dbeCbxTipoPermisao: TDBComboBox;
     dbedtUsuario: TDBEdit;
     edtConfirmarSenha: TEdit;
     dbEdtCodigo: TDBEdit;
@@ -38,6 +37,7 @@ type
     btnAlterarImagem: TSpeedButton;
     actAlterarFoto: TAction;
     dbEdtSenha: TDBEdit;
+    dbeCbTipoPermicao: TDBLookupComboBox;
     procedure actAlterarFotoExecute(Sender: TObject);
     procedure actSalvarExecute(Sender: TObject);
     procedure actNovoExecute(Sender: TObject);
@@ -45,6 +45,7 @@ type
   protected
     procedure Validacoes;
     procedure SetConfigInicial; override;
+    procedure CarregarDadosCadastros;
 
   private
     { Private declarations }
@@ -87,6 +88,7 @@ procedure TFormCadastroUsuario.actNovoExecute(Sender: TObject);
 begin
   inherited;
   dbEdtCodigo.Text := IntToStr(TCarregarSQL.CarregarProximoID(ID, NomeTabela));
+  CarregarDadosCadastros;
 end;
 
 procedure TFormCadastroUsuario.actSalvarExecute(Sender: TObject);
@@ -98,6 +100,18 @@ begin
   end
   else
     ShowMessage('A senha de confirmação nâo é iguail');
+end;
+
+procedure TFormCadastroUsuario.CarregarDadosCadastros;
+begin
+  with SQLConsultas do
+  begin
+    Close;
+    SQL.Clear;
+    SQL.Add('SELECT *');
+    SQL.Add('FROM LICENÇASSOFTWARE');
+    Open();
+  end;
 end;
 
 procedure TFormCadastroUsuario.SetConfigInicial;

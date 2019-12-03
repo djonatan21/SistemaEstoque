@@ -27,7 +27,14 @@ uses
   UnFormAtualizarEstoque in 'Units\UnFormAtualizarEstoque.pas' {FormAtualizarEstoque},
   UnFormPadraoFramework in 'Units\UnFormPadraoFramework.pas' {FormPadraoFramwork},
   UnFormCadastroEmpresa in 'Units\UnFormCadastroEmpresa.pas' {FormCadastroEmpresa},
-  UnFormCadastroDepartamento in 'Units\UnFormCadastroDepartamento.pas' {FormCadastroDepartamento};
+  UnFormCadastroDepartamento in 'Units\UnFormCadastroDepartamento.pas' {FormCadastroDepartamento},
+  UnFormLoginEmpresa in 'Units\UnFormLoginEmpresa.pas' {FormLoginEmpresa},
+  UnCLIENTETypes in 'Metadados\UnCLIENTETypes.pas',
+  UnEMPRESATypes in 'Metadados\UnEMPRESATypes.pas',
+  UnMUNICIPIOTypes in 'Metadados\UnMUNICIPIOTypes.pas',
+  UnLICENÇASSOFTWARETypes in 'Metadados\UnLICENÇASSOFTWARETypes.pas',
+  UnREGISTRARVENDATypes in 'Metadados\UnREGISTRARVENDATypes.pas',
+  UnVENDASTypes in 'Metadados\UnVENDASTypes.pas';
 
 {$R *.res}
 
@@ -43,5 +50,6 @@ begin
   Application.CreateForm(TFormPadraoFramwork, FormPadraoFramwork);
   Application.CreateForm(TFormCadastroEmpresa, FormCadastroEmpresa);
   Application.CreateForm(TFormCadastroDepartamento, FormCadastroDepartamento);
+  Application.CreateForm(TFormLoginEmpresa, FormLoginEmpresa);
   Application.Run;
 end.

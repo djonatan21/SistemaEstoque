@@ -15,6 +15,22 @@ uses
 
 type
   TFormCadastroMunicipios = class(TFormPadraoCadastro)
+    edtCodigo: TEdit;
+    edtNome: TEdit;
+    edtIbge: TEdit;
+    edtDDD: TEdit;
+    cbRegiao: TComboBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Label7: TLabel;
+    procedure actNovoExecute(Sender: TObject);
+    procedure actSalvarExecute(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,7 +42,32 @@ var
 
 implementation
 
+uses
+  UnTypesCarregarSQL;
+
 {$R *.dfm}
+
+procedure TFormCadastroMunicipios.actNovoExecute(Sender: TObject);
+begin
+  inherited;
+  edtCodigo.Text := IntToStr(TCarregarSQL.CarregarProximoID('ID', 'MUNICIPIO'));
+end;
+
+procedure TFormCadastroMunicipios.actSalvarExecute(Sender: TObject);
+begin
+  inherited;
+  with SqlCadastro do
+  begin
+    FieldByName('ID').AsInteger := StrToInt(edtCodigo.Text);
+    FieldByName('NOME').AsString := edtNome.Text;
+    { FieldByName('ESTADO').AsInteger := StrToInt(); }
+    FieldByName('DDD').AsString := edtDDD.Text;
+    FieldByName('IBGE').AsInteger := StrToInt(edtIbge.Text);
+    FieldByName('REGIAO').AsInteger := cbRegiao.ItemIndex;
+    { FieldByName('UF').AsString:= }
+    { FieldByName('PAIS').AsString:= }
+  end;
+end;
 
 initialization
 

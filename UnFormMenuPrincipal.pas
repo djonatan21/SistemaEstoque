@@ -41,7 +41,7 @@ type
     btnCadastroCliente: TSpeedButton;
     SpeedButton8: TSpeedButton;
     actCadastroUsuario: TAction;
-    SpeedButton3: TSpeedButton;
+    btnLoginEmpresa: TSpeedButton;
     SpeedButton5: TSpeedButton;
     actLogin: TAction;
     actCompras: TAction;
@@ -104,6 +104,8 @@ type
     lblUnidade: TLabel;
     actAtualizarEstoque: TAction;
     lblNomeFantazia: TLabel;
+    SpeedButton10: TSpeedButton;
+    actLoginEmpresa: TAction;
     procedure FormShow(Sender: TObject);
     procedure imgBtnCadastroClick(Sender: TObject);
     procedure imgBtnCalculoClick(Sender: TObject);
@@ -139,6 +141,7 @@ type
     procedure actAtualizarEstoqueExecute(Sender: TObject);
     procedure actCadastroEmpresaExecute(Sender: TObject);
     procedure actCadastroDepartamentoExecute(Sender: TObject);
+    procedure actLoginEmpresaExecute(Sender: TObject);
   protected
     procedure SetConfigInicial;
     procedure SetComponentesVisual;
@@ -155,7 +158,7 @@ uses
   UnTypesGeral, UnFormCadastroCliente, UnFormcadastroFornecedor, UnFormLogin,
   UnFormCadastroUsuario, UnDmMenuPrincipal, UnTypesCarregarSQL,
   UnFormCadastroMunicipios, UnFormTelaCarregamento, UnFormAtualizarEstoque,
-  UnFormCadastroEmpresa, UnFormCadastroDepartamento;
+  UnFormCadastroEmpresa, UnFormCadastroDepartamento,UnFormLoginEmpresa;
 
 {$R *.dfm}
 
@@ -227,6 +230,11 @@ begin
   if MessageDlg('Deseja finalizar sistema ?', mtInformation, mbYesNo, 0, mbYes)
     = mrYes then
     Close;
+end;
+
+procedure TFormMenuPrincipal.actLoginEmpresaExecute(Sender: TObject);
+begin
+TGTypeGeral.CarregarFormulario(TFormLoginEmpresa);
 end;
 
 procedure TFormMenuPrincipal.actLoginExecute(Sender: TObject);

@@ -4,13 +4,15 @@ object DmConexao: TDmConexao
   Width = 215
   object fdConect: TFDConnection
     Params.Strings = (
-      'Database=C:\Progeto Sistema de Estoque\BaseDados\BaseDadosSQL.db'
+      
+        'Database=C:\Progeto Sistema de Estoque\BaseDados\BaseDadosSistem' +
+        'aSQL.db'
       'OpenMode=ReadWrite'
       'LockingMode=Normal'
       'DriverID=SQLite')
     Connected = True
     LoginPrompt = False
-    Left = 32
-    Top = 72
+    Left = 96
+    Top = 40
   end
 end
