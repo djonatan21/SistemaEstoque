@@ -106,6 +106,10 @@ type
     lblNomeFantazia: TLabel;
     SpeedButton10: TSpeedButton;
     actLoginEmpresa: TAction;
+    actCadastroSetor: TAction;
+    actCadastroCargo: TAction;
+    SpeedButton3: TSpeedButton;
+    SpeedButton11: TSpeedButton;
     procedure FormShow(Sender: TObject);
     procedure imgBtnCadastroClick(Sender: TObject);
     procedure imgBtnCalculoClick(Sender: TObject);
@@ -142,6 +146,8 @@ type
     procedure actCadastroEmpresaExecute(Sender: TObject);
     procedure actCadastroDepartamentoExecute(Sender: TObject);
     procedure actLoginEmpresaExecute(Sender: TObject);
+    procedure actCadastroSetorExecute(Sender: TObject);
+    procedure actCadastroCargoExecute(Sender: TObject);
   protected
     procedure SetConfigInicial;
     procedure SetComponentesVisual;
@@ -158,7 +164,8 @@ uses
   UnTypesGeral, UnFormCadastroCliente, UnFormcadastroFornecedor, UnFormLogin,
   UnFormCadastroUsuario, UnDmMenuPrincipal, UnTypesCarregarSQL,
   UnFormCadastroMunicipios, UnFormTelaCarregamento, UnFormAtualizarEstoque,
-  UnFormCadastroEmpresa, UnFormCadastroDepartamento,UnFormLoginEmpresa;
+  UnFormCadastroEmpresa, UnFormCadastroDepartamento, UnFormLoginEmpresa,
+  UnFormCadastroSetor, UnFormCadastroCargo;
 
 {$R *.dfm}
 
@@ -175,6 +182,11 @@ end;
 procedure TFormMenuPrincipal.actCadadastroMunicipioExecute(Sender: TObject);
 begin
   TGTypeGeral.CarregarFormulario(TFormCadastroMunicipios);
+end;
+
+procedure TFormMenuPrincipal.actCadastroCargoExecute(Sender: TObject);
+begin
+  TGTypeGeral.CarregarFormulario(TFormCadastroCargo);
 end;
 
 procedure TFormMenuPrincipal.actCadastroClienteExecute(Sender: TObject);
@@ -200,6 +212,11 @@ end;
 procedure TFormMenuPrincipal.actCadastroProdutoExecute(Sender: TObject);
 begin
   TGTypeGeral.CarregarFormulario(TFormCadastroProduto);
+end;
+
+procedure TFormMenuPrincipal.actCadastroSetorExecute(Sender: TObject);
+begin
+  TGTypeGeral.CarregarFormulario(TFormCadastroSetor);
 end;
 
 procedure TFormMenuPrincipal.actCaixaVendasExecute(Sender: TObject);
@@ -234,7 +251,7 @@ end;
 
 procedure TFormMenuPrincipal.actLoginEmpresaExecute(Sender: TObject);
 begin
-TGTypeGeral.CarregarFormulario(TFormLoginEmpresa);
+  TGTypeGeral.CarregarFormulario(TFormLoginEmpresa);
 end;
 
 procedure TFormMenuPrincipal.actLoginExecute(Sender: TObject);

@@ -34,7 +34,9 @@ uses
   UnMUNICIPIOTypes in 'Metadados\UnMUNICIPIOTypes.pas',
   UnLICENÇASSOFTWARETypes in 'Metadados\UnLICENÇASSOFTWARETypes.pas',
   UnREGISTRARVENDATypes in 'Metadados\UnREGISTRARVENDATypes.pas',
-  UnVENDASTypes in 'Metadados\UnVENDASTypes.pas';
+  UnVENDASTypes in 'Metadados\UnVENDASTypes.pas',
+  UnFormCadastroSetor in 'Units\UnFormCadastroSetor.pas' {FormCadastroSetor},
+  UnFormCadastroCargo in 'Units\UnFormCadastroCargo.pas' {FormCadastroCargo};
 
 {$R *.res}
 
@@ -51,5 +53,7 @@ begin
   Application.CreateForm(TFormCadastroEmpresa, FormCadastroEmpresa);
   Application.CreateForm(TFormCadastroDepartamento, FormCadastroDepartamento);
   Application.CreateForm(TFormLoginEmpresa, FormLoginEmpresa);
+  Application.CreateForm(TFormCadastroSetor, FormCadastroSetor);
+  Application.CreateForm(TFormCadastroCargo, FormCadastroCargo);
   Application.Run;
 end.

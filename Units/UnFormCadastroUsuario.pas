@@ -89,6 +89,7 @@ begin
   inherited;
   dbEdtCodigo.Text := IntToStr(TCarregarSQL.CarregarProximoID(ID, NomeTabela));
   CarregarDadosCadastros;
+  TGTypeGeral.SetFocusCampo(Sender, dbEdtNome);
 end;
 
 procedure TFormCadastroUsuario.actSalvarExecute(Sender: TObject);

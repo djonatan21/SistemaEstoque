@@ -25,8 +25,8 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
       ExplicitHeight = 496
       inherited pgcCadastro: TPageControl
         inherited tsCadastroPrincipal: TTabSheet
-          ExplicitLeft = -44
-          ExplicitTop = 20
+          ExplicitLeft = 4
+          ExplicitTop = 24
           ExplicitWidth = 608
           ExplicitHeight = 419
           object Label9: TLabel
@@ -141,7 +141,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
               Height = 105
               DataField = 'IMAGEMPLANOFUNDO'
               DataSource = dsCadastro
-              TabOrder = 0
+              TabOrder = 6
             end
             object dbcbxSetor: TDBComboBox
               Left = 136
@@ -150,7 +150,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
               Height = 21
               DataField = 'SETOR'
               DataSource = dsCadastro
-              TabOrder = 1
+              TabOrder = 3
             end
             object dbeCbxCargo: TDBComboBox
               Left = 137
@@ -159,7 +159,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
               Height = 21
               DataField = 'CARGO'
               DataSource = dsCadastro
-              TabOrder = 2
+              TabOrder = 4
             end
             object dbEdtCodigo: TDBEdit
               Left = 136
@@ -169,7 +169,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
               DataField = 'ID'
               DataSource = dsCadastro
               Enabled = False
-              TabOrder = 3
+              TabOrder = 0
             end
             object dbEdtNome: TDBEdit
               Left = 136
@@ -178,7 +178,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
               Height = 21
               DataField = 'NOME'
               DataSource = dsCadastro
-              TabOrder = 4
+              TabOrder = 1
             end
             object dbEdtEmail: TDBEdit
               Left = 137
@@ -187,7 +187,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
               Height = 21
               DataField = 'EMAIL'
               DataSource = dsCadastro
-              TabOrder = 5
+              TabOrder = 2
             end
             object dbeCbTipoPermicao: TDBLookupComboBox
               Left = 136
@@ -199,7 +199,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
               KeyField = 'ID'
               ListField = 'TIPO'
               ListSource = dsConsultas
-              TabOrder = 6
+              TabOrder = 5
             end
           end
           object gpbLogin: TGroupBox
@@ -263,7 +263,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
               Width = 161
               Height = 21
               PasswordChar = '*'
-              TabOrder = 1
+              TabOrder = 2
             end
             object dbEdtSenha: TDBEdit
               Left = 382
@@ -273,7 +273,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
               DataField = 'SENHA'
               DataSource = dsCadastro
               PasswordChar = '*'
-              TabOrder = 2
+              TabOrder = 1
             end
           end
         end

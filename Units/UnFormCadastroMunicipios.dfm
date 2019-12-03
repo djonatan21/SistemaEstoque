@@ -1,6 +1,5 @@
 inherited FormCadastroMunicipios: TFormCadastroMunicipios
   Caption = 'Cadastro de Municipios'
-  ExplicitTop = -16
   PixelsPerInch = 96
   TextHeight = 13
   inherited pgcFormCadastro: TPageControl
@@ -18,8 +17,8 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
       ExplicitHeight = 496
       inherited pgcCadastro: TPageControl
         inherited tsCadastroPrincipal: TTabSheet
-          ExplicitLeft = 6
-          ExplicitTop = 26
+          ExplicitLeft = 4
+          ExplicitTop = 24
           ExplicitWidth = 608
           ExplicitHeight = 419
           object Label1: TLabel
@@ -37,7 +36,7 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
           end
           object Label2: TLabel
             Left = 58
-            Top = 66
+            Top = 58
             Width = 60
             Height = 16
             Caption = 'Descri'#231#227'o:'
@@ -50,7 +49,7 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
           end
           object Label3: TLabel
             Left = 87
-            Top = 179
+            Top = 152
             Width = 31
             Height = 16
             Caption = 'IBGE:'
@@ -63,7 +62,7 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
           end
           object Label4: TLabel
             Left = 67
-            Top = 217
+            Top = 184
             Width = 51
             Height = 16
             Caption = 'DDD Tel:'
@@ -76,7 +75,7 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
           end
           object Label5: TLabel
             Left = 60
-            Top = 103
+            Top = 89
             Width = 58
             Height = 16
             Caption = 'Cod. Pa'#237's:'
@@ -89,7 +88,7 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
           end
           object Label6: TLabel
             Left = 74
-            Top = 247
+            Top = 215
             Width = 44
             Height = 16
             Caption = 'Regi'#227'o:'
@@ -102,7 +101,7 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
           end
           object Label7: TLabel
             Left = 98
-            Top = 142
+            Top = 120
             Width = 20
             Height = 16
             Caption = 'UF:'
@@ -129,7 +128,7 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
           end
           object edtNome: TEdit
             Left = 124
-            Top = 63
+            Top = 55
             Width = 397
             Height = 24
             Font.Charset = DEFAULT_CHARSET
@@ -142,7 +141,54 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
           end
           object edtIbge: TEdit
             Left = 124
-            Top = 176
+            Top = 149
+            Width = 121
+            Height = 24
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            NumbersOnly = True
+            ParentFont = False
+            TabOrder = 4
+          end
+          object edtDDD: TEdit
+            Left = 124
+            Top = 181
+            Width = 73
+            Height = 24
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            NumbersOnly = True
+            ParentFont = False
+            TabOrder = 5
+          end
+          object cbRegiao: TComboBox
+            Left = 124
+            Top = 212
+            Width = 145
+            Height = 24
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -13
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 6
+            Items.Strings = (
+              'SUL'
+              'NORTE'
+              'NORDESTE'
+              'SUDESTE'
+              'CENTRO OESTE')
+          end
+          object Edit1: TEdit
+            Left = 124
+            Top = 86
             Width = 121
             Height = 24
             Font.Charset = DEFAULT_CHARSET
@@ -154,10 +200,10 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
             ParentFont = False
             TabOrder = 2
           end
-          object edtDDD: TEdit
+          object Edit2: TEdit
             Left = 124
-            Top = 214
-            Width = 73
+            Top = 117
+            Width = 121
             Height = 24
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
@@ -167,53 +213,6 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
             NumbersOnly = True
             ParentFont = False
             TabOrder = 3
-          end
-          object cbRegiao: TComboBox
-            Left = 124
-            Top = 244
-            Width = 145
-            Height = 24
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Tahoma'
-            Font.Style = []
-            ParentFont = False
-            TabOrder = 4
-            Items.Strings = (
-              'SUL'
-              'NORTE'
-              'NORDESTE'
-              'SUDESTE'
-              'CENTRO OESTE')
-          end
-          object Edit1: TEdit
-            Left = 124
-            Top = 100
-            Width = 121
-            Height = 24
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Tahoma'
-            Font.Style = []
-            NumbersOnly = True
-            ParentFont = False
-            TabOrder = 5
-          end
-          object Edit2: TEdit
-            Left = 124
-            Top = 139
-            Width = 121
-            Height = 24
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Tahoma'
-            Font.Style = []
-            NumbersOnly = True
-            ParentFont = False
-            TabOrder = 6
           end
         end
       end

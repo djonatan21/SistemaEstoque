@@ -2,8 +2,8 @@
 <BorlandProject>
   <Transactions>
     <Transaction>2019/12/02 17:05:50.627,=C:\Progeto Sistema de Estoque\Unit1.pas</Transaction>
-    <Transaction>2019/12/02 17:06:36.455,C:\Progeto Sistema de Estoque\Units\UnFormLoginEmpresa.dfm=C:\Progeto Sistema de Estoque\Unit1.dfm</Transaction>
     <Transaction>2019/12/02 17:06:36.455,C:\Progeto Sistema de Estoque\Units\UnFormLoginEmpresa.pas=C:\Progeto Sistema de Estoque\Unit1.pas</Transaction>
+    <Transaction>2019/12/02 17:06:36.455,C:\Progeto Sistema de Estoque\Units\UnFormLoginEmpresa.dfm=C:\Progeto Sistema de Estoque\Unit1.dfm</Transaction>
     <Transaction>2019/12/02 22:13:15.870,=C:\Progeto Sistema de Estoque\Unit1.pas</Transaction>
     <Transaction>2019/12/02 22:13:50.140,C:\Progeto Sistema de Estoque\Metadados\UnCLIENTETypes.pas=C:\Progeto Sistema de Estoque\Unit1.pas</Transaction>
     <Transaction>2019/12/02 22:13:55.352,=C:\Progeto Sistema de Estoque\Unit1.pas</Transaction>
@@ -16,5 +16,11 @@
     <Transaction>2019/12/02 22:15:33.938,C:\Progeto Sistema de Estoque\Metadados\UnREGISTRARVENDATypes.pas=C:\Progeto Sistema de Estoque\Unit1.pas</Transaction>
     <Transaction>2019/12/02 22:15:49.985,=C:\Progeto Sistema de Estoque\Unit1.pas</Transaction>
     <Transaction>2019/12/02 22:16:02.702,C:\Progeto Sistema de Estoque\Metadados\UnVENDASTypes.pas=C:\Progeto Sistema de Estoque\Unit1.pas</Transaction>
+    <Transaction>2019/12/02 22:27:24.409,=C:\Progeto Sistema de Estoque\Unit1.pas</Transaction>
+    <Transaction>2019/12/02 22:27:55.012,C:\Progeto Sistema de Estoque\Units\UnFormCadastroSetor.pas=C:\Progeto Sistema de Estoque\Unit1.pas</Transaction>
+    <Transaction>2019/12/02 22:27:55.012,C:\Progeto Sistema de Estoque\Units\UnFormCadastroSetor.dfm=C:\Progeto Sistema de Estoque\Unit1.dfm</Transaction>
+    <Transaction>2019/12/02 22:28:04.418,=C:\Progeto Sistema de Estoque\Unit1.pas</Transaction>
+    <Transaction>2019/12/02 22:28:20.366,C:\Progeto Sistema de Estoque\Units\UnFormCadastroCargo.pas=C:\Progeto Sistema de Estoque\Unit1.pas</Transaction>
+    <Transaction>2019/12/02 22:28:20.366,C:\Progeto Sistema de Estoque\Units\UnFormCadastroCargo.dfm=C:\Progeto Sistema de Estoque\Unit1.dfm</Transaction>
   </Transactions>
 </BorlandProject>
