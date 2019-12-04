@@ -23,7 +23,6 @@ uses
   UnFormCadastroCliente in 'Units\UnFormCadastroCliente.pas' {FormCadastroCliente},
   UnFormTelaCarregamento in 'Units\UnFormTelaCarregamento.pas' {FormTelaCarregamento},
   UnFormPesquisaLKP in 'Frames\UnFormPesquisaLKP.pas' {FormPesquisaLkp},
-  UnLokupProdutos in 'Frames\UnLokupProdutos.pas' {LkpProdutos: TFrame},
   UnFormAtualizarEstoque in 'Units\UnFormAtualizarEstoque.pas' {FormAtualizarEstoque},
   UnFormPadraoFramework in 'Units\UnFormPadraoFramework.pas' {FormPadraoFramwork},
   UnFormCadastroEmpresa in 'Units\UnFormCadastroEmpresa.pas' {FormCadastroEmpresa},
@@ -36,7 +35,8 @@ uses
   UnREGISTRARVENDATypes in 'Metadados\UnREGISTRARVENDATypes.pas',
   UnVENDASTypes in 'Metadados\UnVENDASTypes.pas',
   UnFormCadastroSetor in 'Units\UnFormCadastroSetor.pas' {FormCadastroSetor},
-  UnFormCadastroCargo in 'Units\UnFormCadastroCargo.pas' {FormCadastroCargo};
+  UnFormCadastroCargo in 'Units\UnFormCadastroCargo.pas' {FormCadastroCargo},
+  UnFormPesquisaProdutos in 'Frames\UnFormPesquisaProdutos.pas' {FormPesquisaProdutos};
 
 {$R *.res}
 
@@ -55,5 +55,6 @@ begin
   Application.CreateForm(TFormLoginEmpresa, FormLoginEmpresa);
   Application.CreateForm(TFormCadastroSetor, FormCadastroSetor);
   Application.CreateForm(TFormCadastroCargo, FormCadastroCargo);
+  Application.CreateForm(TFormPesquisaProdutos, FormPesquisaProdutos);
   Application.Run;
 end.

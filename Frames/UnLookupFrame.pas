@@ -17,7 +17,6 @@ type
     lblCaptionLkp: TLabel;
     edtDescricao: TEdit;
     dbeCodigo: TDBEdit;
-    procedure btnAbrirConsultaClick(Sender: TObject);
     procedure edtCodigoKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
   public
@@ -39,8 +38,6 @@ type
     property CampoSalvarBanco: string read FCampoSalvarBanco
       write FCampoSalvarBanco;
     procedure CarregarSQL;
-    procedure AbrirFormPesquisaLkp;
-    constructor Create(AOwner: TComponent); virtual;
   end;
 
 implementation
@@ -49,25 +46,8 @@ uses
   UnFormPesquisaLKP;
 
 {$R *.dfm}
+
 { TLookupFrame }
-
-procedure TLookupFrame.AbrirFormPesquisaLkp;
-var
-  LCarregarFormPesquisa: TFormPesquisaLkp;
-begin
-  LCarregarFormPesquisa := TFormPesquisaLkp.Create(Self);
-  try
-    LCarregarFormPesquisa.ShowModal;
-  finally
-    FreeAndNil(LCarregarFormPesquisa);
-  end;
-end;
-
-procedure TLookupFrame.btnAbrirConsultaClick(Sender: TObject);
-begin
-  AbrirFormPesquisaLkp;
-end;
-
 procedure TLookupFrame.CarregarSQL;
 var
   LCarregarSQL: TFDQuery;
@@ -91,10 +71,6 @@ begin
   finally
     FreeAndNil(LCarregarSQL);
   end;
-end;
-
-constructor TLookupFrame.Create(AOwner: TComponent);
-begin
 end;
 
 procedure TLookupFrame.edtCodigoKeyDown(Sender: TObject; var Key: Word;

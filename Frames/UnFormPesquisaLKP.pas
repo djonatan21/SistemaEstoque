@@ -22,12 +22,16 @@ type
     dsPesquisa: TDataSource;
     pnlLookupPesquisa: TPanel;
     btnAbrirCadastro: TSpeedButton;
+    cbTipoFiltro: TComboBox;
+    cbFiltrarCampo: TComboBox;
     procedure btnClosePesquisaClick(Sender: TObject);
     procedure btnPesquisarClick(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+  protected
+    procedure CarregarItemCamposFiltro(ATexto, ACampoSQL: string); Virtual;
   end;
 
 var
@@ -42,6 +46,7 @@ uses
 
 var
   LFrame: TLookupFrame;
+  LItemsCampoPesquisa: array [0 .. 10] of string;
 
 procedure TFormPesquisaLkp.btnClosePesquisaClick(Sender: TObject);
 begin
@@ -58,6 +63,16 @@ begin
     sql.Add('WHERE ' + LFrame.FColunaNomePesqisa + '=' + edtPesquisa.Text);
     Open();
   end;
+end;
+
+procedure TFormPesquisaLkp.CarregarItemCamposFiltro(ATexto, ACampoSQL: string);
+var
+  I: integer;
+begin
+  cbFiltrarCampo.Items.Add(ATexto);
+  LItemsCampoPesquisa[I] := ACampoSQL;
+  I := I + 1;
+  inherited;
 end;
 
 end.

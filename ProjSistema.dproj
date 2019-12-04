@@ -175,10 +175,6 @@
         <DCCReference Include="Frames\UnFormPesquisaLKP.pas">
             <Form>FormPesquisaLkp</Form>
         </DCCReference>
-        <DCCReference Include="Frames\UnLokupProdutos.pas">
-            <Form>LkpProdutos</Form>
-            <DesignClass>TFrame</DesignClass>
-        </DCCReference>
         <DCCReference Include="Units\UnFormAtualizarEstoque.pas">
             <Form>FormAtualizarEstoque</Form>
         </DCCReference>
@@ -207,6 +203,10 @@
         </DCCReference>
         <DCCReference Include="Units\UnFormCadastroCargo.pas">
             <Form>FormCadastroCargo</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Frames\UnFormPesquisaProdutos.pas">
+            <Form>FormPesquisaProdutos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Debug">

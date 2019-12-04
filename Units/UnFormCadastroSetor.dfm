@@ -2,6 +2,29 @@ inherited FormCadastroSetor: TFormCadastroSetor
   Caption = 'Cadastro de Setor'
   PixelsPerInch = 96
   TextHeight = 13
+  inherited pgcFormCadastro: TPageControl
+    ActivePage = tsCadastro
+    inherited tsConsultas: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 616
+      ExplicitHeight = 496
+    end
+    inherited tsCadastro: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 616
+      ExplicitHeight = 496
+      inherited pgcCadastro: TPageControl
+        inherited tsCadastroPrincipal: TTabSheet
+          ExplicitLeft = 6
+          ExplicitTop = 26
+          ExplicitWidth = 608
+          ExplicitHeight = 419
+        end
+      end
+    end
+  end
   inherited pnlFoter: TPanel
     inherited lblStatus: TLabel
       Height = 15

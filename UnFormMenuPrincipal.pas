@@ -50,7 +50,6 @@ type
     btnFinalizarSistema: TSpeedButton;
     pgcTelaMenu: TPageControl;
     tsPlanoFundo: TTabSheet;
-    ToolMenu: TActionToolBar;
     tsCaixaVendas: TTabSheet;
     dbeVenda: TDBGrid;
     pnlOpcoes: TPanel;
@@ -110,6 +109,11 @@ type
     actCadastroCargo: TAction;
     SpeedButton3: TSpeedButton;
     SpeedButton11: TSpeedButton;
+    SpeedButton12: TSpeedButton;
+    SpeedButton13: TSpeedButton;
+    SpeedButton14: TSpeedButton;
+    SpeedButton15: TSpeedButton;
+    ToolMenu: TActionMainMenuBar;
     procedure FormShow(Sender: TObject);
     procedure imgBtnCadastroClick(Sender: TObject);
     procedure imgBtnCalculoClick(Sender: TObject);

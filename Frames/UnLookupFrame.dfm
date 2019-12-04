@@ -10,7 +10,7 @@ object LookupFrame: TLookupFrame
     AlignWithMargins = True
     Left = 0
     Top = 5
-    Width = 97
+    Width = 101
     Height = 16
     Margins.Left = 0
     Margins.Top = 5
@@ -24,8 +24,6 @@ object LookupFrame: TLookupFrame
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitLeft = 5
-    ExplicitHeight = 19
   end
   object btnAbrirConsulta: TSpeedButton
     Left = 145
@@ -94,7 +92,6 @@ object LookupFrame: TLookupFrame
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFEFEBEBD8CECFD8CECFDAD0D2E0D7D8F5F2F2FFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-    OnClick = btnAbrirConsultaClick
     ExplicitLeft = 90
     ExplicitTop = -1
     ExplicitHeight = 29

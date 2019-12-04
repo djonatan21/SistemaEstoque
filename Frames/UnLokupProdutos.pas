@@ -10,25 +10,22 @@ uses
 
 type
   TLkpProdutos = class(TLookupFrame)
+    procedure btnAbrirConsultaClick(Sender: TObject);
   private
     { Private declarations }
   public
-    constructor Create(AOwner: TComponent); override;
   end;
 
 implementation
 
+uses
+  UnTypesGeral, UnFormPesquisaProdutos;
 {$R *.dfm}
 { TLkpProdutos }
 
-constructor TLkpProdutos.Create(AOwner: TComponent);
+procedure TLkpProdutos.btnAbrirConsultaClick(Sender: TObject);
 begin
-  FColunaNomePesqisa := 'DESCRICAO';
-  FColunaCodigo := 'CODIGO';
-  FCaptionLKP := 'Produto:';
-  FCampoDescricao := 'DESCRICAO';
-  FNomeTabela := 'PRODUTOS';
-  inherited;
+  TGTypeGeral.CarregarFormulario(TFormPesquisaProdutos);
 end;
 
 end.

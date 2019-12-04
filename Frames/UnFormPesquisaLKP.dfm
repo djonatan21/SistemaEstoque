@@ -24,8 +24,8 @@ object FormPesquisaLkp: TFormPesquisaLkp
     ParentBackground = False
     TabOrder = 0
     object btnPesquisar: TSpeedButton
-      Left = 490
-      Top = 38
+      Left = 507
+      Top = 43
       Width = 34
       Height = 30
       Glyph.Data = {
@@ -88,9 +88,9 @@ object FormPesquisaLkp: TFormPesquisaLkp
       OnClick = btnPesquisarClick
     end
     object btnAbrirCadastro: TSpeedButton
-      Left = 534
+      Left = 546
       Top = 40
-      Width = 81
+      Width = 72
       Height = 28
       Caption = 'Cadastrar'
       Glyph.Data = {
@@ -125,9 +125,9 @@ object FormPesquisaLkp: TFormPesquisaLkp
     object dbGridPesquisa: TDBGrid
       AlignWithMargins = True
       Left = 8
-      Top = 73
+      Top = 88
       Width = 609
-      Height = 313
+      Height = 298
       Margins.Left = 7
       Margins.Top = 0
       Margins.Right = 7
@@ -142,9 +142,9 @@ object FormPesquisaLkp: TFormPesquisaLkp
       TitleFont.Style = []
     end
     object edtPesquisa: TEdit
-      Left = 190
-      Top = 40
-      Width = 297
+      Left = 251
+      Top = 46
+      Width = 255
       Height = 24
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -245,14 +245,39 @@ object FormPesquisaLkp: TFormPesquisaLkp
         ExplicitHeight = 31
       end
     end
+    object cbTipoFiltro: TComboBox
+      Left = 144
+      Top = 47
+      Width = 101
+      Height = 21
+      ItemIndex = 0
+      TabOrder = 3
+      Text = 'Inicia'
+      Items.Strings = (
+        'Inicia'
+        'Contem'
+        'Termina'
+        'Igual')
+    end
+    object cbFiltrarCampo: TComboBox
+      Left = 16
+      Top = 47
+      Width = 122
+      Height = 21
+      ItemIndex = 0
+      TabOrder = 4
+      Text = 'C'#243'digo'
+      Items.Strings = (
+        'C'#243'digo')
+    end
   end
   object SQLPesquisa: TFDQuery
     Connection = DmConexao.fdConect
-    Left = 48
-    Top = 32
+    Left = 120
+    Top = 192
   end
   object dsPesquisa: TDataSource
-    Left = 96
-    Top = 32
+    Left = 120
+    Top = 136
   end
 end
