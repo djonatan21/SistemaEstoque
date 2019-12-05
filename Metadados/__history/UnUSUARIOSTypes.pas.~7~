@@ -1,0 +1,24 @@
+unit UnUSUARIOSTypes;
+
+interface
+
+type
+  USUARIOS = class
+  const
+    NomeTabela = 'USUARIOS';
+    ID = '';
+    NOME = '';
+    SENHA = '';
+    IMAGEMPLANOFUNDO = '';
+    EMAIL = '';
+    EMPRESA = '';
+    USUARIO = '';
+    SETOR = '';
+    CARGO = '';
+    TIPOPERMICAO = '';
+
+  end;
+
+implementation
+
+end.

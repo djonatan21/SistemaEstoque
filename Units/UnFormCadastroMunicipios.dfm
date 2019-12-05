@@ -2,25 +2,30 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
   Caption = 'Cadastro de Municipios'
   PixelsPerInch = 96
   TextHeight = 13
+  inherited pnlOpcoes: TPanel
+    ExplicitHeight = 523
+  end
   inherited pgcFormCadastro: TPageControl
     ActivePage = tsCadastro
+    ExplicitHeight = 523
     inherited tsConsultas: TTabSheet
       ExplicitLeft = 4
       ExplicitTop = 24
       ExplicitWidth = 616
-      ExplicitHeight = 496
+      ExplicitHeight = 495
     end
     inherited tsCadastro: TTabSheet
       ExplicitLeft = 4
       ExplicitTop = 24
       ExplicitWidth = 616
-      ExplicitHeight = 496
+      ExplicitHeight = 495
       inherited pgcCadastro: TPageControl
+        ExplicitHeight = 446
         inherited tsCadastroPrincipal: TTabSheet
           ExplicitLeft = 4
           ExplicitTop = 24
           ExplicitWidth = 608
-          ExplicitHeight = 419
+          ExplicitHeight = 418
           object Label1: TLabel
             Left = 74
             Top = 28
@@ -66,19 +71,6 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
             Width = 51
             Height = 16
             Caption = 'DDD Tel:'
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Tahoma'
-            Font.Style = []
-            ParentFont = False
-          end
-          object Label5: TLabel
-            Left = 60
-            Top = 89
-            Width = 58
-            Height = 16
-            Caption = 'Cod. Pa'#237's:'
             Font.Charset = DEFAULT_CHARSET
             Font.Color = clWindowText
             Font.Height = -13
@@ -151,7 +143,7 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
             Font.Style = []
             NumbersOnly = True
             ParentFont = False
-            TabOrder = 4
+            TabOrder = 3
           end
           object edtDDD: TEdit
             Left = 124
@@ -165,7 +157,7 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
             Font.Style = []
             NumbersOnly = True
             ParentFont = False
-            TabOrder = 5
+            TabOrder = 4
           end
           object cbRegiao: TComboBox
             Left = 124
@@ -178,27 +170,13 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
             Font.Name = 'Tahoma'
             Font.Style = []
             ParentFont = False
-            TabOrder = 6
+            TabOrder = 5
             Items.Strings = (
               'SUL'
               'NORTE'
               'NORDESTE'
               'SUDESTE'
               'CENTRO OESTE')
-          end
-          object Edit1: TEdit
-            Left = 124
-            Top = 86
-            Width = 121
-            Height = 24
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -13
-            Font.Name = 'Tahoma'
-            Font.Style = []
-            NumbersOnly = True
-            ParentFont = False
-            TabOrder = 2
           end
           object Edit2: TEdit
             Left = 124
@@ -212,7 +190,7 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
             Font.Style = []
             NumbersOnly = True
             ParentFont = False
-            TabOrder = 3
+            TabOrder = 2
           end
         end
       end
@@ -222,5 +200,13 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
     inherited lblStatus: TLabel
       Height = 15
     end
+    inherited pgbAguarde: TProgressBar
+      ExplicitHeight = 16
+    end
+  end
+  inherited SqlCadastro: TFDQuery
+    SQL.Strings = (
+      'SELECT *'
+      ' FROM MUNICIPIO')
   end
 end

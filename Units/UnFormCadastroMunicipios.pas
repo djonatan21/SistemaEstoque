@@ -10,8 +10,7 @@ uses
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, System.Actions, Vcl.ActnList,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.ComCtrls, Vcl.StdCtrls,
-  Vcl.Grids, Vcl.DBGrids, Vcl.Buttons, Vcl.ExtCtrls, UnLookupFrame,
-  UnLokupProdutos;
+  Vcl.Grids, Vcl.DBGrids, Vcl.Buttons, Vcl.ExtCtrls;
 
 type
   TFormCadastroMunicipios = class(TFormPadraoCadastro)
@@ -24,9 +23,7 @@ type
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
-    Label5: TLabel;
     Label6: TLabel;
-    Edit1: TEdit;
     Edit2: TEdit;
     Label7: TLabel;
     procedure actNovoExecute(Sender: TObject);

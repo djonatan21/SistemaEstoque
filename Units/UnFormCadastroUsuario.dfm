@@ -280,13 +280,7 @@ inherited FormCadastroUsuario: TFormCadastroUsuario
       end
     end
   end
-  inherited pnlFoter: TPanel
-    inherited lblStatus: TLabel
-      Height = 15
-    end
-  end
   inherited SqlCadastro: TFDQuery
-    Active = True
     Left = 504
     Top = 32
   end

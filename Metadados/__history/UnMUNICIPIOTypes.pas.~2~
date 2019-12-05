@@ -1,0 +1,14 @@
+unit UnMUNICIPIOTypes;
+
+interface
+
+type
+  MUNICIPIO = class
+    ID NUMERIC(5, 0)PRIMARY KEY, NOME VARCHAR(100), ESTADO NUMERIC(2, 0),
+      IBGE NUMERIC(10, 0), DDD VARCHAR(5), PAIS VARCHAR(30),
+      CODIGOPAIS NUMERIC(10, 0), REGIAO
+  end;
+
+implementation
+
+end.

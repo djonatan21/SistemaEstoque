@@ -1,0 +1,21 @@
+inherited LookupFrameUF: TLookupFrameUF
+  Width = 544
+  ExplicitWidth = 544
+  inherited lblCaptionLkp: TLabel
+    Width = 52
+    Caption = '      UF:  '
+    ExplicitWidth = 52
+  end
+  inherited btnAbrirConsulta: TSpeedButton
+    Left = 100
+  end
+  inherited edtDescricao: TEdit
+    Left = 138
+    ExplicitLeft = 187
+    ExplicitHeight = 24
+  end
+  inherited dbeCodigo: TDBEdit
+    Left = 52
+    ExplicitLeft = 101
+  end
+end

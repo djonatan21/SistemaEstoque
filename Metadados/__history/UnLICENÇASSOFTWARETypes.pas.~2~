@@ -1,0 +1,14 @@
+unit UnLICENÇASSOFTWARETypes;
+
+interface
+
+type
+  LICENCASSOFTWARE = class
+  const
+    ID = '';
+    TIPO = '';
+  end;
+
+implementation
+
+end.

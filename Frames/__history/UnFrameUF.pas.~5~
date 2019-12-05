@@ -1,0 +1,33 @@
+unit UnFrameUF;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnLookupFrame, Vcl.Mask,
+  Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TLookupFrameUF = class(TLookupFrame)
+    procedure btnAbrirConsultaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+uses
+  UnTypesGeral;
+
+{$R *.dfm}
+
+procedure TLookupFrameUF.btnAbrirConsultaClick(Sender: TObject);
+begin
+  inherited;
+  TGTypeGeral.CarregarFormulario(TLookupFrameUF);
+end;
+
+end.

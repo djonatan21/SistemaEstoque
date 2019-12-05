@@ -1,0 +1,21 @@
+unit UnVENDASTypes;
+
+interface
+
+type
+  VENDAS = class
+  const
+    NomeTabela = '';
+    ID = '';
+    CODIGO = '';
+    CLIENTE = '';
+    VALOR = '';
+    DATA = '';
+    CAIXA = '';
+    OPERADOR = '';
+    DESCONTO = '';
+  end;
+
+implementation
+
+end.

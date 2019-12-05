@@ -11,8 +11,7 @@ uses
   Vcl.StdCtrls, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  Vcl.Buttons, System.ImageList, Vcl.ImgList, Vcl.Mask, Vcl.Grids, Vcl.DBGrids,
-  UnLookupFrame;
+  Vcl.Buttons, System.ImageList, Vcl.ImgList, Vcl.Mask, Vcl.Grids, Vcl.DBGrids;
 
 type
   TFormMenuPrincipal = class(TForm)
@@ -30,90 +29,56 @@ type
     tsCalculos: TTabSheet;
     TabSheet4: TTabSheet;
     tsCaixa: TTabSheet;
-    dbeImgPlanoFundo: TDBImage;
     tsConfig: TTabSheet;
     tsRelatorios: TTabSheet;
     btnCadastro: TSpeedButton;
     btnConfiguracoes: TSpeedButton;
     btnRelatorios: TSpeedButton;
     btnCalculos: TSpeedButton;
-    SpeedButton6: TSpeedButton;
+    btnCadastroProduto: TSpeedButton;
     btnCadastroCliente: TSpeedButton;
-    SpeedButton8: TSpeedButton;
+    btnCadastroFornecedor: TSpeedButton;
     actCadastroUsuario: TAction;
     btnLoginEmpresa: TSpeedButton;
-    SpeedButton5: TSpeedButton;
+    btnConfig: TSpeedButton;
     actLogin: TAction;
     actCompras: TAction;
     actVendas: TAction;
     BtnCaixa: TSpeedButton;
     btnFinalizarSistema: TSpeedButton;
     pgcTelaMenu: TPageControl;
-    tsPlanoFundo: TTabSheet;
-    tsCaixaVendas: TTabSheet;
-    dbeVenda: TDBGrid;
-    pnlOpcoes: TPanel;
     btnAbrirCaixa: TSpeedButton;
-    actCaixaVendas: TAction;
-    pnlSubTotal: TPanel;
-    Label2: TLabel;
-    Label1: TLabel;
-    Label3: TLabel;
-    pnlPrincipalCaixa: TPanel;
-    Panel4: TPanel;
-    Label7: TLabel;
-    lblTotalItemsCarinho: TLabel;
-    Panel5: TPanel;
-    dsVenda: TDataSource;
-    dsCaixa: TDataSource;
-    btnAdicionarItem: TSpeedButton;
-    btnDeletarItem: TSpeedButton;
-    btnSubTotal: TSpeedButton;
-    btnCanselarCaixa: TSpeedButton;
-    actFinalizarCaixa: TAction;
-    actAdicionarItem: TAction;
-    actRemoverItem: TAction;
-    actSubTotal: TAction;
-    edtSubTotal: TEdit;
-    edtDescontos: TEdit;
-    edtTotalVenda: TEdit;
     pnlFoter: TPanel;
     dsEmpresa: TDataSource;
-    GroupBox1: TGroupBox;
-    pnlLancamentos: TPanel;
-    edtCodigo: TMaskEdit;
-    edtQuantidade: TMaskEdit;
-    dbeImgProduto: TDBImage;
-    dbeImgEmpresa: TDBImage;
-    lblOperador: TLabel;
-    SpeedButton1: TSpeedButton;
+    btnCadastroUsuario: TSpeedButton;
     actCadadastroMunicipio: TAction;
-    SpeedButton2: TSpeedButton;
+    btnCadastroMunicipio: TSpeedButton;
     actCadastroEmpresa: TAction;
-    SpeedButton4: TSpeedButton;
-    SpeedButton7: TSpeedButton;
+    btnCadastroCargo: TSpeedButton;
+    btnCadastroEmpresa: TSpeedButton;
     actCadastroDepartamento: TAction;
-    SpeedButton9: TSpeedButton;
+    btnAtualizarEstoque: TSpeedButton;
     actConferenciaEstoque: TAction;
     pgbCarregar: TProgressBar;
     lblUsuario: TLabel;
     lblData: TLabel;
     lblEmpresa: TLabel;
     TimerCarregar: TTimer;
-    lblUnidade: TLabel;
     actAtualizarEstoque: TAction;
     lblNomeFantazia: TLabel;
-    SpeedButton10: TSpeedButton;
+    btnLoginUsuario: TSpeedButton;
     actLoginEmpresa: TAction;
     actCadastroSetor: TAction;
     actCadastroCargo: TAction;
-    SpeedButton3: TSpeedButton;
+    btnCadastroSetor: TSpeedButton;
     SpeedButton11: TSpeedButton;
     SpeedButton12: TSpeedButton;
-    SpeedButton13: TSpeedButton;
-    SpeedButton14: TSpeedButton;
-    SpeedButton15: TSpeedButton;
+    btnRelatorioCreditoClientes: TSpeedButton;
+    btnRelatorioCompras: TSpeedButton;
+    btnRelatorioVendas: TSpeedButton;
     ToolMenu: TActionMainMenuBar;
+    actAbrirCaixaVendas: TAction;
+    dbeImgPlanoFundo: TDBImage;
     procedure FormShow(Sender: TObject);
     procedure imgBtnCadastroClick(Sender: TObject);
     procedure imgBtnCalculoClick(Sender: TObject);
@@ -135,15 +100,6 @@ type
     procedure actCadastroFonecedorExecute(Sender: TObject);
     procedure actLoginExecute(Sender: TObject);
     procedure actCadastroUsuarioExecute(Sender: TObject);
-    procedure actCaixaVendasExecute(Sender: TObject);
-    procedure actFinalizarCaixaExecute(Sender: TObject);
-    procedure actAdicionarItemExecute(Sender: TObject);
-    procedure edtCodigoKeyDown(Sender: TObject; var Key: Word;
-      Shift: TShiftState);
-    procedure edtQuantidadeKeyDown(Sender: TObject; var Key: Word;
-      Shift: TShiftState);
-    procedure tsCaixaVendasShow(Sender: TObject);
-    procedure edtQuantidadeEnter(Sender: TObject);
     procedure actCadadastroMunicipioExecute(Sender: TObject);
     procedure TimerCarregarTimer(Sender: TObject);
     procedure actAtualizarEstoqueExecute(Sender: TObject);
@@ -152,10 +108,11 @@ type
     procedure actLoginEmpresaExecute(Sender: TObject);
     procedure actCadastroSetorExecute(Sender: TObject);
     procedure actCadastroCargoExecute(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure actAbrirCaixaVendasExecute(Sender: TObject);
   protected
     procedure SetConfigInicial;
     procedure SetComponentesVisual;
-    procedure SetConfigCaixa;
   end;
 
 var
@@ -164,86 +121,68 @@ var
 implementation
 
 uses
-  unDmconectConfigSistema, UnFormCadastroProduto, UnFormCofigSistema,
+  UnDmConectConfigSistema, UnFormCadastroProduto, UnFormCofigSistema,
   UnTypesGeral, UnFormCadastroCliente, UnFormcadastroFornecedor, UnFormLogin,
   UnFormCadastroUsuario, UnDmMenuPrincipal, UnTypesCarregarSQL,
   UnFormCadastroMunicipios, UnFormTelaCarregamento, UnFormAtualizarEstoque,
   UnFormCadastroEmpresa, UnFormCadastroDepartamento, UnFormLoginEmpresa,
-  UnFormCadastroSetor, UnFormCadastroCargo;
+  UnFormCadastroSetor, UnFormCadastroCargo, UnFormCaixaVendas;
 
 {$R *.dfm}
 
-procedure TFormMenuPrincipal.actAdicionarItemExecute(Sender: TObject);
+procedure TFormMenuPrincipal.actAbrirCaixaVendasExecute(Sender: TObject);
 begin
-  TCarregarSQL.AdicionarItemNaCompra;
+  TGTypeGeral.CarregarFormulario(TFormCaixaVendas, False);
 end;
 
 procedure TFormMenuPrincipal.actAtualizarEstoqueExecute(Sender: TObject);
 begin
-  TGTypeGeral.CarregarFormulario(TFormAtualizarEstoque);
+  TGTypeGeral.CarregarFormulario(TFormAtualizarEstoque, True);
 end;
 
 procedure TFormMenuPrincipal.actCadadastroMunicipioExecute(Sender: TObject);
 begin
-  TGTypeGeral.CarregarFormulario(TFormCadastroMunicipios);
+  TGTypeGeral.CarregarFormulario(TFormCadastroMunicipios, True);
 end;
 
 procedure TFormMenuPrincipal.actCadastroCargoExecute(Sender: TObject);
 begin
-  TGTypeGeral.CarregarFormulario(TFormCadastroCargo);
+  TGTypeGeral.CarregarFormulario(TFormCadastroCargo, True);
 end;
 
 procedure TFormMenuPrincipal.actCadastroClienteExecute(Sender: TObject);
 begin
-  TGTypeGeral.CarregarFormulario(TFormCadastroCliente);
+  TGTypeGeral.CarregarFormulario(TFormCadastroCliente, True);
 end;
 
 procedure TFormMenuPrincipal.actCadastroDepartamentoExecute(Sender: TObject);
 begin
-  TGTypeGeral.CarregarFormulario(TFormCadastroDepartamento);
+  TGTypeGeral.CarregarFormulario(TFormCadastroDepartamento, True);
 end;
 
 procedure TFormMenuPrincipal.actCadastroEmpresaExecute(Sender: TObject);
 begin
-  TGTypeGeral.CarregarFormulario(TFormCadastroEmpresa);
+  TGTypeGeral.CarregarFormulario(TFormCadastroEmpresa, True);
 end;
 
 procedure TFormMenuPrincipal.actCadastroFonecedorExecute(Sender: TObject);
 begin
-  TGTypeGeral.CarregarFormulario(TFormCadastroFornecedor);
+  TGTypeGeral.CarregarFormulario(TFormCadastroFornecedor, True);
 end;
 
 procedure TFormMenuPrincipal.actCadastroProdutoExecute(Sender: TObject);
 begin
-  TGTypeGeral.CarregarFormulario(TFormCadastroProduto);
+  TGTypeGeral.CarregarFormulario(TFormCadastroProduto, True);
 end;
 
 procedure TFormMenuPrincipal.actCadastroSetorExecute(Sender: TObject);
 begin
-  TGTypeGeral.CarregarFormulario(TFormCadastroSetor);
-end;
-
-procedure TFormMenuPrincipal.actCaixaVendasExecute(Sender: TObject);
-begin
-  tsCaixaVendas.Show;
-  TGTypeGeral.SetFocusCampo(Sender, edtCodigo);
-  pnlMenuLateral.Visible := False;
-  pnlMenuTop.Visible := False;
-  ToolMenu.Visible := False;
-  SetConfigCaixa;
+  TGTypeGeral.CarregarFormulario(TFormCadastroSetor, True);
 end;
 
 procedure TFormMenuPrincipal.actConfigSistemaExecute(Sender: TObject);
 begin
-  TGTypeGeral.CarregarFormulario(TFormConfig);
-end;
-
-procedure TFormMenuPrincipal.actFinalizarCaixaExecute(Sender: TObject);
-begin
-  tsPlanoFundo.Show;
-  pnlMenuTop.Visible := true;
-  pnlMenuLateral.Visible := true;
-  ToolMenu.Visible := true;
+  TGTypeGeral.CarregarFormulario(TFormConfig, True);
 end;
 
 procedure TFormMenuPrincipal.actFinalizarSistemaExecute(Sender: TObject);
@@ -255,17 +194,17 @@ end;
 
 procedure TFormMenuPrincipal.actLoginEmpresaExecute(Sender: TObject);
 begin
-  TGTypeGeral.CarregarFormulario(TFormLoginEmpresa);
+  TGTypeGeral.CarregarFormulario(TFormLoginEmpresa, True);
 end;
 
 procedure TFormMenuPrincipal.actLoginExecute(Sender: TObject);
 begin
-  TGTypeGeral.CarregarFormulario(TFormLogin);
+  TGTypeGeral.CarregarFormulario(TFormLogin, True);
 end;
 
 procedure TFormMenuPrincipal.actCadastroUsuarioExecute(Sender: TObject);
 begin
-  TGTypeGeral.CarregarFormulario(TFormCadastroUsuario);
+  TGTypeGeral.CarregarFormulario(TFormCadastroUsuario, True);
 end;
 
 procedure TFormMenuPrincipal.btnCadastroClick(Sender: TObject);
@@ -298,33 +237,12 @@ begin
   tsRelatorios.Show;
 end;
 
-procedure TFormMenuPrincipal.edtCodigoKeyDown(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
+procedure TFormMenuPrincipal.FormCreate(Sender: TObject);
 begin
-  if Key = VK_RETURN then
-  begin
-    if DmMenuPrincipal.SQLCaixa.FieldByName('UNIDADE').AsInteger = 0 then
-      lblUnidade.Caption := 'Un'
-    else
-      lblUnidade.Caption := 'Kg';
-    TCarregarSQL.ConsultarProduto(StrToInt(edtCodigo.Text));
-    TGTypeGeral.SetFocusCampo(Sender, edtQuantidade);
-  end;
-end;
-
-procedure TFormMenuPrincipal.edtQuantidadeEnter(Sender: TObject);
-begin
-  actAdicionarItem.Execute;
-end;
-
-procedure TFormMenuPrincipal.edtQuantidadeKeyDown(Sender: TObject;
-  var Key: Word; Shift: TShiftState);
-begin
-  if Key = VK_RETURN then
-  begin
-    actAdicionarItem.Execute;
-    TGTypeGeral.SetFocusCampo(Sender, edtCodigo);
-  end;
+  DmMenuPrincipal.SQLVenda.Active := True;
+  DmMenuPrincipal.SQLCaixa.Active := True;
+  DmMenuPrincipal.SQLConfigSistema.Active := True;
+  DmMenuPrincipal.SQLConfigEmpresa.Active := True;
 end;
 
 procedure TFormMenuPrincipal.FormShow(Sender: TObject);
@@ -373,25 +291,15 @@ begin
     DmMenuPrincipal.SQLConfigEmpresa.FieldByName('NOMEFANTAZIA').AsString;
 end;
 
-procedure TFormMenuPrincipal.SetConfigCaixa;
-begin
-  lblOperador.Caption := 'OPERADOR : ' + '00' +
-    IntToStr(DmMenuPrincipal.SQLConfigSistema.FieldByName('ID').AsInteger) +
-    ' - ' + DmMenuPrincipal.SQLConfigSistema.FieldByName('NOME').AsString;
-end;
-
 procedure TFormMenuPrincipal.SetConfigInicial;
 begin
-  tsPlanoFundo.TabVisible := False;
-  tsCaixaVendas.TabVisible := False;
   tsRelatorios.TabVisible := False;
   tsConfig.TabVisible := False;
   tsCadastro.TabVisible := False;
   tsCalculos.TabVisible := False;
   tsCaixa.TabVisible := False;
   tsCadastro.Show;
-  tsPlanoFundo.Show;
-  pnlMenuTop.Visible := true;
+  pnlMenuTop.Visible := True;
   SetComponentesVisual;
 end;
 
@@ -403,11 +311,6 @@ begin
     TimerCarregar.Destroy;
     pgbCarregar.Position := 0;
   end;
-end;
-
-procedure TFormMenuPrincipal.tsCaixaVendasShow(Sender: TObject);
-begin
-  edtCodigo.SetFocus;
 end;
 
 procedure TFormMenuPrincipal.btnFinalizarSistemaClick(Sender: TObject);

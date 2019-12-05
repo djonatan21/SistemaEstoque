@@ -80,14 +80,15 @@ end;
 
 procedure TFormCadastroUsuario.actFiltrarExecute(Sender: TObject);
 begin
-  FiltrarSQL(edtConsultas.Text, NomeTabela);
+  FiltrarSQL(edtConsultas.Text, USUARIOS.NomeTabela);
   inherited;
 end;
 
 procedure TFormCadastroUsuario.actNovoExecute(Sender: TObject);
 begin
   inherited;
-  dbEdtCodigo.Text := IntToStr(TCarregarSQL.CarregarProximoID(ID, NomeTabela));
+  dbEdtCodigo.Text := IntToStr(TCarregarSQL.CarregarProximoID(USUARIOS.ID,
+    USUARIOS.NomeTabela));
   CarregarDadosCadastros;
   TGTypeGeral.SetFocusCampo(Sender, dbEdtNome);
 end;
@@ -96,7 +97,7 @@ procedure TFormCadastroUsuario.actSalvarExecute(Sender: TObject);
 begin
   if dbEdtSenha.Text = edtConfirmarSenha.Text then
   begin
-    SqlCadastro.ParamByName(SENHA).AsString := dbEdtSenha.Text;
+    SqlCadastro.ParamByName(USUARIOS.SENHA).AsString := dbEdtSenha.Text;
     inherited;
   end
   else
@@ -119,7 +120,7 @@ procedure TFormCadastroUsuario.SetConfigInicial;
 begin
   inherited;
   // edtConfirmarSenha.Text := SqlCadastro.ParamByName(SENHA).AsString;
-  CarregarItemComboBox('Codigo', ID);
+  CarregarItemComboBox('Codigo',USUARIOS.ID);
 end;
 
 procedure TFormCadastroUsuario.Validacoes;

@@ -1,0 +1,19 @@
+unit UnREGISTRARVENDATypes;
+
+interface
+
+type
+  REGISTRARVENDA = class
+    ITEM = '';
+    CODIGO_PRODUTO = '';
+    VALOR = '';
+    QUANTIDADE = '';
+    VALOR_TOTAL = '';
+    UNIDADE = '';
+    CODIGO_BARRA = '';
+    DESCRICAO = '';
+  end;
+
+implementation
+
+end.

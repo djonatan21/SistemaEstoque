@@ -1,0 +1,30 @@
+unit UnCLIENTETypes;
+
+interface
+
+type
+  CLIENTES = class
+  const
+    ID = '';
+    NOME = '';
+    DATANASCIMENTO = '';
+    CPF = '';
+    RG = '';
+    MUNICIPIO = '';
+    COMPLEMENTO = '';
+    ENDERECO = '';
+    TELEFONE = '';
+    CELULAR = '';
+    SEXO = '';
+    CEP = '';
+    REFERENCIA = '';
+    CODIGO = '';
+    EMAIL = '';
+    IMAGEM = '';
+    BAIRRO = '';
+    UF = '';
+  end;
+
+implementation
+
+end.

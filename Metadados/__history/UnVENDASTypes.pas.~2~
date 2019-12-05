@@ -1,0 +1,12 @@
+unit UnVENDASTypes;
+
+interface
+
+type
+  VENDAS = class
+
+  end;
+
+implementation
+
+end.

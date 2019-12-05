@@ -15,14 +15,12 @@ uses
   UnPRODUTOSTypes in 'Metadados\UnPRODUTOSTypes.pas',
   UnUSUARIOSTypes in 'Metadados\UnUSUARIOSTypes.pas',
   UnDmValidacoesTypesGeral in 'Units\UnDmValidacoesTypesGeral.pas' {DmValidar: TDataModule},
-  UnLookupFrame in 'Frames\UnLookupFrame.pas' {LookupFrame: TFrame},
   UnFormCadastroMunicipios in 'Units\UnFormCadastroMunicipios.pas' {FormCadastroMunicipios},
   UnDmMenuPrincipal in 'Units\UnDmMenuPrincipal.pas' {DmMenuPrincipal: TDataModule},
   UnTypesValidar in 'Units\UnTypesValidar.pas',
   UnTypesCarregarSQL in 'Units\UnTypesCarregarSQL.pas',
   UnFormCadastroCliente in 'Units\UnFormCadastroCliente.pas' {FormCadastroCliente},
   UnFormTelaCarregamento in 'Units\UnFormTelaCarregamento.pas' {FormTelaCarregamento},
-  UnFormPesquisaLKP in 'Frames\UnFormPesquisaLKP.pas' {FormPesquisaLkp},
   UnFormAtualizarEstoque in 'Units\UnFormAtualizarEstoque.pas' {FormAtualizarEstoque},
   UnFormPadraoFramework in 'Units\UnFormPadraoFramework.pas' {FormPadraoFramwork},
   UnFormCadastroEmpresa in 'Units\UnFormCadastroEmpresa.pas' {FormCadastroEmpresa},
@@ -36,7 +34,8 @@ uses
   UnVENDASTypes in 'Metadados\UnVENDASTypes.pas',
   UnFormCadastroSetor in 'Units\UnFormCadastroSetor.pas' {FormCadastroSetor},
   UnFormCadastroCargo in 'Units\UnFormCadastroCargo.pas' {FormCadastroCargo},
-  UnFormPesquisaProdutos in 'Frames\UnFormPesquisaProdutos.pas' {FormPesquisaProdutos};
+  UnFormCaixaVendas in 'Units\UnFormCaixaVendas.pas' {FormCaixaVendas},
+  UnFormPadraoPesquisaLookupFrame in 'Frames\Form Pesquisa\UnFormPadraoPesquisaLookupFrame.pas' {FormPesquisaLkp};
 
 {$R *.res}
 
@@ -47,14 +46,5 @@ begin
   Application.CreateForm(TDmValidar, DmValidar);
   Application.CreateForm(TDmMenuPrincipal, DmMenuPrincipal);
   Application.CreateForm(TFormTelaCarregamento, FormTelaCarregamento);
-  Application.CreateForm(TFormPesquisaLkp, FormPesquisaLkp);
-  Application.CreateForm(TFormAtualizarEstoque, FormAtualizarEstoque);
-  Application.CreateForm(TFormPadraoFramwork, FormPadraoFramwork);
-  Application.CreateForm(TFormCadastroEmpresa, FormCadastroEmpresa);
-  Application.CreateForm(TFormCadastroDepartamento, FormCadastroDepartamento);
-  Application.CreateForm(TFormLoginEmpresa, FormLoginEmpresa);
-  Application.CreateForm(TFormCadastroSetor, FormCadastroSetor);
-  Application.CreateForm(TFormCadastroCargo, FormCadastroCargo);
-  Application.CreateForm(TFormPesquisaProdutos, FormPesquisaProdutos);
   Application.Run;
 end.

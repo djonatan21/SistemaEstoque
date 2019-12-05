@@ -1,0 +1,21 @@
+unit UnMUNICIPIOTypes;
+
+interface
+
+type
+  MUNICIPIO = class
+  const
+
+    ID = '';
+    NOME = '';
+    ESTADO = '';
+    IBGE = '';
+    DDD = '';
+    PAIS = '';
+    CODIGOPAIS = '';
+    REGIAO = '';
+  end;
+
+implementation
+
+end.

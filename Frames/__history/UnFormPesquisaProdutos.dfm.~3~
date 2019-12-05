@@ -1,0 +1,80 @@
+inherited FormPesquisaProdutos: TFormPesquisaProdutos
+  ClientHeight = 434
+  ClientWidth = 643
+  ExplicitWidth = 643
+  ExplicitHeight = 434
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pnlLookupPesquisa: TPanel
+    Width = 643
+    Height = 434
+    ExplicitWidth = 643
+    ExplicitHeight = 434
+    inherited dbGridPesquisa: TDBGrid
+      Top = 110
+      Width = 627
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'CODIGO'
+          Title.Caption = 'C'#243'digo'
+          Width = 49
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'DESCRICAO'
+          Title.Caption = 'Descri'#231#227'o'
+          Width = 146
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'CODIGO_BARRA'
+          Title.Caption = 'C'#243'digo de Barra'
+          Width = 127
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'QUANTIDADE'
+          Title.Caption = 'Quantidade'
+          Width = 66
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'UNIDADE'
+          Title.Caption = 'Unidade'
+          Width = 53
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'VALOR_VENDA'
+          Title.Caption = 'Pre'#231'o Venda'
+          Width = 80
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'VALOR_CUSTO'
+          Title.Caption = 'Pre'#231'o Custo'
+          Width = 83
+          Visible = True
+        end>
+    end
+    inherited pnlMenuTop: TPanel
+      Width = 641
+      ExplicitWidth = 641
+      inherited btnClosePesquisa: TSpeedButton
+        Left = 593
+      end
+    end
+  end
+  inherited SQLPesquisa: TFDQuery
+    Active = True
+    SQL.Strings = (
+      'SELECT * FROM PRODUTOS')
+  end
+end

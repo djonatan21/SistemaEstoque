@@ -1,19 +1,22 @@
 inherited FormCadastroProduto: TFormCadastroProduto
   Caption = 'Cadastro de Produtos'
-  ExplicitTop = -16
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlOpcoes: TPanel
-    ExplicitHeight = 558
+    ExplicitHeight = 523
     inherited btnSair: TSpeedButton
       Top = 464
       ExplicitTop = 464
     end
   end
   inherited pgcFormCadastro: TPageControl
-    ExplicitHeight = 558
+    ActivePage = tsCadastro
+    ExplicitHeight = 523
     inherited tsConsultas: TTabSheet
-      ExplicitHeight = 530
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 616
+      ExplicitHeight = 495
       inherited pnlConsultas: TPanel
         inherited gprFiltro: TGroupBox
           Width = 165
@@ -46,21 +49,21 @@ inherited FormCadastroProduto: TFormCadastroProduto
             Expanded = False
             FieldName = 'CODIGO'
             Title.Caption = 'C'#243'digo'
-            Width = 52
+            Width = 57
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'DESCRICAO'
             Title.Caption = 'Descri'#231#227'o'
-            Width = 142
+            Width = 149
             Visible = True
           end
           item
             Expanded = False
             FieldName = 'CODIGO_BARRA'
             Title.Caption = 'C'#243'digo de Barras'
-            Width = 112
+            Width = 100
             Visible = True
           end
           item
@@ -88,17 +91,23 @@ inherited FormCadastroProduto: TFormCadastroProduto
             Expanded = False
             FieldName = 'VALOR_VENDA'
             Title.Caption = 'Pre'#231'o de Venda'
-            Width = 81
+            Width = 82
             Visible = True
           end>
       end
     end
     inherited tsCadastro: TTabSheet
-      ExplicitHeight = 530
+      ExplicitLeft = 4
+      ExplicitTop = 24
+      ExplicitWidth = 616
+      ExplicitHeight = 495
       inherited pgcCadastro: TPageControl
-        ExplicitHeight = 481
+        ExplicitHeight = 446
         inherited tsCadastroPrincipal: TTabSheet
-          ExplicitHeight = 453
+          ExplicitLeft = 4
+          ExplicitTop = 24
+          ExplicitWidth = 608
+          ExplicitHeight = 418
           object Label1: TLabel
             Left = 78
             Top = 3
@@ -562,7 +571,12 @@ inherited FormCadastroProduto: TFormCadastroProduto
     end
   end
   inherited pnlFoter: TPanel
-    ExplicitTop = 558
+    inherited lblStatus: TLabel
+      Height = 15
+    end
+    inherited pgbAguarde: TProgressBar
+      ExplicitHeight = 16
+    end
   end
   inherited SqlCadastro: TFDQuery
     SQL.Strings = (

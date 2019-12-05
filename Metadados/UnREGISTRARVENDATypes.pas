@@ -2,6 +2,22 @@ unit UnREGISTRARVENDATypes;
 
 interface
 
+type
+  REGISTRARVENDA = class
+  const
+    NomeTabela = 'REGISTRARVENDA';
+
+    ITEM = 'ITEM';
+    CODIGO_VENDA = 'CODIGO_VENDA';
+    CODIGO_PRODUTO = 'CODIGO_PRODUTO';
+    VALOR = 'VALOR';
+    QUANTIDADE = 'QUANTIDADE';
+    VALOR_TOTAL = 'VALOR_TOTAL';
+    UNIDADE = 'UNIDADE';
+    CODIGO_BARRA = 'CODIGO_BARRA';
+    DESCRICAO = 'DESCRICAO';
+  end;
+
 implementation
 
 end.

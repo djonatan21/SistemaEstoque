@@ -1,0 +1,12 @@
+unit UnREGISTRARVENDATypes;
+
+interface
+
+type
+  REGISTRARVENDA = class
+
+  end;
+
+implementation
+
+end.

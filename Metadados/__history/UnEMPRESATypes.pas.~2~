@@ -1,0 +1,26 @@
+unit UnEMPRESATypes;
+
+interface
+
+type
+  TEMPRESA = class
+    ID = '';
+    NOME = '';
+
+    CNPJ = '';
+
+    DATAINICIO = '';
+    DATAFIM = '';
+    MUNICIPIO = '';
+    UF = '';
+    BAIRRO = '';
+    NUMERO = '';
+    TELEFONE = '';
+    LOGO = '';
+    NOMEFANTAZIA = '';
+    TIPOLICENCA = '';
+  end;
+
+implementation
+
+end.

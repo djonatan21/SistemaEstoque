@@ -2,16 +2,23 @@ unit UnUSUARIOSTypes;
 
 interface
 
-const
-  NomeTabela = 'USUARIOS';
-  // Primary Key
-  ID = 'ID';
+type
+  USUARIOS = class
+  const
+    NomeTabela = 'USUARIOS';
 
-  NOME = 'NOME';
-  SENHA = 'SENHA';
-  ImgPlanoFundo = 'ImgPlanoFundo';
-  EMAIL = 'EMAIL';
-  EMPRESA = 'EMPRESA';
+    ID = 'ID';
+    NOME = 'NOME';
+    SENHA = 'SENHA';
+    IMAGEMPLANOFUNDO = 'IMAGEMPLANOFUNDO';
+    EMAIL = 'EMAIL';
+    EMPRESA = 'EMPRESA';
+    USUARIO = 'USUARIO';
+    SETOR = 'SETOR';
+    CARGO = 'CARGO';
+    TIPOPERMICAO = 'TIPOPERMICAO';
+
+  end;
 
 implementation
 

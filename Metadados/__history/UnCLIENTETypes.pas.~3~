@@ -1,0 +1,10 @@
+unit UnCLIENTETypes;
+
+interface
+
+type
+  CLIENTES = class
+
+implementation
+
+end.

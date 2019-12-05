@@ -1,0 +1,13 @@
+unit UnVENDASTypes;
+
+interface
+
+type
+  VENDAS = class
+  const
+
+  end;
+
+implementation
+
+end.

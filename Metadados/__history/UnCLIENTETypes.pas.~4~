@@ -1,0 +1,13 @@
+unit UnCLIENTETypes;
+
+interface
+
+type
+  CLIENTES = class
+  const
+
+  end;
+
+implementation
+
+end.

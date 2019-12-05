@@ -1,0 +1,30 @@
+unit UnPRODUTOSTypes;
+
+interface
+
+type
+  PRODUTOS = class
+  const
+    NomeTabela = 'PRODUTOS';
+    ID = '';
+    CODIGO = '';
+    DESCRICAO = '';
+    VALOR_VENDA = '';
+    VALOR_COMPRA = '';
+    QUANTIDADE = '';
+    IMAGEM = '';
+    CODIGO_BARRA = '';
+    DATACOMPRA = '';
+    UNIDADE = '';
+    CATEGORIA = '';
+    MARCA = '';
+    LOCALIZACAO = '';
+    LIMITEESTOQUE = '';
+    OBSERVACOES = '';
+    PESOBRUTO = '';
+    PESOLIQUIDO = '';
+  end;
+
+implementation
+
+end.

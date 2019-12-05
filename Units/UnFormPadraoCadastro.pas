@@ -89,6 +89,7 @@ type
     procedure ValidarEmail(Sender: TObject; dbeEdit: TEdit;
       ANomeCampo, ATextoEmail: string); virtual;
     procedure CarregarBarraProgresso; virtual;
+    procedure ControlaLabelStatusFrom;
   end;
 
 var
@@ -177,9 +178,12 @@ begin
   if dsCadastro.State in [dsInsert, dsEdit] then
   begin
     SqlCadastro.Post;
+    SQLConsultas.Active := False;
+    SQLConsultas.Active := True;
     // SqlCadastro.ApplyUpdates(-1);
     SetConfigInicial;
     tsConsultas.Show;
+    TGTypeGeral.SetFocusCampo(Sender, edtConsultas);
   end;
 end;
 
@@ -217,11 +221,25 @@ end;
 
 procedure TFormPadraoCadastro.ConfigVisual;
 begin
-  tsConsultas.TabVisible := false;
-  tsCadastro.TabVisible := false;
+  tsConsultas.TabVisible := False;
+  tsCadastro.TabVisible := False;
   tsConsultas.Show;
   cbxTipoFiltro.ItemIndex := 0;
   cbxModoFiltro.ItemIndex := 0;
+end;
+
+procedure TFormPadraoCadastro.ControlaLabelStatusFrom;
+begin
+  case SqlCadastro.State of
+    dsInsert:
+      lblStatus.Caption := 'Inserindo Registro  ';
+    dsEdit:
+      lblStatus.Caption := 'Editando Registro  ';
+    dsBrowse:
+      lblStatus.Caption := 'Navegando  ';
+  end;
+  if dsConsultas.State = dsFilter then
+    lblStatus.Caption := 'Consultado Registro  ';
 end;
 
 procedure TFormPadraoCadastro.edtConsultasChange(Sender: TObject);
@@ -276,6 +294,7 @@ begin
   btnAvancar.Enabled := not(SqlCadastro.State in [dsInsert]);
   btnVoltar.Enabled := not(SqlCadastro.State in [dsInsert]);
   btnUltimo.Enabled := not(SqlCadastro.State in [dsInsert]);
+  ControlaLabelStatusFrom;
 end;
 
 procedure TFormPadraoCadastro.ValidarCamposTexto(Sender: TObject;
@@ -297,7 +316,7 @@ begin
     if ATextoEmail[I] = '@' then
       exit
     else
-      LValidou := false;
+      LValidou := False;
   end;
   if LValidou then
     ShowMessage('Campo [' + ANomeCampo + '] é de preemchimento obrigatório');
