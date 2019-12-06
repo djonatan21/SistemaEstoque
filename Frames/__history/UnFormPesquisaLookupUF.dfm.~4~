@@ -1,0 +1,22 @@
+inherited Form1: TForm1
+  Caption = 'Form1'
+  ClientHeight = 201
+  ClientWidth = 447
+  ExplicitWidth = 447
+  ExplicitHeight = 201
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited dbConsultas: TDBGrid
+    Top = -208
+    Width = 447
+  end
+  inherited pnlMenuTop: TPanel
+    Width = 447
+    inherited btnFexarPesquisa: TSpeedButton
+      Left = 399
+    end
+    inherited SpeedButton1: TSpeedButton
+      Left = 350
+    end
+  end
+end

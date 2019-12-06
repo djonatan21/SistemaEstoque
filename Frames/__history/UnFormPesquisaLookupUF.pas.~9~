@@ -1,0 +1,53 @@
+unit UnFormPesquisaLookupUF;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnFormPadraoPesquisaLookupFrame,
+  Data.DB, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Buttons,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TFormPesquisaUF = class(TFormPesquisaLookup)
+    FDQuery1: TFDQuery;
+    procedure btnPesquisarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FormPesquisaUF: TFormPesquisaUF;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormPesquisaUF.btnPesquisarClick(Sender: TObject);
+begin
+  inherited;
+  with SQL do
+  begin
+ Close;
+ SQL.Clear;
+ sql.Add('SELECT *');
+ sql.Add('FROM ESTADO');
+ sql.Add('WHERE ESTADO.');
+ case cbTipoFiltro of
+ 1:
+sql.Add('CODIGO LIKE ' + QuotedStr('%'+edtPesquisar.Text));
+2:
+sql.Add('ESTADO LIKE ' + QuotedStr('%'+edtPesquisar.Text));
+3:
+sql.Add('UF LIKE ' + QuotedStr('%'+edtPesquisar.Text));
+ end;
+
+  end;
+end;
+
+end.

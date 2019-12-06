@@ -1,0 +1,18 @@
+inherited FormPesquisaUF: TFormPesquisaUF
+  Caption = 'Pesquisa de UF'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited btnPesquisar: TSpeedButton
+    Left = 494
+    ExplicitLeft = 494
+  end
+  inherited pnlMenuTop: TPanel
+    ExplicitWidth = 650
+  end
+  inherited edtPesquisar: TEdit
+    Left = 218
+    Top = 44
+    ExplicitLeft = 218
+    ExplicitTop = 44
+  end
+end

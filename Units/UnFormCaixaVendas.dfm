@@ -1,15 +1,12 @@
 inherited FormCaixaVendas: TFormCaixaVendas
-  BorderIcons = []
+  BorderIcons = [biSystemMenu]
   Caption = 'Caixa de vendas'
   ClientHeight = 884
   ClientWidth = 1300
   ParentBiDiMode = False
   Position = poDefault
   Visible = True
-  WindowState = wsMaximized
-  StyleElements = []
   OnShow = FormShow
-  ExplicitTop = -307
   ExplicitWidth = 1300
   ExplicitHeight = 884
   PixelsPerInch = 96
@@ -27,8 +24,6 @@ inherited FormCaixaVendas: TFormCaixaVendas
     ParentBackground = False
     TabOrder = 0
     VerticalAlignment = taAlignTop
-    ExplicitWidth = 1110
-    ExplicitHeight = 565
     object pnlOpcoes: TPanel
       Left = 0
       Top = 745
@@ -36,8 +31,6 @@ inherited FormCaixaVendas: TFormCaixaVendas
       Height = 130
       Align = alBottom
       TabOrder = 0
-      ExplicitTop = 717
-      ExplicitWidth = 1146
       object lblTotalItemsCarinho: TLabel
         Left = 555
         Top = 3
@@ -363,7 +356,6 @@ inherited FormCaixaVendas: TFormCaixaVendas
         Color = clInactiveCaption
         ParentBackground = False
         TabOrder = 0
-        ExplicitLeft = 852
         object Label2: TLabel
           Left = 17
           Top = 8
@@ -641,7 +633,6 @@ inherited FormCaixaVendas: TFormCaixaVendas
       Color = clYellow
       ParentBackground = False
       TabOrder = 2
-      ExplicitWidth = 1146
       object Label7: TLabel
         Left = 16
         Top = 12
@@ -663,8 +654,6 @@ inherited FormCaixaVendas: TFormCaixaVendas
       Height = 9
       Align = alBottom
       TabOrder = 3
-      ExplicitTop = 847
-      ExplicitWidth = 1146
     end
     object GroupBox1: TGroupBox
       AlignWithMargins = True
@@ -682,8 +671,6 @@ inherited FormCaixaVendas: TFormCaixaVendas
       ParentBiDiMode = False
       ParentFont = False
       TabOrder = 4
-      ExplicitLeft = -720
-      ExplicitHeight = 615
       object lblOperador: TLabel
         Left = 520
         Top = 455

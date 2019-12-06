@@ -1,0 +1,15 @@
+inherited Form1: TForm1
+  Caption = 'Form1'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited btnPesquisar: TSpeedButton
+    Left = 494
+    ExplicitLeft = 494
+  end
+  inherited edtPesquisar: TEdit
+    Left = 218
+    Top = 44
+    ExplicitLeft = 218
+    ExplicitTop = 44
+  end
+end

@@ -132,7 +132,7 @@ uses
 
 procedure TFormMenuPrincipal.actAbrirCaixaVendasExecute(Sender: TObject);
 begin
-  TGTypeGeral.CarregarFormulario(TFormCaixaVendas, False);
+  TGTypeGeral.CarregarFormulario(TFormCaixaVendas, True);
 end;
 
 procedure TFormMenuPrincipal.actAtualizarEstoqueExecute(Sender: TObject);

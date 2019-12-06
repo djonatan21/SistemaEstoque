@@ -1,0 +1,10 @@
+inherited LookupFrameUF: TLookupFrameUF
+  inherited btnAbrirPesquisa: TSpeedButton
+    OnClick = btnAbrirPesquisaClick
+  end
+  inherited dbeCodigo: TDBEdit
+    OnEnter = edtCodigoEnter
+    ExplicitLeft = 45
+    ExplicitHeight = 26
+  end
+end

@@ -1,0 +1,12 @@
+inherited LookupFrameUF: TLookupFrameUF
+  inherited lblDescricao: TLabel
+    ExplicitLeft = 0
+    ExplicitTop = 0
+    ExplicitHeight = 16
+  end
+  inherited edtCodigo: TDBEdit
+    ExplicitLeft = 68
+    ExplicitTop = 0
+    ExplicitHeight = 21
+  end
+end

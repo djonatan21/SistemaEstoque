@@ -1,0 +1,33 @@
+unit UnLookupFrameUF;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UnLookupFramePadrao,
+  Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.Buttons;
+
+type
+  TLookupFrameUF = class(TLookupFramePadrao)
+    procedure btnAbrirPesquisaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+uses
+  UnTypesGeral, UnFormPesquisaLookupUF;
+
+{$R *.dfm}
+
+procedure TLookupFrameUF.btnAbrirPesquisaClick(Sender: TObject);
+begin
+  inherited;
+  TGTypeGeral.CarregarFormulario(TFormPesquisaUF, True);
+end;
+
+end.
