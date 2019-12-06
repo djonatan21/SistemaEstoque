@@ -22,8 +22,8 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
       inherited pgcCadastro: TPageControl
         ExplicitHeight = 446
         inherited tsCadastroPrincipal: TTabSheet
-          ExplicitLeft = 4
-          ExplicitTop = 24
+          ExplicitLeft = 6
+          ExplicitTop = 26
           ExplicitWidth = 608
           ExplicitHeight = 418
           object Label1: TLabel
@@ -192,6 +192,42 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
             ParentFont = False
             TabOrder = 2
           end
+          inline LookupFrameUF1: TLookupFrameUF
+            Left = 79
+            Top = 84
+            Width = 400
+            Height = 26
+            VertScrollBar.Smooth = True
+            AutoSize = True
+            Constraints.MaxHeight = 26
+            Constraints.MinHeight = 26
+            Constraints.MinWidth = 400
+            TabOrder = 6
+            ExplicitLeft = 79
+            ExplicitTop = 84
+            inherited lblDescricao: TLabel
+              Width = 44
+              ExplicitTop = 16
+              ExplicitWidth = 44
+              ExplicitHeight = 10
+            end
+            inherited btnAbrirPesquisa: TSpeedButton
+              Left = 91
+              ExplicitLeft = 94
+              ExplicitTop = 15
+            end
+            inherited dbeCodigo: TDBEdit
+              Left = 50
+              DataField = 'ESTADO'
+              DataSource = dsCadastro
+              ExplicitLeft = 53
+              ExplicitTop = 18
+            end
+            inherited pnlDescricao: TPanel
+              Left = 131
+              ExplicitLeft = 116
+            end
+          end
         end
       end
     end
@@ -205,6 +241,7 @@ inherited FormCadastroMunicipios: TFormCadastroMunicipios
     end
   end
   inherited SqlCadastro: TFDQuery
+    Active = False
     SQL.Strings = (
       'SELECT *'
       ' FROM MUNICIPIO')

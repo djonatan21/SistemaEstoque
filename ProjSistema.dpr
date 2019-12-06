@@ -35,7 +35,10 @@ uses
   UnFormCadastroSetor in 'Units\UnFormCadastroSetor.pas' {FormCadastroSetor},
   UnFormCadastroCargo in 'Units\UnFormCadastroCargo.pas' {FormCadastroCargo},
   UnFormCaixaVendas in 'Units\UnFormCaixaVendas.pas' {FormCaixaVendas},
-  UnFormPadraoPesquisaLookupFrame in 'Frames\Form Pesquisa\UnFormPadraoPesquisaLookupFrame.pas' {FormPesquisaLkp};
+  UnLookupFramePadrao in 'Frames\UnLookupFramePadrao.pas' {LookupFramePadrao: TFrame},
+  UnFormPadraoPesquisaLookupFrame in 'Frames\UnFormPadraoPesquisaLookupFrame.pas' {FormPesquisaLookup},
+  UnLookupFrameUF in 'Frames\UnLookupFrameUF.pas' {LookupFrameUF: TFrame},
+  UnFormPesquisaLookupUF in 'Frames\UnFormPesquisaLookupUF.pas' {FormPesquisaUF};
 
 {$R *.res}
 
@@ -46,5 +49,7 @@ begin
   Application.CreateForm(TDmValidar, DmValidar);
   Application.CreateForm(TDmMenuPrincipal, DmMenuPrincipal);
   Application.CreateForm(TFormTelaCarregamento, FormTelaCarregamento);
+  Application.CreateForm(TFormPesquisaLookup, FormPesquisaLookup);
+  Application.CreateForm(TFormPesquisaUF, FormPesquisaUF);
   Application.Run;
 end.
